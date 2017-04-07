@@ -46,5 +46,20 @@ namespace Common_Ground_Project
         {
 
         }
+
+        private void checkBox21_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox20_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox9_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
