@@ -12,8 +12,10 @@ namespace Common_Ground_Project
         static public string Password { get { return LoginCredentials.password; } }
 
         static private bool isAuthenticated = false;
-        static public bool IsAuthenticated { get { return LoginCredentials.isAuthenticated; }
-                                             set { LoginCredentials.isAuthenticated = value; }
+        static public bool IsAuthenticated
+        {
+            get { return LoginCredentials.isAuthenticated; }
+            set { LoginCredentials.isAuthenticated = value; }
         }
     }
         

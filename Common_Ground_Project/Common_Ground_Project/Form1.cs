@@ -66,5 +66,37 @@ namespace Common_Ground_Project
         {
             Application.Exit();        
         }
+
+        private void label105_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label84_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                dateTimePicker5.Visible = true;
+            }
+            else
+            {
+                dateTimePicker5.Visible = false;
+            }
+        }
     }
 }
