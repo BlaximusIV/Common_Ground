@@ -19,7 +19,6 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -212,6 +211,32 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Notes = new System.Windows.Forms.Label();
             this.richTextBox10 = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -253,32 +278,7 @@
             this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
             this.label103 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.label98 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.label84 = new System.Windows.Forms.Label();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.label105 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -2004,9 +2004,9 @@
             this.label81.Location = new System.Drawing.Point(261, 29);
             this.label81.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(276, 31);
+            this.label81.Size = new System.Drawing.Size(219, 31);
             this.label81.TabIndex = 61;
-            this.label81.Text = " Update A Volunteer";
+            this.label81.Text = "Update a Donor";
             // 
             // textBox51
             // 
@@ -2029,6 +2029,7 @@
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.label105);
             this.tabPage14.Controls.Add(this.button9);
             this.tabPage14.Controls.Add(this.label63);
             this.tabPage14.Controls.Add(this.textBox36);
@@ -2286,425 +2287,31 @@
             this.tabPage15.UseVisualStyleBackColor = true;
             this.tabPage15.Click += new System.EventHandler(this.tabPage15_Click);
             // 
-            // Notes
-            // 
-            this.Notes.AutoSize = true;
-            this.Notes.Location = new System.Drawing.Point(362, 82);
-            this.Notes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Notes.Name = "Notes";
-            this.Notes.Size = new System.Drawing.Size(35, 13);
-            this.Notes.TabIndex = 21;
-            this.Notes.Text = "Notes";
-            // 
-            // richTextBox10
-            // 
-            this.richTextBox10.Location = new System.Drawing.Point(400, 79);
-            this.richTextBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.Size = new System.Drawing.Size(251, 385);
-            this.richTextBox10.TabIndex = 20;
-            this.richTextBox10.Text = "";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(29, 474);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 42);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage16
-            // 
-            this.tabPage16.Controls.Add(this.button11);
-            this.tabPage16.Controls.Add(this.textBox54);
-            this.tabPage16.Controls.Add(this.label87);
-            this.tabPage16.Controls.Add(this.label88);
-            this.tabPage16.Controls.Add(this.textBox55);
-            this.tabPage16.Controls.Add(this.label89);
-            this.tabPage16.Controls.Add(this.textBox56);
-            this.tabPage16.Controls.Add(this.label90);
-            this.tabPage16.Controls.Add(this.label91);
-            this.tabPage16.Controls.Add(this.dateTimePicker1);
-            this.tabPage16.Controls.Add(this.label92);
-            this.tabPage16.Controls.Add(this.richTextBox14);
-            this.tabPage16.Controls.Add(this.textBox57);
-            this.tabPage16.Controls.Add(this.label93);
-            this.tabPage16.Controls.Add(this.label94);
-            this.tabPage16.Controls.Add(this.textBox58);
-            this.tabPage16.Controls.Add(this.maskedTextBox7);
-            this.tabPage16.Controls.Add(this.label86);
-            this.tabPage16.Location = new System.Drawing.Point(4, 25);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage16.Size = new System.Drawing.Size(759, 585);
-            this.tabPage16.TabIndex = 1;
-            this.tabPage16.Text = "Update";
-            this.tabPage16.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(37, 510);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(126, 42);
-            this.button11.TabIndex = 47;
-            this.button11.Text = "Update";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // textBox54
-            // 
-            this.textBox54.Location = new System.Drawing.Point(44, 340);
-            this.textBox54.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(76, 20);
-            this.textBox54.TabIndex = 46;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(46, 324);
-            this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(42, 13);
-            this.label87.TabIndex = 45;
-            this.label87.Text = "Vehicle";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(44, 263);
-            this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(58, 13);
-            this.label88.TabIndex = 44;
-            this.label88.Text = "Employees";
-            // 
-            // textBox55
-            // 
-            this.textBox55.Location = new System.Drawing.Point(44, 282);
-            this.textBox55.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(76, 20);
-            this.textBox55.TabIndex = 43;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(39, 436);
-            this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(30, 13);
-            this.label89.TabIndex = 42;
-            this.label89.Text = "Time";
-            // 
-            // textBox56
-            // 
-            this.textBox56.Location = new System.Drawing.Point(41, 452);
-            this.textBox56.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(76, 20);
-            this.textBox56.TabIndex = 41;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(41, 63);
-            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(0, 13);
-            this.label90.TabIndex = 40;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(41, 375);
-            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(30, 13);
-            this.label91.TabIndex = 39;
-            this.label91.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(41, 394);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 38;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(338, 90);
-            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(35, 13);
-            this.label92.TabIndex = 37;
-            this.label92.Text = "Notes";
-            // 
-            // richTextBox14
-            // 
-            this.richTextBox14.Location = new System.Drawing.Point(401, 88);
-            this.richTextBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox14.Name = "richTextBox14";
-            this.richTextBox14.Size = new System.Drawing.Size(251, 385);
-            this.richTextBox14.TabIndex = 36;
-            this.richTextBox14.Text = "";
-            // 
-            // textBox57
-            // 
-            this.textBox57.Location = new System.Drawing.Point(41, 211);
-            this.textBox57.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(76, 20);
-            this.textBox57.TabIndex = 35;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(39, 195);
-            this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(48, 13);
-            this.label93.TabIndex = 34;
-            this.label93.Text = "Location";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(37, 135);
-            this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(27, 13);
-            this.label94.TabIndex = 33;
-            this.label94.Text = "Title";
-            // 
-            // textBox58
-            // 
-            this.textBox58.Location = new System.Drawing.Point(39, 154);
-            this.textBox58.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(76, 20);
-            this.textBox58.TabIndex = 32;
-            // 
-            // maskedTextBox7
-            // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(42, 76);
-            this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox7.Mask = "00/00/0000";
-            this.maskedTextBox7.Name = "maskedTextBox7";
-            this.maskedTextBox7.Size = new System.Drawing.Size(122, 20);
-            this.maskedTextBox7.TabIndex = 1;
-            this.maskedTextBox7.ValidatingType = typeof(System.DateTime);
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(38, 39);
-            this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(222, 24);
-            this.label86.TabIndex = 0;
-            this.label86.Text = "Select the Activity Date";
-            // 
-            // tabPage17
-            // 
-            this.tabPage17.Controls.Add(this.button12);
-            this.tabPage17.Controls.Add(this.textBox59);
-            this.tabPage17.Controls.Add(this.label95);
-            this.tabPage17.Controls.Add(this.label96);
-            this.tabPage17.Controls.Add(this.textBox60);
-            this.tabPage17.Controls.Add(this.label97);
-            this.tabPage17.Controls.Add(this.textBox61);
-            this.tabPage17.Controls.Add(this.label99);
-            this.tabPage17.Controls.Add(this.dateTimePicker3);
-            this.tabPage17.Controls.Add(this.label100);
-            this.tabPage17.Controls.Add(this.richTextBox15);
-            this.tabPage17.Controls.Add(this.textBox62);
-            this.tabPage17.Controls.Add(this.label101);
-            this.tabPage17.Controls.Add(this.label102);
-            this.tabPage17.Controls.Add(this.textBox63);
-            this.tabPage17.Controls.Add(this.maskedTextBox8);
-            this.tabPage17.Controls.Add(this.label103);
-            this.tabPage17.Location = new System.Drawing.Point(4, 25);
-            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(759, 585);
-            this.tabPage17.TabIndex = 2;
-            this.tabPage17.Text = "Delete";
-            this.tabPage17.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(38, 502);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(126, 42);
-            this.button12.TabIndex = 64;
-            this.button12.Text = "Delete";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // textBox59
-            // 
-            this.textBox59.Location = new System.Drawing.Point(40, 340);
-            this.textBox59.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(76, 20);
-            this.textBox59.TabIndex = 63;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(42, 324);
-            this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(42, 13);
-            this.label95.TabIndex = 62;
-            this.label95.Text = "Vehicle";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(40, 263);
-            this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(58, 13);
-            this.label96.TabIndex = 61;
-            this.label96.Text = "Employees";
-            // 
-            // textBox60
-            // 
-            this.textBox60.Location = new System.Drawing.Point(40, 282);
-            this.textBox60.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(76, 20);
-            this.textBox60.TabIndex = 60;
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(35, 436);
-            this.label97.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(30, 13);
-            this.label97.TabIndex = 59;
-            this.label97.Text = "Time";
-            // 
-            // textBox61
-            // 
-            this.textBox61.Location = new System.Drawing.Point(38, 452);
-            this.textBox61.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(76, 20);
-            this.textBox61.TabIndex = 58;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(38, 375);
-            this.label99.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(30, 13);
-            this.label99.TabIndex = 56;
-            this.label99.Text = "Date";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(38, 394);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker3.TabIndex = 55;
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(334, 90);
-            this.label100.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(35, 13);
-            this.label100.TabIndex = 54;
-            this.label100.Text = "Notes";
-            // 
-            // richTextBox15
-            // 
-            this.richTextBox15.Location = new System.Drawing.Point(398, 88);
-            this.richTextBox15.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox15.Name = "richTextBox15";
-            this.richTextBox15.Size = new System.Drawing.Size(251, 385);
-            this.richTextBox15.TabIndex = 53;
-            this.richTextBox15.Text = "";
-            // 
-            // textBox62
-            // 
-            this.textBox62.Location = new System.Drawing.Point(38, 211);
-            this.textBox62.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(76, 20);
-            this.textBox62.TabIndex = 52;
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(35, 195);
-            this.label101.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(48, 13);
-            this.label101.TabIndex = 51;
-            this.label101.Text = "Location";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(33, 135);
-            this.label102.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(27, 13);
-            this.label102.TabIndex = 50;
-            this.label102.Text = "Title";
-            // 
-            // textBox63
-            // 
-            this.textBox63.Location = new System.Drawing.Point(35, 154);
-            this.textBox63.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(76, 20);
-            this.textBox63.TabIndex = 49;
-            // 
-            // maskedTextBox8
-            // 
-            this.maskedTextBox8.Location = new System.Drawing.Point(38, 82);
-            this.maskedTextBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox8.Mask = "00/00/0000";
-            this.maskedTextBox8.Name = "maskedTextBox8";
-            this.maskedTextBox8.Size = new System.Drawing.Size(122, 20);
-            this.maskedTextBox8.TabIndex = 48;
-            this.maskedTextBox8.ValidatingType = typeof(System.DateTime);
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(34, 39);
-            this.label103.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(222, 24);
-            this.label103.TabIndex = 47;
-            this.label103.Text = "Select the Activity Date";
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(23, 4);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(767, 614);
-            this.tabPage8.TabIndex = 4;
-            this.tabPage8.Text = "Reports";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(32, 398);
+            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker6.TabIndex = 74;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(31, 357);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker5.TabIndex = 73;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(28, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(170, 25);
+            this.label20.TabIndex = 72;
+            this.label20.Text = "Add an Activity";
             // 
             // label98
             // 
@@ -2935,31 +2542,435 @@
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 49;
             // 
-            // label20
+            // Notes
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(28, 18);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(137, 25);
-            this.label20.TabIndex = 72;
-            this.label20.Text = "Add Activity";
+            this.Notes.AutoSize = true;
+            this.Notes.Location = new System.Drawing.Point(362, 82);
+            this.Notes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(35, 13);
+            this.Notes.TabIndex = 21;
+            this.Notes.Text = "Notes";
             // 
-            // dateTimePicker5
+            // richTextBox10
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(31, 357);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker5.TabIndex = 73;
+            this.richTextBox10.Location = new System.Drawing.Point(400, 79);
+            this.richTextBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.Size = new System.Drawing.Size(251, 385);
+            this.richTextBox10.TabIndex = 20;
+            this.richTextBox10.Text = "";
             // 
-            // dateTimePicker6
+            // button4
             // 
-            this.dateTimePicker6.Location = new System.Drawing.Point(32, 398);
-            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker6.TabIndex = 74;
+            this.button4.Location = new System.Drawing.Point(29, 474);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(126, 42);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Add";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.button11);
+            this.tabPage16.Controls.Add(this.textBox54);
+            this.tabPage16.Controls.Add(this.label87);
+            this.tabPage16.Controls.Add(this.label88);
+            this.tabPage16.Controls.Add(this.textBox55);
+            this.tabPage16.Controls.Add(this.label89);
+            this.tabPage16.Controls.Add(this.textBox56);
+            this.tabPage16.Controls.Add(this.label90);
+            this.tabPage16.Controls.Add(this.label91);
+            this.tabPage16.Controls.Add(this.dateTimePicker1);
+            this.tabPage16.Controls.Add(this.label92);
+            this.tabPage16.Controls.Add(this.richTextBox14);
+            this.tabPage16.Controls.Add(this.textBox57);
+            this.tabPage16.Controls.Add(this.label93);
+            this.tabPage16.Controls.Add(this.label94);
+            this.tabPage16.Controls.Add(this.textBox58);
+            this.tabPage16.Controls.Add(this.maskedTextBox7);
+            this.tabPage16.Controls.Add(this.label86);
+            this.tabPage16.Location = new System.Drawing.Point(4, 25);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Size = new System.Drawing.Size(759, 585);
+            this.tabPage16.TabIndex = 1;
+            this.tabPage16.Text = "Update";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(37, 510);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(126, 42);
+            this.button11.TabIndex = 47;
+            this.button11.Text = "Update";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // textBox54
+            // 
+            this.textBox54.Location = new System.Drawing.Point(44, 340);
+            this.textBox54.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox54.Name = "textBox54";
+            this.textBox54.Size = new System.Drawing.Size(76, 20);
+            this.textBox54.TabIndex = 46;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(46, 324);
+            this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(42, 13);
+            this.label87.TabIndex = 45;
+            this.label87.Text = "Vehicle";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(44, 263);
+            this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(58, 13);
+            this.label88.TabIndex = 44;
+            this.label88.Text = "Employees";
+            // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(44, 282);
+            this.textBox55.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.Size = new System.Drawing.Size(76, 20);
+            this.textBox55.TabIndex = 43;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(39, 436);
+            this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(30, 13);
+            this.label89.TabIndex = 42;
+            this.label89.Text = "Time";
+            // 
+            // textBox56
+            // 
+            this.textBox56.Location = new System.Drawing.Point(41, 452);
+            this.textBox56.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.Size = new System.Drawing.Size(76, 20);
+            this.textBox56.TabIndex = 41;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(41, 63);
+            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(0, 13);
+            this.label90.TabIndex = 40;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(41, 375);
+            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(30, 13);
+            this.label91.TabIndex = 39;
+            this.label91.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(41, 394);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.TabIndex = 38;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(338, 90);
+            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(35, 13);
+            this.label92.TabIndex = 37;
+            this.label92.Text = "Notes";
+            // 
+            // richTextBox14
+            // 
+            this.richTextBox14.Location = new System.Drawing.Point(401, 88);
+            this.richTextBox14.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.Size = new System.Drawing.Size(251, 385);
+            this.richTextBox14.TabIndex = 36;
+            this.richTextBox14.Text = "";
+            // 
+            // textBox57
+            // 
+            this.textBox57.Location = new System.Drawing.Point(41, 211);
+            this.textBox57.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox57.Name = "textBox57";
+            this.textBox57.Size = new System.Drawing.Size(76, 20);
+            this.textBox57.TabIndex = 35;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(39, 195);
+            this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(48, 13);
+            this.label93.TabIndex = 34;
+            this.label93.Text = "Location";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(37, 135);
+            this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(27, 13);
+            this.label94.TabIndex = 33;
+            this.label94.Text = "Title";
+            // 
+            // textBox58
+            // 
+            this.textBox58.Location = new System.Drawing.Point(39, 154);
+            this.textBox58.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox58.Name = "textBox58";
+            this.textBox58.Size = new System.Drawing.Size(76, 20);
+            this.textBox58.TabIndex = 32;
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.Location = new System.Drawing.Point(42, 76);
+            this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox7.Mask = "00/00/0000";
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(122, 20);
+            this.maskedTextBox7.TabIndex = 1;
+            this.maskedTextBox7.ValidatingType = typeof(System.DateTime);
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(38, 39);
+            this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(176, 24);
+            this.label86.TabIndex = 0;
+            this.label86.Text = "Update an Activity";
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.button12);
+            this.tabPage17.Controls.Add(this.textBox59);
+            this.tabPage17.Controls.Add(this.label95);
+            this.tabPage17.Controls.Add(this.label96);
+            this.tabPage17.Controls.Add(this.textBox60);
+            this.tabPage17.Controls.Add(this.label97);
+            this.tabPage17.Controls.Add(this.textBox61);
+            this.tabPage17.Controls.Add(this.label99);
+            this.tabPage17.Controls.Add(this.dateTimePicker3);
+            this.tabPage17.Controls.Add(this.label100);
+            this.tabPage17.Controls.Add(this.richTextBox15);
+            this.tabPage17.Controls.Add(this.textBox62);
+            this.tabPage17.Controls.Add(this.label101);
+            this.tabPage17.Controls.Add(this.label102);
+            this.tabPage17.Controls.Add(this.textBox63);
+            this.tabPage17.Controls.Add(this.maskedTextBox8);
+            this.tabPage17.Controls.Add(this.label103);
+            this.tabPage17.Location = new System.Drawing.Point(4, 25);
+            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Size = new System.Drawing.Size(759, 585);
+            this.tabPage17.TabIndex = 2;
+            this.tabPage17.Text = "Delete";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(38, 502);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(126, 42);
+            this.button12.TabIndex = 64;
+            this.button12.Text = "Delete";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // textBox59
+            // 
+            this.textBox59.Location = new System.Drawing.Point(40, 340);
+            this.textBox59.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox59.Name = "textBox59";
+            this.textBox59.Size = new System.Drawing.Size(76, 20);
+            this.textBox59.TabIndex = 63;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(42, 324);
+            this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(42, 13);
+            this.label95.TabIndex = 62;
+            this.label95.Text = "Vehicle";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(40, 263);
+            this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(58, 13);
+            this.label96.TabIndex = 61;
+            this.label96.Text = "Employees";
+            // 
+            // textBox60
+            // 
+            this.textBox60.Location = new System.Drawing.Point(40, 282);
+            this.textBox60.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox60.Name = "textBox60";
+            this.textBox60.Size = new System.Drawing.Size(76, 20);
+            this.textBox60.TabIndex = 60;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(35, 436);
+            this.label97.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(30, 13);
+            this.label97.TabIndex = 59;
+            this.label97.Text = "Time";
+            // 
+            // textBox61
+            // 
+            this.textBox61.Location = new System.Drawing.Point(38, 452);
+            this.textBox61.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox61.Name = "textBox61";
+            this.textBox61.Size = new System.Drawing.Size(76, 20);
+            this.textBox61.TabIndex = 58;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(38, 375);
+            this.label99.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(30, 13);
+            this.label99.TabIndex = 56;
+            this.label99.Text = "Date";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(38, 394);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker3.TabIndex = 55;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(334, 90);
+            this.label100.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(35, 13);
+            this.label100.TabIndex = 54;
+            this.label100.Text = "Notes";
+            // 
+            // richTextBox15
+            // 
+            this.richTextBox15.Location = new System.Drawing.Point(398, 88);
+            this.richTextBox15.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.Size = new System.Drawing.Size(251, 385);
+            this.richTextBox15.TabIndex = 53;
+            this.richTextBox15.Text = "";
+            // 
+            // textBox62
+            // 
+            this.textBox62.Location = new System.Drawing.Point(38, 211);
+            this.textBox62.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox62.Name = "textBox62";
+            this.textBox62.Size = new System.Drawing.Size(76, 20);
+            this.textBox62.TabIndex = 52;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(35, 195);
+            this.label101.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(48, 13);
+            this.label101.TabIndex = 51;
+            this.label101.Text = "Location";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(33, 135);
+            this.label102.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(27, 13);
+            this.label102.TabIndex = 50;
+            this.label102.Text = "Title";
+            // 
+            // textBox63
+            // 
+            this.textBox63.Location = new System.Drawing.Point(35, 154);
+            this.textBox63.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox63.Name = "textBox63";
+            this.textBox63.Size = new System.Drawing.Size(76, 20);
+            this.textBox63.TabIndex = 49;
+            // 
+            // maskedTextBox8
+            // 
+            this.maskedTextBox8.Location = new System.Drawing.Point(38, 82);
+            this.maskedTextBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox8.Mask = "00/00/0000";
+            this.maskedTextBox8.Name = "maskedTextBox8";
+            this.maskedTextBox8.Size = new System.Drawing.Size(122, 20);
+            this.maskedTextBox8.TabIndex = 48;
+            this.maskedTextBox8.ValidatingType = typeof(System.DateTime);
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.Location = new System.Drawing.Point(34, 39);
+            this.label103.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(170, 24);
+            this.label103.TabIndex = 47;
+            this.label103.Text = "Delete an Activity";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(23, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(767, 614);
+            this.tabPage8.TabIndex = 4;
+            this.tabPage8.Text = "Reports";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label105.Location = new System.Drawing.Point(91, 83);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(245, 37);
+            this.label105.TabIndex = 72;
+            this.label105.Text = "Delete a Donor";
             // 
             // Form1
             // 
@@ -3260,6 +3271,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.Label label105;
     }
 }
 

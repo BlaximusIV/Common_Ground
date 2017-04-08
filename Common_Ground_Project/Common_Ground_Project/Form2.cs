@@ -16,7 +16,13 @@ namespace Common_Ground_Project
         {
             InitializeComponent();
         }
- 
+
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBox1.Text != LoginCredentials.Password)
@@ -26,8 +32,10 @@ namespace Common_Ground_Project
 
            if(textBox1.Text == LoginCredentials.Password)
             {
-                Close();
+                LoginCredentials.IsAuthenticated = true;
+                this.Close();
             }
         }
+
     }
 }

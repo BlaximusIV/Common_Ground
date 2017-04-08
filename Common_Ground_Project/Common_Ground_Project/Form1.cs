@@ -61,5 +61,10 @@ namespace Common_Ground_Project
         {
 
         }
+
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();        
+        }
     }
 }
