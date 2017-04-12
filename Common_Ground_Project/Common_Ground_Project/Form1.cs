@@ -19,6 +19,8 @@ namespace Common_Ground_Project
         SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-GUSKKLJ\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
         int personID = 0;
         int volunteerID = 0;
+        int ActivityID = 0;
+        int staffID = 0;
         public Form1()
         {
             InitializeComponent();
@@ -426,6 +428,319 @@ namespace Common_Ground_Project
             {
 
                 FillDVGVolunteer();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error Message");
+
+            }
+        }
+
+        private void btn_addActivity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                if (btn_addVolunteer.Text == "Save")
+                {
+                    SqlCommand sqlCmd = new SqlCommand("ActivityAddEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@mode", "Add");
+                    sqlCmd.Parameters.AddWithValue("@ActivityID", 0);
+                    sqlCmd.Parameters.AddWithValue("@Title", a_title.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Description", a_activityDescription.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Location", a_location.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Date", a_startDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Date", a_endDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Time", a_startTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Time", a_endTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", a_pickUpTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", a_dropOffTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", a_staffArrivalTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Cost", a_cost.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Notes", a_notes.Text.Trim());
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Save Succesful");
+                }
+                else
+                {
+                    SqlCommand sqlCmd = new SqlCommand("ActivityAddEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@mode", "Edit");
+                    sqlCmd.Parameters.AddWithValue("@ActivityID", ActivityID);
+                    sqlCmd.Parameters.AddWithValue("@Title", a_title.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Description", a_activityDescription.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Location", a_location.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Date", a_startDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Date", a_endDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Time", a_startTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Time", a_endTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", a_pickUpTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", a_dropOffTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", a_staffArrivalTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Cost", a_cost.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Notes", a_notes.Text.Trim());
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Update Succesful");
+
+                }
+                ResetActivity();
+                FillDVGActivity();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
+        }
+        private void FillDVGActivity()
+        {
+            if (sqlCon.State == ConnectionState.Closed)
+                sqlCon.Open();
+            SqlDataAdapter sqlDa = new SqlDataAdapter("activityGridView1", sqlCon);
+            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlDa.SelectCommand.Parameters.AddWithValue("@Title", a_title.Text.Trim());
+            //the "txtSearch might be the name of the text box in the UI// 
+            DataTable Activitydtbl = new DataTable();
+            sqlDa.Fill(Activitydtbl);
+
+            dvgVolunteer.DataSource = Activitydtbl;
+            dvgVolunteer.Columns[0].Visible = false;
+
+            // this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
+
+            sqlCon.Close();
+        }
+
+        private void btn_deleteActivity_Click(object sender, EventArgs e)
+        {
+              try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("deleteActivity", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@ActivityID", ActivityID);
+                sqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Delete Succesful");
+                ResetVolunteer();
+                FillDVGVolunteer();
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+
+        }
+
+        private void dvgActivity_DoubleClick(object sender, EventArgs e)
+        {
+            if (dvgActivity.CurrentRow.Index != -1)
+            {
+                ActivityID = Convert.ToInt32(dvgActivity.CurrentRow.Cells[0].Value.ToString());
+                a_title.Text = dvgActivity.CurrentRow.Cells[1].Value.ToString();
+                a_activityDescription.Text = dvgActivity.CurrentRow.Cells[2].Value.ToString();
+                a_location.Text = dvgActivity.CurrentRow.Cells[3].Value.ToString();
+                a_startDate.Text = dvgActivity.CurrentRow.Cells[4].Value.ToString();
+                a_endDate.Text = dvgActivity.CurrentRow.Cells[5].Value.ToString();
+                a_startTime.Text = dvgActivity.CurrentRow.Cells[6].Value.ToString();
+                a_endTime.Text = dvgActivity.CurrentRow.Cells[7].Value.ToString();
+                a_pickUpTime.Text = dvgActivity.CurrentRow.Cells[8].Value.ToString();
+                a_dropOffTime.Text = dvgActivity.CurrentRow.Cells[9].Value.ToString();
+                a_staffArrivalTime.Text = dvgActivity.CurrentRow.Cells[10].Value.ToString();
+                a_cost.Text = dvgActivity.CurrentRow.Cells[11].Value.ToString();
+                a_notes.Text = dvgActivity.CurrentRow.Cells[21].Value.ToString();
+                btn_addActivity.Text = "Update";
+                btn_deleteActivity.Enabled = true;
+            }
+        }
+        void ResetActivity()
+        {
+            a_title.Text = a_activityDescription.Text = a_location.Text = a_startDate.Text = a_endDate.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_cost.Text = "";
+            btn_addActivity.Text = "Save";
+            ActivityID = 0;
+            btn_deleteActivity.Enabled = false;
+
+        }
+
+        private void btn_searchActivity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                FillDVGActivity();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+        }
+
+        private void btn_addStaff_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                if (btn_addVolunteer.Text == "Save")
+                {
+                    SqlCommand sqlCmd = new SqlCommand("StaffAddEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@mode", "Add");
+                    sqlCmd.Parameters.AddWithValue("@staffID", 0);
+                    sqlCmd.Parameters.AddWithValue("@First_Name", s_firstName.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Last_Name", s_lastName.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Phone_Number", s_phoneNumber.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Email", s_email.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Emergency_Contact", s_emergencyContact.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Street_Address", s_streetAddress.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@City", s_city.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@State", s_state.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Zip", s_zip.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Notes", s_notes.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@DOB", s_DOB.Text.Trim());
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Save Succesful");
+                }
+                else
+                {
+                    SqlCommand sqlCmd = new SqlCommand("StaffAddEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@mode", "Edit");
+                    sqlCmd.Parameters.AddWithValue("@staffID", staffID);
+                    sqlCmd.Parameters.AddWithValue("@First_Name", s_firstName.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Last_Name", s_lastName.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Phone_Number", s_phoneNumber.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Email", s_email.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Emergency_Contact", s_emergencyContact.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Street_Address", s_streetAddress.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@City", s_city.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@State", s_state.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Zip", s_zip.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Notes", s_notes.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@DOB", s_DOB.Text.Trim());
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Update Succesful");
+
+                }
+                ResetStaff();
+                FillDVGStaff();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
+        }
+        void FillDVGStaff()
+        {
+            if (sqlCon.State == ConnectionState.Closed)
+                sqlCon.Open();
+            SqlDataAdapter sqlDa = new SqlDataAdapter("staffGridView1", sqlCon);
+            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlDa.SelectCommand.Parameters.AddWithValue("@First_Name", s_searchStaff.Text.Trim());
+            //the "txtSearch might be the name of the text box in the UI// 
+            DataTable Staffdtbl = new DataTable();
+            sqlDa.Fill(Staffdtbl);
+
+            dvgVolunteer.DataSource = Staffdtbl;
+            dvgVolunteer.Columns[0].Visible = false;
+
+            // this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
+
+            sqlCon.Close();
+        }
+
+        private void dvgStaff_DoubleClick(object sender, EventArgs e)
+        {
+            if (dvgStaff.CurrentRow.Index != -1)
+            {
+                staffID = Convert.ToInt32(dvgStaff.CurrentRow.Cells[0].Value.ToString());
+                s_firstName.Text = dvgStaff.CurrentRow.Cells[1].Value.ToString();
+                s_lastName.Text = dvgStaff.CurrentRow.Cells[2].Value.ToString();
+                s_phoneNumber.Text = dvgStaff.CurrentRow.Cells[3].Value.ToString();
+                s_DOB.Text = dvgStaff.CurrentRow.Cells[4].Value.ToString();
+                s_email.Text = dvgStaff.CurrentRow.Cells[12].Value.ToString();
+                s_streetAddress.Text = dvgStaff.CurrentRow.Cells[6].Value.ToString();
+                s_city.Text = dvgStaff.CurrentRow.Cells[7].Value.ToString();
+                s_state.Text = dvgStaff.CurrentRow.Cells[8].Value.ToString();
+                s_zip.Text = dvgStaff.CurrentRow.Cells[9].Value.ToString();
+                s_emergencyContact.Text = dvgStaff.CurrentRow.Cells[10].Value.ToString();
+                s_notes.Text = dvgStaff.CurrentRow.Cells[11].Value.ToString();
+                btn_addStaff.Text = "Update";
+                btn_deleteStaff.Enabled = true;
+            }
+        }
+
+        private void btn_deleteStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("deleteStaff", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@staffID", staffID);
+                sqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Delete Succesful");
+                ResetStaff();
+                FillDVGStaff();
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+        }
+        void ResetStaff()
+        {
+            s_firstName.Text = s_lastName.Text = s_phoneNumber.Text = s_DOB.Text = s_email.Text = s_city.Text = s_state.Text = s_streetAddress.Text = s_zip.Text = s_emergencyContact.Text = s_notes.Text = "";
+            btn_addStaff.Text = "Save";
+            staffID = 0;
+            btn_deleteStaff.Enabled = false;
+
+        }
+
+        private void btn_searchStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                FillDVGStaff();
 
             }
             catch (Exception ex)
