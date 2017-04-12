@@ -17,7 +17,7 @@ namespace Common_Ground_Project
 
     public partial class Form1 : Form
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-GUSKKLJ\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;");
         int personID = 0;
         int volunteerID = 0;
         public Form1()
@@ -268,15 +268,22 @@ namespace Common_Ground_Project
         {
             try
             {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("deleteParticipant", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@personID", personID);
-                sqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Delete Succesful");
-                ResetParticipant();
-                FillDVGParticipant();
+                if (MessageBox.Show("Are you sure you would like to delete this record?", "Deletion Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (sqlCon.State == ConnectionState.Closed)
+                        sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("deleteParticipant", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@personID", personID);
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Delete Succesful");
+                    ResetParticipant();
+                    FillDVGParticipant();
+                }
+                else
+                {
+                    MessageBox.Show("Canceling Deletion");
+                }
             }
 
 
@@ -371,15 +378,22 @@ namespace Common_Ground_Project
         {
             try
             {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("deleteVolunteer", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@volunteerID", volunteerID);
-                sqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Delete Succesful");
-                ResetVolunteer();
-                FillDVGVolunteer();
+                if (MessageBox.Show("Are you sure you would like to delete this record?", "Deletion Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (sqlCon.State == ConnectionState.Closed)
+                        sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("deleteVolunteer", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@volunteerID", volunteerID);
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Delete Succesful");
+                    ResetVolunteer();
+                    FillDVGVolunteer();
+                }
+                else
+                {
+                    MessageBox.Show("Canceling Deletion");
+                }
             }
 
 
@@ -445,6 +459,24 @@ namespace Common_Ground_Project
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+            ParticipantHelp ph = new ParticipantHelp();
+            ph.Show();
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+            VolunteerHelp vh = new VolunteerHelp();
+            vh.Show();
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+            ActivitiesHelp ah = new ActivitiesHelp();
+            ah.Show();
         }
     }
 }

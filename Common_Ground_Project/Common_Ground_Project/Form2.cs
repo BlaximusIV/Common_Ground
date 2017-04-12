@@ -28,6 +28,7 @@ namespace Common_Ground_Project
             if(textBox1.Text != LoginCredentials.Password)
             {
                 label2.Visible = true;
+                textBox1.Clear();
             }
 
            if(textBox1.Text == LoginCredentials.Password)
