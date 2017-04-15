@@ -17,7 +17,7 @@ namespace Common_Ground_Project
 
     public partial class Form1 : Form
     {
-        SqlConnection sqlCon = new SqlConnection(@"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-GUSKKLJ\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
         int personID = 0;
         int volunteerID = 0;
         int ActivityID= 0;
@@ -115,6 +115,28 @@ namespace Common_Ground_Project
 
         }
 
+        //----------------------------------------------------------------------------------
+        //
+        //              Refresh/Reset Page
+        //
+        //----------------------------------------------------------------------------------
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ResetParticipant();
+            FillDVGParticipant();
+            ResetVolunteer();
+            FillDVGVolunteer();
+            ResetActivity();
+            FillDVGActivity();
+            ResetStaff();
+            FillDVGStaff();
+
+        }
+        //----------------------------------------------------------------------------------
+        //
+        //              Participant
+        //
+        //----------------------------------------------------------------------------------
         private void btn_Addparticipant_Click(object sender, EventArgs e)
         {
             try
@@ -137,6 +159,7 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
+                    //sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(p_DOB.Text.Trim()));
 
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Save Succesful");
@@ -157,6 +180,7 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
+                    //sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(p_DOB.Text.Trim()));
 
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Update Succesful");
@@ -259,18 +283,6 @@ namespace Common_Ground_Project
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ResetParticipant();
-            FillDVGParticipant();
-            ResetVolunteer();
-            FillDVGVolunteer();
-            ResetActivity();
-            FillDVGActivity();
-            ResetStaff();
-            FillDVGStaff();
-       
-        }
 
         private void btn_deleteParticipant_Click(object sender, EventArgs e)
         {
@@ -302,7 +314,11 @@ namespace Common_Ground_Project
 
 
         }
-
+        //----------------------------------------------------------------------------------
+        //
+        //             Volunteer
+        //
+        //----------------------------------------------------------------------------------
         private void btn_addVolunteer_Click(object sender, EventArgs e)
         {
 
@@ -326,7 +342,7 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@State", v_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Zip", v_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Notes", v_notes.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@DOB", v_DOB.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(v_DOB.Text.Trim()));
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Save Succesful");
                 }
@@ -346,7 +362,7 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@State", v_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Zip", v_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Notes", v_notes.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@DOB", v_DOB.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(v_DOB.Text.Trim()));
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Update Succesful");
 
@@ -536,23 +552,23 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@Title", a_title.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Description", a_activityDescription.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Location", a_location.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Start_Date", a_startDate.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@End_Date", a_endDate.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Start_Time", a_startTime.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@End_Time", a_endTime.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", a_pickUpTime.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", a_dropOffTime.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", a_staffArrivalTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Date", Convert.ToDateTime(a_startDate.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@End_Date", Convert.ToDateTime(a_endDate.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@Start_Time", Convert.ToDateTime(a_startTime.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@End_Time", Convert.ToDateTime(a_endTime.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", Convert.ToDateTime(a_pickUpTime.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", Convert.ToDateTime(a_dropOffTime.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", Convert.ToDateTime(a_staffArrivalTime.Text.Trim()));
                     sqlCmd.Parameters.AddWithValue("@Cost", a_cost.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Checked);
                     sqlCmd.Parameters.AddWithValue("@Notes", a_notes.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Update Succesful");
@@ -637,7 +653,7 @@ namespace Common_Ground_Project
         void ResetActivity()
         {
             a_startDate.Text = a_endDate.Text = "";
-            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_cost.Text = "";
+            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_notes.Text = "";
             btn_addActivity.Text = "Save";
             ActivityID = 0;
             btn_deleteActivity.Enabled = false;
@@ -765,6 +781,24 @@ namespace Common_Ground_Project
 
         private void btn_deleteStaff_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("deleteStaff", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@staffID", staffID);
+                sqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Delete Succesful");
+                ResetStaff();
+                FillDVGStaff();
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
 
         }
         void ResetStaff()
@@ -791,5 +825,36 @@ namespace Common_Ground_Project
 
             }
         }
+
+        private void tabPage16_Click(object sender, EventArgs e)
+        {
+
+        }
+        //----------------------------------------------------------------------------------
+        //
+        //              Assiging Staff
+        //
+        //----------------------------------------------------------------------------------
+
+        private void FillDVGASActivity()
+        {
+            if (sqlCon.State == ConnectionState.Closed)
+                sqlCon.Open();
+            SqlDataAdapter sqlDa = new SqlDataAdapter("asActivityGridView1", sqlCon);
+            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlDa.SelectCommand.Parameters.AddWithValue("@Title", as_searchActivity.Text.Trim());
+            //the "txtSearch might be the name of the text box in the UI// 
+            DataTable AsActivitydtbl = new DataTable();
+            sqlDa.Fill(AsActivitydtbl);
+
+            dvgASactivity.DataSource = AsActivitydtbl;
+            dvgASactivity.Columns[0].Visible = false;
+
+            // this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
+
+            sqlCon.Close();
+        }
+
+
     }
 }
