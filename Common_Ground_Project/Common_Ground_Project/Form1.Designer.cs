@@ -168,7 +168,6 @@
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.label86 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.as_staff = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.as_tripLeader = new System.Windows.Forms.TextBox();
@@ -1852,7 +1851,6 @@
             this.tabPage16.Controls.Add(this.label39);
             this.tabPage16.Controls.Add(this.label40);
             this.tabPage16.Controls.Add(this.label41);
-            this.tabPage16.Controls.Add(this.button11);
             this.tabPage16.Controls.Add(this.label90);
             this.tabPage16.Controls.Add(this.label86);
             this.tabPage16.Location = new System.Drawing.Point(4, 37);
@@ -1884,16 +1882,6 @@
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(0, 25);
             this.label90.TabIndex = 40;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(42, 714);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(252, 81);
-            this.button11.TabIndex = 47;
-            this.button11.Text = "Update";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // as_staff
             // 
@@ -2830,7 +2818,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.TabPage tabPage17;
