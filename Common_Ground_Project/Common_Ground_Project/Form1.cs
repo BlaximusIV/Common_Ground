@@ -17,7 +17,7 @@ namespace Common_Ground_Project
 
     public partial class Form1 : Form
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-GUSKKLJ\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;");
         int personID = 0;
         int volunteerID = 0;
         int ActivityID= 0;
@@ -28,74 +28,9 @@ namespace Common_Ground_Project
             InitializeComponent();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox21_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox20_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox9_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void label105_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox13_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label84_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -110,222 +45,179 @@ namespace Common_Ground_Project
             }
         }
 
-        private void richTextBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //---------------------------------------------------------------------------
-        //
-        //              Refresh/Reset Page
-        //
-        //---------------------------------------------------------------------------
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ResetParticipant();
-            FillDVGParticipant();
-            ResetVolunteer();
-            FillDVGVolunteer();
-            ResetActivity();
-            FillDVGActivity();
-            ResetStaff();
-            FillDVGStaff();
-
-        }
-        //---------------------------------------------------------------------------
-        //
-        //              Participant
-        //
-        //---------------------------------------------------------------------------
         private void btn_Addparticipant_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                if (btn_Addparticipant.Text == "Save")
-                {
-                    SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@mode", "Add");
-                    sqlCmd.Parameters.AddWithValue("@personID", 0);
-                    sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(p_DOB.Text.Trim()));
+            //try
+            //{
+            //    if (sqlCon.State == ConnectionState.Closed)
+            //        sqlCon.Open();
+            //    if (btn_Addparticipant.Text == "Save")
+            //    {
+            //        SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
+            //        sqlCmd.CommandType = CommandType.StoredProcedure;
+            //        sqlCmd.Parameters.AddWithValue("@mode", "Add");
+            //        sqlCmd.Parameters.AddWithValue("@personID", 0);
+            //        sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
 
-                    sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Save Succesful");
-                }
-                else
-                {
-                    SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@mode", "Edit");
-                    sqlCmd.Parameters.AddWithValue("@personID", personID);
-                    sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
-                    //sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(p_DOB.Text.Trim()));
+            //        sqlCmd.ExecuteNonQuery();
+            //        MessageBox.Show("Save Succesful");
+            //    }
+            //    else
+            //    {
+            //        SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
+            //        sqlCmd.CommandType = CommandType.StoredProcedure;
+            //        sqlCmd.Parameters.AddWithValue("@mode", "Edit");
+            //        sqlCmd.Parameters.AddWithValue("@personID", personID);
+            //        sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
+            //        sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
 
-                    sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Update Succesful");
+            //        sqlCmd.ExecuteNonQuery();
+            //        MessageBox.Show("Update Succesful");
 
-                }
-                ResetParticipant();
-                FillDVGParticipant();
+            //    }
+            //    ResetParticipant();
+            //    FillDVGParticipant();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Message");
-            }
-            finally
-            {
-                sqlCon.Close();
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error Message");
+            //}
+            //finally
+            //{
+            //    sqlCon.Close();
+            //}
 
         }
-
-        private void label64_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         void FillDVGParticipant()
         {
-            if (sqlCon.State == ConnectionState.Closed)
-                sqlCon.Open();
-            SqlDataAdapter sqlDa = new SqlDataAdapter("participantGridVew1", sqlCon);
-            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sqlDa.SelectCommand.Parameters.AddWithValue("@firstName", p_search.Text.Trim());
-            //the "txtSearch might be the name of the text box in the UI// 
-            DataTable dtbl = new DataTable();
-            sqlDa.Fill(dtbl);
+            //if (sqlCon.State == ConnectionState.Closed)
+            //    sqlCon.Open();
+            //SqlDataAdapter sqlDa = new SqlDataAdapter("participantGridVew1", sqlCon);
+            //sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //sqlDa.SelectCommand.Parameters.AddWithValue("@firstName", p_search.Text.Trim());
+            ////the "txtSearch might be the name of the text box in the UI// 
+            //DataTable dtbl = new DataTable();
+            //sqlDa.Fill(dtbl);
 
-            dvgParticipant.DataSource = dtbl;
-            dvgParticipant.Columns[0].Visible = false;
+            //dvgParticipant.DataSource = dtbl;
+            //dvgParticipant.Columns[0].Visible = false;
 
-            // this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
+            //// this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
 
-            sqlCon.Close();
+            //sqlCon.Close();
         }
-
 
         private void btn_searchParticipant_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                FillDVGParticipant();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error Message");
-
-            }
-
-        }
-
-        private void dvgParticipant_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            //try
+            //{
+            //    FillDVGParticipant();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error Message");
+            //}
         }
 
         private void dvgParticipant_DoubleClick(object sender, EventArgs e)
         {
-            if (dvgParticipant.CurrentRow.Index != -1)
-            {
-                personID = Convert.ToInt32(dvgParticipant.CurrentRow.Cells[0].Value.ToString());
-                p_fName.Text = dvgParticipant.CurrentRow.Cells[2].Value.ToString();
-                p_lName.Text = dvgParticipant.CurrentRow.Cells[1].Value.ToString();
-                p_phoneNumber.Text = dvgParticipant.CurrentRow.Cells[3].Value.ToString();
-                p_DOB.Text = dvgParticipant.CurrentRow.Cells[15].Value.ToString();
-                p_email.Text = dvgParticipant.CurrentRow.Cells[4].Value.ToString();
-                p_streetAddress.Text = dvgParticipant.CurrentRow.Cells[9].Value.ToString();
-                p_city.Text = dvgParticipant.CurrentRow.Cells[10].Value.ToString();
-                p_state.Text = dvgParticipant.CurrentRow.Cells[11].Value.ToString();
-                p_zip.Text = dvgParticipant.CurrentRow.Cells[12].Value.ToString();
-                p_emergencyContact.Text = dvgParticipant.CurrentRow.Cells[7].Value.ToString();
-                p_notes.Text = dvgParticipant.CurrentRow.Cells[13].Value.ToString();
-                btn_Addparticipant.Text = "Update";
-                btn_deleteParticipant.Enabled = true;
-            }
+            //if (dvgParticipant.CurrentRow.Index != -1)
+            //{
+            //    personID = Convert.ToInt32(dvgParticipant.CurrentRow.Cells[0].Value.ToString());
+            //    p_fName.Text = dvgParticipant.CurrentRow.Cells[2].Value.ToString();
+            //    p_lName.Text = dvgParticipant.CurrentRow.Cells[1].Value.ToString();
+            //    p_phoneNumber.Text = dvgParticipant.CurrentRow.Cells[3].Value.ToString();
+            //    p_DOB.Text = dvgParticipant.CurrentRow.Cells[15].Value.ToString();
+            //    p_email.Text = dvgParticipant.CurrentRow.Cells[4].Value.ToString();
+            //    p_streetAddress.Text = dvgParticipant.CurrentRow.Cells[9].Value.ToString();
+            //    p_city.Text = dvgParticipant.CurrentRow.Cells[10].Value.ToString();
+            //    p_state.Text = dvgParticipant.CurrentRow.Cells[11].Value.ToString();
+            //    p_zip.Text = dvgParticipant.CurrentRow.Cells[12].Value.ToString();
+            //    p_emergencyContact.Text = dvgParticipant.CurrentRow.Cells[7].Value.ToString();
+            //    p_notes.Text = dvgParticipant.CurrentRow.Cells[13].Value.ToString();
+            //    btn_Addparticipant.Text = "Update";
+            //    btn_deleteParticipant.Enabled = true;
+            //}
 
 
         }
 
         void ResetParticipant()
         {
-            p_lName.Text = p_fName.Text = p_phoneNumber.Text = p_DOB.Text = p_email.Text = p_state.Text = p_streetAddress.Text = p_zip.Text = p_city.Text = p_emergencyContact.Text = p_notes.Text = "";
-            btn_Addparticipant.Text = "Save";
-            personID = 0;
-            btn_deleteParticipant.Enabled = false;
-
-
-
+            //p_lName.Text = p_fName.Text = p_phoneNumber.Text = p_DOB.Text = p_email.Text = p_state.Text = p_streetAddress.Text = p_zip.Text = p_city.Text = p_emergencyContact.Text = p_notes.Text = "";
+            //btn_Addparticipant.Text = "Save";
+            //personID = 0;
+            //btn_deleteParticipant.Enabled = false;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //ResetParticipant();
+            //FillDVGParticipant();
+            //ResetVolunteer();
+            //FillDVGVolunteer();
+            //ResetActivity();
+            //FillDVGActivity();
+            //ResetStaff();
+            //FillDVGStaff();
+       
+        }
 
         private void btn_deleteParticipant_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (MessageBox.Show("Are you sure you would like to delete this record?", "Deletion Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (sqlCon.State == ConnectionState.Closed)
-                        sqlCon.Open();
-                    SqlCommand sqlCmd = new SqlCommand("deleteParticipant", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@personID", personID);
-                    sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Delete Succesful");
-                    ResetParticipant();
-                    FillDVGParticipant();
-                }
-                else
-                {
-                    MessageBox.Show("Canceling Deletion");
-                }
-            }
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Message");
-            }
+            //try
+            //{
+            //    if (MessageBox.Show("Are you sure you would like to delete this record?", "Deletion Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
+            //        if (sqlCon.State == ConnectionState.Closed)
+            //            sqlCon.Open();
+            //        SqlCommand sqlCmd = new SqlCommand("deleteParticipant", sqlCon);
+            //        sqlCmd.CommandType = CommandType.StoredProcedure;
+            //        sqlCmd.Parameters.AddWithValue("@personID", personID);
+            //        sqlCmd.ExecuteNonQuery();
+            //        MessageBox.Show("Delete Succesful");
+            //        ResetParticipant();
+            //        FillDVGParticipant();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Canceling Deletion");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error Message");
+            //}
 
 
         }
-        //----------------------------------------------------------------------------------
-        //
-        //             Volunteer
-        //
-        //----------------------------------------------------------------------------------
+
         private void btn_addVolunteer_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)
                     sqlCon.Open();
+
                 if (btn_addVolunteer.Text == "Save")
                 {
                     SqlCommand sqlCmd = new SqlCommand("VolunteerAddEdit", sqlCon);
@@ -342,7 +234,7 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@State", v_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Zip", v_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Notes", v_notes.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(v_DOB.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@DOB", v_DOB.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Save Succesful");
                 }
@@ -362,14 +254,13 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@State", v_state.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Zip", v_zip.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Notes", v_notes.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime(v_DOB.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@DOB", v_DOB.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Update Succesful");
-
                 }
+
                 ResetVolunteer();
                 FillDVGVolunteer();
-
             }
             catch (Exception ex)
             {
@@ -419,14 +310,10 @@ namespace Common_Ground_Project
                     MessageBox.Show("Canceling Deletion");
                 }
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message");
             }
-
-
         }
 
         private void dvgVolunteer_DoubleClick(object sender, EventArgs e)
@@ -450,39 +337,25 @@ namespace Common_Ground_Project
                 btn_deleteVolunteer.Enabled = true;
             }
         }
-        void ResetVolunteer()
+
+        private void ResetVolunteer()
         {
             v_firstName.Text = v_lastName.Text = v_phoneNumber.Text = v_DOB.Text = v_email.Text = v_city.Text = v_state.Text = v_streetAddress.Text = v_zip.Text = v_wavierDate.Text = v_emergencyContact.Text = v_notes.Text = "";
             btn_addVolunteer.Text = "Save";
             volunteerID = 0;
             btn_deleteVolunteer.Enabled = false;
-
         }
 
         private void btn_searchVolunteer_Click(object sender, EventArgs e)
         {
             try
             {
-
                 FillDVGVolunteer();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error Message");
-
             }
-        }
-
-        private void v_search_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -552,23 +425,23 @@ namespace Common_Ground_Project
                     sqlCmd.Parameters.AddWithValue("@Title", a_title.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Description", a_activityDescription.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Location", a_location.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Start_Date", Convert.ToDateTime(a_startDate.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@End_Date", Convert.ToDateTime(a_endDate.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@Start_Time", Convert.ToDateTime(a_startTime.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@End_Time", Convert.ToDateTime(a_endTime.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", Convert.ToDateTime(a_pickUpTime.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", Convert.ToDateTime(a_dropOffTime.Text.Trim()));
-                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", Convert.ToDateTime(a_staffArrivalTime.Text.Trim()));
+                    sqlCmd.Parameters.AddWithValue("@Start_Date", a_startDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Date", a_endDate.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Start_Time", a_startTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@End_Time", a_endTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Pick_Up_Time", a_pickUpTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Drop_Off_Time", a_dropOffTime.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Staff_Arrival_Time", a_staffArrivalTime.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Cost", a_cost.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Checked);
-                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Checked);
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_1", a_v1.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_2", a_v2.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_3", a_v3.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_4", a_v4.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_5", a_v5.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_6", a_v6.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_7", a_v7.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_8", a_v8.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@Vehicle_9", a_v9.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Notes", a_notes.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Update Succesful");
@@ -620,13 +493,10 @@ namespace Common_Ground_Project
                 ResetActivity();
                 FillDVGActivity();
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message");
             }
-
         }
 
         private void dvgActivity_DoubleClick(object sender, EventArgs e)
@@ -653,7 +523,7 @@ namespace Common_Ground_Project
         void ResetActivity()
         {
             a_startDate.Text = a_endDate.Text = "";
-            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_notes.Text = "";
+            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_cost.Text = "";
             btn_addActivity.Text = "Save";
             ActivityID = 0;
             btn_deleteActivity.Enabled = false;
@@ -664,13 +534,10 @@ namespace Common_Ground_Project
         {
             try
             {
-
                 FillDVGActivity();
-
             }
             catch (Exception ex)
-            {
-
+            { 
                 MessageBox.Show(ex.Message, "Error Message");
             }
         }
@@ -681,11 +548,11 @@ namespace Common_Ground_Project
         //----------------------------------------------------------------------------------
         private void btn_addStaff_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)
                     sqlCon.Open();
+
                 if (btn_addStaff.Text == "Save")
                 {
                     SqlCommand sqlCmd = new SqlCommand("StaffAddEdit", sqlCon);
@@ -743,6 +610,7 @@ namespace Common_Ground_Project
         {
             if (sqlCon.State == ConnectionState.Closed)
                 sqlCon.Open();
+
             SqlDataAdapter sqlDa = new SqlDataAdapter("staffGridView1", sqlCon);
             sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
             sqlDa.SelectCommand.Parameters.AddWithValue("@First_Name", s_searchStaff.Text.Trim());
@@ -779,123 +647,23 @@ namespace Common_Ground_Project
             }
         }
 
-        private void btn_deleteStaff_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("deleteStaff", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@staffID", staffID);
-                sqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Delete Succesful");
-                ResetStaff();
-                FillDVGStaff();
-            }
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Message");
-            }
-
-        }
         void ResetStaff()
         {
             s_firstName.Text = s_lastName.Text = s_phoneNumber.Text = s_DOB.Text = s_email.Text = s_city.Text = s_state.Text = s_streetAddress.Text = s_zip.Text = s_emergencyContact.Text = s_notes.Text = "";
             btn_addStaff.Text = "Save";
             staffID = 0;
             btn_deleteStaff.Enabled = false;
-
         }
 
         private void btn_searchStaff_Click(object sender, EventArgs e)
         {
             try
             {
-
                 FillDVGStaff();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error Message");
-
-            }
-        }
-
-        private void tabPage16_Click(object sender, EventArgs e)
-        {
-
-        }
-        //----------------------------------------------------------------------------------
-        //
-        //              Assiging Staff
-        //
-        //----------------------------------------------------------------------------------
-
-        private void FillDVGASActivity()
-        {
-            if (sqlCon.State == ConnectionState.Closed)
-                sqlCon.Open();
-            SqlDataAdapter sqlDa = new SqlDataAdapter("asActivityGridView1", sqlCon);
-            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sqlDa.SelectCommand.Parameters.AddWithValue("@Title", as_searchActivity.Text.Trim());
- 
-            DataTable AsActivitydtbl = new DataTable();
-            sqlDa.Fill(AsActivitydtbl);
-
-            dvgASactivity.DataSource = AsActivitydtbl;
-            dvgASactivity.Columns[0].Visible = false;
-
-          
-
-            sqlCon.Close();
-        }
-
-        private void btn_asSearchActivity_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                FillDVGASActivity();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error Message");
-            }
-        }
-        void ResetASActivity()
-        {
-            a_startDate.Text = a_endDate.Text = "";
-            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_notes.Text = "";
-            //btn_addActivity.Text = "+";
-            //ActivityID = 0;
-            btn_asAddStaff.Enabled = false;
-            btn_asDeleteStaff.Enabled = false;
-            btn_asAddVolunteer.Enabled = false;
-            btn_asDeleteVolunteer.Enabled = false;
-            btn_asAddParticipant.Enabled = false;
-            btn_asDeleteParticipant.Enabled = false;
-
-        }
-
-        private void dvgASactivity_DoubleClick(object sender, EventArgs e)
-        {
-            if (dvgASactivity.CurrentRow.Index != -1)
-            {
-                ActivityID = Convert.ToInt32(dvgASactivity.CurrentRow.Cells[0].Value.ToString());
-                as_activity.Text = dvgASactivity.CurrentRow.Cells[1].Value.ToString();
-                as_date.Text = dvgASactivity.CurrentRow.Cells[4].Value.ToString();
-                //as_tripLeader.Text = dvgASactivity.CurrentRow.Cells[[insertIndex]].Value.ToString();
-                //btn_addActivity.Text = "Update";
-                //btn_deleteActivity.Enabled = true;
-
-
             }
         }
     }
