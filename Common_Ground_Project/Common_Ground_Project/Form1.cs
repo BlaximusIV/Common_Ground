@@ -17,7 +17,9 @@ namespace Common_Ground_Project
 
     public partial class Form1 : Form
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-GUSKKLJ\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
+
+        SqlConnection sqlCon = new SqlConnection(@"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;");
+
         int personID = 0;
         int volunteerID = 0;
         int ActivityID= 0;
@@ -115,11 +117,11 @@ namespace Common_Ground_Project
 
         }
 
-        //----------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
         //
         //              Refresh/Reset Page
         //
-        //----------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
             ResetParticipant();
@@ -132,11 +134,11 @@ namespace Common_Ground_Project
             FillDVGStaff();
 
         }
-        //----------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
         //
         //              Participant
         //
-        //----------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
         private void btn_Addparticipant_Click(object sender, EventArgs e)
         {
             try
@@ -843,18 +845,60 @@ namespace Common_Ground_Project
             SqlDataAdapter sqlDa = new SqlDataAdapter("asActivityGridView1", sqlCon);
             sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
             sqlDa.SelectCommand.Parameters.AddWithValue("@Title", as_searchActivity.Text.Trim());
-            //the "txtSearch might be the name of the text box in the UI// 
+ 
             DataTable AsActivitydtbl = new DataTable();
             sqlDa.Fill(AsActivitydtbl);
 
             dvgASactivity.DataSource = AsActivitydtbl;
             dvgASactivity.Columns[0].Visible = false;
 
-            // this hides the columns in the data grid view on the UI. "[0]' is index one of all the columns.//
+          
 
             sqlCon.Close();
         }
 
+        private void btn_asSearchActivity_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
+                FillDVGASActivity();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+        }
+        void ResetASActivity()
+        {
+            a_startDate.Text = a_endDate.Text = "";
+            a_title.Text = a_activityDescription.Text = a_location.Text = a_startTime.Text = a_endTime.Text = a_pickUpTime.Text = a_dropOffTime.Text = a_staffArrivalTime.Text = a_cost.Text = a_notes.Text = "";
+            //btn_addActivity.Text = "+";
+            //ActivityID = 0;
+            btn_asAddStaff.Enabled = false;
+            btn_asDeleteStaff.Enabled = false;
+            btn_asAddVolunteer.Enabled = false;
+            btn_asDeleteVolunteer.Enabled = false;
+            btn_asAddParticipant.Enabled = false;
+            btn_asDeleteParticipant.Enabled = false;
+
+        }
+
+        private void dvgASactivity_DoubleClick(object sender, EventArgs e)
+        {
+            if (dvgASactivity.CurrentRow.Index != -1)
+            {
+                ActivityID = Convert.ToInt32(dvgASactivity.CurrentRow.Cells[0].Value.ToString());
+                as_activity.Text = dvgASactivity.CurrentRow.Cells[1].Value.ToString();
+                as_date.Text = dvgASactivity.CurrentRow.Cells[4].Value.ToString();
+                //as_tripLeader.Text = dvgASactivity.CurrentRow.Cells[[insertIndex]].Value.ToString();
+                //btn_addActivity.Text = "Update";
+                //btn_deleteActivity.Enabled = true;
+
+
+            }
+        }
     }
 }
