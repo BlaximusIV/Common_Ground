@@ -614,10 +614,13 @@
             // 
             // dvgActivity
             // 
+            this.dvgActivity.AllowUserToAddRows = false;
+            this.dvgActivity.AllowUserToDeleteRows = false;
             this.dvgActivity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgActivity.Location = new System.Drawing.Point(220, 334);
             this.dvgActivity.Margin = new System.Windows.Forms.Padding(2);
             this.dvgActivity.Name = "dvgActivity";
+            this.dvgActivity.RowHeadersVisible = false;
             this.dvgActivity.RowTemplate.Height = 33;
             this.dvgActivity.Size = new System.Drawing.Size(686, 256);
             this.dvgActivity.TabIndex = 127;
@@ -1397,6 +1400,7 @@
             // 
             this.p_search.Location = new System.Drawing.Point(422, 76);
             this.p_search.Margin = new System.Windows.Forms.Padding(2);
+            this.p_search.Multiline = false;
             this.p_search.Name = "p_search";
             this.p_search.Size = new System.Drawing.Size(164, 19);
             this.p_search.TabIndex = 15;
@@ -1415,6 +1419,7 @@
             // 
             this.p_emergencyContact.Location = new System.Drawing.Point(123, 345);
             this.p_emergencyContact.Margin = new System.Windows.Forms.Padding(2);
+            this.p_emergencyContact.Multiline = false;
             this.p_emergencyContact.Name = "p_emergencyContact";
             this.p_emergencyContact.Size = new System.Drawing.Size(125, 19);
             this.p_emergencyContact.TabIndex = 10;
@@ -1424,6 +1429,7 @@
             // 
             this.p_zip.Location = new System.Drawing.Point(100, 291);
             this.p_zip.Margin = new System.Windows.Forms.Padding(2);
+            this.p_zip.Multiline = false;
             this.p_zip.Name = "p_zip";
             this.p_zip.Size = new System.Drawing.Size(125, 19);
             this.p_zip.TabIndex = 9;
@@ -1433,6 +1439,7 @@
             // 
             this.p_state.Location = new System.Drawing.Point(100, 264);
             this.p_state.Margin = new System.Windows.Forms.Padding(2);
+            this.p_state.Multiline = false;
             this.p_state.Name = "p_state";
             this.p_state.Size = new System.Drawing.Size(37, 19);
             this.p_state.TabIndex = 8;
@@ -1442,6 +1449,7 @@
             // 
             this.p_city.Location = new System.Drawing.Point(100, 237);
             this.p_city.Margin = new System.Windows.Forms.Padding(2);
+            this.p_city.Multiline = false;
             this.p_city.Name = "p_city";
             this.p_city.Size = new System.Drawing.Size(125, 19);
             this.p_city.TabIndex = 7;
@@ -1451,6 +1459,7 @@
             // 
             this.p_streetAddress.Location = new System.Drawing.Point(100, 210);
             this.p_streetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.p_streetAddress.Multiline = false;
             this.p_streetAddress.Name = "p_streetAddress";
             this.p_streetAddress.Size = new System.Drawing.Size(125, 19);
             this.p_streetAddress.TabIndex = 6;
@@ -1460,6 +1469,7 @@
             // 
             this.p_email.Location = new System.Drawing.Point(100, 181);
             this.p_email.Margin = new System.Windows.Forms.Padding(2);
+            this.p_email.Multiline = false;
             this.p_email.Name = "p_email";
             this.p_email.Size = new System.Drawing.Size(120, 19);
             this.p_email.TabIndex = 5;
@@ -1469,6 +1479,7 @@
             // 
             this.p_lName.Location = new System.Drawing.Point(100, 98);
             this.p_lName.Margin = new System.Windows.Forms.Padding(2);
+            this.p_lName.Multiline = false;
             this.p_lName.Name = "p_lName";
             this.p_lName.Size = new System.Drawing.Size(116, 19);
             this.p_lName.TabIndex = 2;
@@ -1478,6 +1489,7 @@
             // 
             this.p_fName.Location = new System.Drawing.Point(100, 67);
             this.p_fName.Margin = new System.Windows.Forms.Padding(2);
+            this.p_fName.Multiline = false;
             this.p_fName.Name = "p_fName";
             this.p_fName.Size = new System.Drawing.Size(116, 19);
             this.p_fName.TabIndex = 1;
@@ -1486,11 +1498,14 @@
             // 
             // dvgParticipant
             // 
+            this.dvgParticipant.AllowUserToAddRows = false;
+            this.dvgParticipant.AllowUserToDeleteRows = false;
             this.dvgParticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgParticipant.Location = new System.Drawing.Point(386, 127);
             this.dvgParticipant.Margin = new System.Windows.Forms.Padding(2);
             this.dvgParticipant.Name = "dvgParticipant";
             this.dvgParticipant.ReadOnly = true;
+            this.dvgParticipant.RowHeadersVisible = false;
             this.dvgParticipant.RowTemplate.Height = 33;
             this.dvgParticipant.Size = new System.Drawing.Size(342, 365);
             this.dvgParticipant.TabIndex = 43;
@@ -1777,6 +1792,7 @@
             // 
             this.v_search.Location = new System.Drawing.Point(637, 60);
             this.v_search.Margin = new System.Windows.Forms.Padding(2);
+            this.v_search.Multiline = false;
             this.v_search.Name = "v_search";
             this.v_search.Size = new System.Drawing.Size(164, 19);
             this.v_search.TabIndex = 52;
@@ -1796,6 +1812,7 @@
             // 
             this.v_emergencyContact.Location = new System.Drawing.Point(114, 406);
             this.v_emergencyContact.Margin = new System.Windows.Forms.Padding(2);
+            this.v_emergencyContact.Multiline = false;
             this.v_emergencyContact.Name = "v_emergencyContact";
             this.v_emergencyContact.Size = new System.Drawing.Size(125, 19);
             this.v_emergencyContact.TabIndex = 47;
@@ -1805,6 +1822,7 @@
             // 
             this.v_zip.Location = new System.Drawing.Point(113, 376);
             this.v_zip.Margin = new System.Windows.Forms.Padding(2);
+            this.v_zip.Multiline = false;
             this.v_zip.Name = "v_zip";
             this.v_zip.Size = new System.Drawing.Size(125, 19);
             this.v_zip.TabIndex = 45;
@@ -1814,6 +1832,7 @@
             // 
             this.v_state.Location = new System.Drawing.Point(114, 347);
             this.v_state.Margin = new System.Windows.Forms.Padding(2);
+            this.v_state.Multiline = false;
             this.v_state.Name = "v_state";
             this.v_state.Size = new System.Drawing.Size(37, 19);
             this.v_state.TabIndex = 43;
@@ -1823,6 +1842,7 @@
             // 
             this.v_city.Location = new System.Drawing.Point(114, 319);
             this.v_city.Margin = new System.Windows.Forms.Padding(2);
+            this.v_city.Multiline = false;
             this.v_city.Name = "v_city";
             this.v_city.Size = new System.Drawing.Size(125, 19);
             this.v_city.TabIndex = 41;
@@ -1832,6 +1852,7 @@
             // 
             this.v_streetAddress.Location = new System.Drawing.Point(114, 290);
             this.v_streetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.v_streetAddress.Multiline = false;
             this.v_streetAddress.Name = "v_streetAddress";
             this.v_streetAddress.Size = new System.Drawing.Size(125, 19);
             this.v_streetAddress.TabIndex = 39;
@@ -1841,6 +1862,7 @@
             // 
             this.v_wavierDate.Location = new System.Drawing.Point(114, 259);
             this.v_wavierDate.Margin = new System.Windows.Forms.Padding(2);
+            this.v_wavierDate.Multiline = false;
             this.v_wavierDate.Name = "v_wavierDate";
             this.v_wavierDate.Size = new System.Drawing.Size(116, 19);
             this.v_wavierDate.TabIndex = 34;
@@ -1850,6 +1872,7 @@
             // 
             this.v_email.Location = new System.Drawing.Point(114, 228);
             this.v_email.Margin = new System.Windows.Forms.Padding(2);
+            this.v_email.Multiline = false;
             this.v_email.Name = "v_email";
             this.v_email.Size = new System.Drawing.Size(120, 19);
             this.v_email.TabIndex = 28;
@@ -1859,6 +1882,7 @@
             // 
             this.v_lastName.Location = new System.Drawing.Point(114, 135);
             this.v_lastName.Margin = new System.Windows.Forms.Padding(2);
+            this.v_lastName.Multiline = false;
             this.v_lastName.Name = "v_lastName";
             this.v_lastName.Size = new System.Drawing.Size(116, 19);
             this.v_lastName.TabIndex = 20;
@@ -1868,6 +1892,7 @@
             // 
             this.v_firstName.Location = new System.Drawing.Point(114, 101);
             this.v_firstName.Margin = new System.Windows.Forms.Padding(2);
+            this.v_firstName.Multiline = false;
             this.v_firstName.Name = "v_firstName";
             this.v_firstName.Size = new System.Drawing.Size(116, 19);
             this.v_firstName.TabIndex = 19;
@@ -1875,11 +1900,14 @@
             // 
             // dvgVolunteer
             // 
+            this.dvgVolunteer.AllowUserToAddRows = false;
+            this.dvgVolunteer.AllowUserToDeleteRows = false;
             this.dvgVolunteer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgVolunteer.Location = new System.Drawing.Point(417, 131);
             this.dvgVolunteer.Margin = new System.Windows.Forms.Padding(2);
             this.dvgVolunteer.Name = "dvgVolunteer";
             this.dvgVolunteer.ReadOnly = true;
+            this.dvgVolunteer.RowHeadersVisible = false;
             this.dvgVolunteer.RowTemplate.Height = 33;
             this.dvgVolunteer.Size = new System.Drawing.Size(532, 380);
             this.dvgVolunteer.TabIndex = 51;
@@ -2174,6 +2202,7 @@
             // 
             this.s_searchStaff.Location = new System.Drawing.Point(435, 79);
             this.s_searchStaff.Margin = new System.Windows.Forms.Padding(2);
+            this.s_searchStaff.Multiline = false;
             this.s_searchStaff.Name = "s_searchStaff";
             this.s_searchStaff.Size = new System.Drawing.Size(164, 19);
             this.s_searchStaff.TabIndex = 61;
@@ -2192,6 +2221,7 @@
             // 
             this.s_emergencyContact.Location = new System.Drawing.Point(136, 348);
             this.s_emergencyContact.Margin = new System.Windows.Forms.Padding(2);
+            this.s_emergencyContact.Multiline = false;
             this.s_emergencyContact.Name = "s_emergencyContact";
             this.s_emergencyContact.Size = new System.Drawing.Size(125, 19);
             this.s_emergencyContact.TabIndex = 56;
@@ -2201,6 +2231,7 @@
             // 
             this.s_zip.Location = new System.Drawing.Point(113, 294);
             this.s_zip.Margin = new System.Windows.Forms.Padding(2);
+            this.s_zip.Multiline = false;
             this.s_zip.Name = "s_zip";
             this.s_zip.Size = new System.Drawing.Size(125, 19);
             this.s_zip.TabIndex = 55;
@@ -2210,6 +2241,7 @@
             // 
             this.s_state.Location = new System.Drawing.Point(113, 267);
             this.s_state.Margin = new System.Windows.Forms.Padding(2);
+            this.s_state.Multiline = false;
             this.s_state.Name = "s_state";
             this.s_state.Size = new System.Drawing.Size(37, 19);
             this.s_state.TabIndex = 54;
@@ -2219,6 +2251,7 @@
             // 
             this.s_city.Location = new System.Drawing.Point(113, 240);
             this.s_city.Margin = new System.Windows.Forms.Padding(2);
+            this.s_city.Multiline = false;
             this.s_city.Name = "s_city";
             this.s_city.Size = new System.Drawing.Size(125, 19);
             this.s_city.TabIndex = 53;
@@ -2228,6 +2261,7 @@
             // 
             this.s_streetAddress.Location = new System.Drawing.Point(113, 213);
             this.s_streetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.s_streetAddress.Multiline = false;
             this.s_streetAddress.Name = "s_streetAddress";
             this.s_streetAddress.Size = new System.Drawing.Size(125, 19);
             this.s_streetAddress.TabIndex = 52;
@@ -2237,6 +2271,7 @@
             // 
             this.s_email.Location = new System.Drawing.Point(113, 184);
             this.s_email.Margin = new System.Windows.Forms.Padding(2);
+            this.s_email.Multiline = false;
             this.s_email.Name = "s_email";
             this.s_email.Size = new System.Drawing.Size(120, 19);
             this.s_email.TabIndex = 51;
@@ -2246,6 +2281,7 @@
             // 
             this.s_lastName.Location = new System.Drawing.Point(113, 101);
             this.s_lastName.Margin = new System.Windows.Forms.Padding(2);
+            this.s_lastName.Multiline = false;
             this.s_lastName.Name = "s_lastName";
             this.s_lastName.Size = new System.Drawing.Size(116, 19);
             this.s_lastName.TabIndex = 48;
@@ -2255,6 +2291,7 @@
             // 
             this.s_firstName.Location = new System.Drawing.Point(113, 70);
             this.s_firstName.Margin = new System.Windows.Forms.Padding(2);
+            this.s_firstName.Multiline = false;
             this.s_firstName.Name = "s_firstName";
             this.s_firstName.Size = new System.Drawing.Size(116, 19);
             this.s_firstName.TabIndex = 47;
@@ -2262,11 +2299,14 @@
             // 
             // dvgStaff
             // 
+            this.dvgStaff.AllowUserToAddRows = false;
+            this.dvgStaff.AllowUserToDeleteRows = false;
             this.dvgStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgStaff.Location = new System.Drawing.Point(399, 130);
             this.dvgStaff.Margin = new System.Windows.Forms.Padding(2);
             this.dvgStaff.Name = "dvgStaff";
             this.dvgStaff.ReadOnly = true;
+            this.dvgStaff.RowHeadersVisible = false;
             this.dvgStaff.RowTemplate.Height = 33;
             this.dvgStaff.Size = new System.Drawing.Size(342, 365);
             this.dvgStaff.TabIndex = 74;
