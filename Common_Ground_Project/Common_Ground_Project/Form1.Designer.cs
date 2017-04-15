@@ -227,15 +227,15 @@
             this.btn_deleteActivity = new System.Windows.Forms.Button();
             this.a_searchActivity = new System.Windows.Forms.TextBox();
             this.tabControl5 = new System.Windows.Forms.TabControl();
-            this.btn_asAddTripLeader = new System.Windows.Forms.Button();
             this.btn_asAddStaff = new System.Windows.Forms.Button();
             this.btn_asAddVolunteer = new System.Windows.Forms.Button();
             this.btn_asAddParticipant = new System.Windows.Forms.Button();
             this.btn_asSearchActivity = new System.Windows.Forms.Button();
-            this.btn_asDeleteTripLeader = new System.Windows.Forms.Button();
             this.btn_asDeleteParticipant = new System.Windows.Forms.Button();
             this.btn_asDeleteVolunteer = new System.Windows.Forms.Button();
             this.btn_asDeleteStaff = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.tabPage8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -1828,12 +1828,10 @@
             this.tabPage16.Controls.Add(this.btn_asDeleteStaff);
             this.tabPage16.Controls.Add(this.btn_asDeleteVolunteer);
             this.tabPage16.Controls.Add(this.btn_asDeleteParticipant);
-            this.tabPage16.Controls.Add(this.btn_asDeleteTripLeader);
             this.tabPage16.Controls.Add(this.btn_asSearchActivity);
             this.tabPage16.Controls.Add(this.btn_asAddParticipant);
             this.tabPage16.Controls.Add(this.btn_asAddVolunteer);
             this.tabPage16.Controls.Add(this.btn_asAddStaff);
-            this.tabPage16.Controls.Add(this.btn_asAddTripLeader);
             this.tabPage16.Controls.Add(this.dvgInterVolunteer);
             this.tabPage16.Controls.Add(this.dvgInterParticipant);
             this.tabPage16.Controls.Add(this.dvgInterStaff);
@@ -1888,7 +1886,7 @@
             this.as_staff.Location = new System.Drawing.Point(47, 381);
             this.as_staff.Margin = new System.Windows.Forms.Padding(4);
             this.as_staff.Name = "as_staff";
-            this.as_staff.Size = new System.Drawing.Size(148, 31);
+            this.as_staff.Size = new System.Drawing.Size(244, 31);
             this.as_staff.TabIndex = 136;
             // 
             // label41
@@ -1906,7 +1904,7 @@
             this.as_tripLeader.Location = new System.Drawing.Point(47, 290);
             this.as_tripLeader.Margin = new System.Windows.Forms.Padding(4);
             this.as_tripLeader.Name = "as_tripLeader";
-            this.as_tripLeader.Size = new System.Drawing.Size(148, 31);
+            this.as_tripLeader.Size = new System.Drawing.Size(244, 31);
             this.as_tripLeader.TabIndex = 138;
             // 
             // label40
@@ -1924,7 +1922,7 @@
             this.as_volunteer.Location = new System.Drawing.Point(47, 561);
             this.as_volunteer.Margin = new System.Windows.Forms.Padding(4);
             this.as_volunteer.Name = "as_volunteer";
-            this.as_volunteer.Size = new System.Drawing.Size(148, 31);
+            this.as_volunteer.Size = new System.Drawing.Size(244, 31);
             this.as_volunteer.TabIndex = 140;
             // 
             // label39
@@ -1942,7 +1940,7 @@
             this.as_participant.Location = new System.Drawing.Point(47, 469);
             this.as_participant.Margin = new System.Windows.Forms.Padding(4);
             this.as_participant.Name = "as_participant";
-            this.as_participant.Size = new System.Drawing.Size(148, 31);
+            this.as_participant.Size = new System.Drawing.Size(244, 31);
             this.as_participant.TabIndex = 142;
             // 
             // label38
@@ -1957,19 +1955,24 @@
             // 
             // dvgASactivity
             // 
+            this.dvgASactivity.AllowUserToAddRows = false;
+            this.dvgASactivity.AllowUserToDeleteRows = false;
             this.dvgASactivity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgASactivity.Location = new System.Drawing.Point(605, 203);
+            this.dvgASactivity.Location = new System.Drawing.Point(47, 753);
             this.dvgASactivity.Name = "dvgASactivity";
+            this.dvgASactivity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dvgASactivity.RowHeadersVisible = false;
             this.dvgASactivity.RowTemplate.Height = 33;
-            this.dvgASactivity.Size = new System.Drawing.Size(757, 201);
+            this.dvgASactivity.Size = new System.Drawing.Size(1696, 457);
             this.dvgASactivity.TabIndex = 147;
+            this.dvgASactivity.DoubleClick += new System.EventHandler(this.dvgASactivity_DoubleClick);
             // 
             // as_searchActivity
             // 
-            this.as_searchActivity.Location = new System.Drawing.Point(605, 133);
+            this.as_searchActivity.Location = new System.Drawing.Point(47, 683);
             this.as_searchActivity.Margin = new System.Windows.Forms.Padding(4);
             this.as_searchActivity.Name = "as_searchActivity";
-            this.as_searchActivity.Size = new System.Drawing.Size(282, 31);
+            this.as_searchActivity.Size = new System.Drawing.Size(609, 31);
             this.as_searchActivity.TabIndex = 148;
             // 
             // as_activity
@@ -1977,7 +1980,7 @@
             this.as_activity.Location = new System.Drawing.Point(47, 203);
             this.as_activity.Margin = new System.Windows.Forms.Padding(4);
             this.as_activity.Name = "as_activity";
-            this.as_activity.Size = new System.Drawing.Size(148, 31);
+            this.as_activity.Size = new System.Drawing.Size(244, 31);
             this.as_activity.TabIndex = 149;
             // 
             // label44
@@ -1992,16 +1995,16 @@
             // 
             // as_date
             // 
-            this.as_date.Location = new System.Drawing.Point(259, 203);
+            this.as_date.Location = new System.Drawing.Point(337, 203);
             this.as_date.Margin = new System.Windows.Forms.Padding(4);
             this.as_date.Name = "as_date";
-            this.as_date.Size = new System.Drawing.Size(148, 31);
+            this.as_date.Size = new System.Drawing.Size(227, 31);
             this.as_date.TabIndex = 151;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(259, 171);
+            this.label45.Location = new System.Drawing.Point(337, 171);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(57, 25);
@@ -2010,33 +2013,47 @@
             // 
             // dvgInterStaff
             // 
+            this.dvgInterStaff.AllowUserToAddRows = false;
+            this.dvgInterStaff.AllowUserToDeleteRows = false;
             this.dvgInterStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgInterStaff.Location = new System.Drawing.Point(605, 452);
+            this.dvgInterStaff.Location = new System.Drawing.Point(849, 103);
             this.dvgInterStaff.Name = "dvgInterStaff";
+            this.dvgInterStaff.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dvgInterStaff.RowHeadersVisible = false;
             this.dvgInterStaff.RowTemplate.Height = 33;
-            this.dvgInterStaff.Size = new System.Drawing.Size(245, 343);
+            this.dvgInterStaff.Size = new System.Drawing.Size(245, 466);
             this.dvgInterStaff.TabIndex = 155;
             // 
             // dvgInterParticipant
             // 
+            this.dvgInterParticipant.AllowUserToAddRows = false;
+            this.dvgInterParticipant.AllowUserToDeleteRows = false;
             this.dvgInterParticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgInterParticipant.Location = new System.Drawing.Point(856, 452);
+            this.dvgInterParticipant.Location = new System.Drawing.Point(1100, 103);
             this.dvgInterParticipant.Name = "dvgInterParticipant";
+            this.dvgInterParticipant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dvgInterParticipant.RowHeadersVisible = false;
             this.dvgInterParticipant.RowTemplate.Height = 33;
-            this.dvgInterParticipant.Size = new System.Drawing.Size(250, 343);
+            this.dvgInterParticipant.Size = new System.Drawing.Size(250, 466);
             this.dvgInterParticipant.TabIndex = 156;
             // 
             // dvgInterVolunteer
             // 
+            this.dvgInterVolunteer.AllowUserToAddRows = false;
+            this.dvgInterVolunteer.AllowUserToDeleteRows = false;
             this.dvgInterVolunteer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgInterVolunteer.Location = new System.Drawing.Point(1112, 452);
+            this.dvgInterVolunteer.Location = new System.Drawing.Point(1356, 103);
             this.dvgInterVolunteer.Name = "dvgInterVolunteer";
+            this.dvgInterVolunteer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dvgInterVolunteer.RowHeadersVisible = false;
             this.dvgInterVolunteer.RowTemplate.Height = 33;
-            this.dvgInterVolunteer.Size = new System.Drawing.Size(250, 343);
+            this.dvgInterVolunteer.Size = new System.Drawing.Size(250, 466);
             this.dvgInterVolunteer.TabIndex = 157;
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.textBox1);
+            this.tabPage15.Controls.Add(this.label43);
             this.tabPage15.Controls.Add(this.a_searchActivity);
             this.tabPage15.Controls.Add(this.a_activityDescription);
             this.tabPage15.Controls.Add(this.a_cost);
@@ -2506,18 +2523,9 @@
             this.tabControl5.Size = new System.Drawing.Size(1825, 1305);
             this.tabControl5.TabIndex = 1;
             // 
-            // btn_asAddTripLeader
-            // 
-            this.btn_asAddTripLeader.Location = new System.Drawing.Point(225, 284);
-            this.btn_asAddTripLeader.Name = "btn_asAddTripLeader";
-            this.btn_asAddTripLeader.Size = new System.Drawing.Size(42, 42);
-            this.btn_asAddTripLeader.TabIndex = 158;
-            this.btn_asAddTripLeader.Text = "+";
-            this.btn_asAddTripLeader.UseVisualStyleBackColor = true;
-            // 
             // btn_asAddStaff
             // 
-            this.btn_asAddStaff.Location = new System.Drawing.Point(225, 375);
+            this.btn_asAddStaff.Location = new System.Drawing.Point(347, 375);
             this.btn_asAddStaff.Name = "btn_asAddStaff";
             this.btn_asAddStaff.Size = new System.Drawing.Size(42, 42);
             this.btn_asAddStaff.TabIndex = 160;
@@ -2526,7 +2534,7 @@
             // 
             // btn_asAddVolunteer
             // 
-            this.btn_asAddVolunteer.Location = new System.Drawing.Point(225, 555);
+            this.btn_asAddVolunteer.Location = new System.Drawing.Point(347, 555);
             this.btn_asAddVolunteer.Name = "btn_asAddVolunteer";
             this.btn_asAddVolunteer.Size = new System.Drawing.Size(42, 42);
             this.btn_asAddVolunteer.TabIndex = 161;
@@ -2535,7 +2543,7 @@
             // 
             // btn_asAddParticipant
             // 
-            this.btn_asAddParticipant.Location = new System.Drawing.Point(225, 463);
+            this.btn_asAddParticipant.Location = new System.Drawing.Point(347, 463);
             this.btn_asAddParticipant.Name = "btn_asAddParticipant";
             this.btn_asAddParticipant.Size = new System.Drawing.Size(42, 42);
             this.btn_asAddParticipant.TabIndex = 162;
@@ -2544,26 +2552,18 @@
             // 
             // btn_asSearchActivity
             // 
-            this.btn_asSearchActivity.Location = new System.Drawing.Point(911, 120);
+            this.btn_asSearchActivity.Location = new System.Drawing.Point(744, 674);
             this.btn_asSearchActivity.Margin = new System.Windows.Forms.Padding(4);
             this.btn_asSearchActivity.Name = "btn_asSearchActivity";
-            this.btn_asSearchActivity.Size = new System.Drawing.Size(136, 56);
+            this.btn_asSearchActivity.Size = new System.Drawing.Size(198, 48);
             this.btn_asSearchActivity.TabIndex = 163;
             this.btn_asSearchActivity.Text = "Search";
             this.btn_asSearchActivity.UseVisualStyleBackColor = true;
-            // 
-            // btn_asDeleteTripLeader
-            // 
-            this.btn_asDeleteTripLeader.Location = new System.Drawing.Point(297, 284);
-            this.btn_asDeleteTripLeader.Name = "btn_asDeleteTripLeader";
-            this.btn_asDeleteTripLeader.Size = new System.Drawing.Size(42, 42);
-            this.btn_asDeleteTripLeader.TabIndex = 164;
-            this.btn_asDeleteTripLeader.Text = "-";
-            this.btn_asDeleteTripLeader.UseVisualStyleBackColor = true;
+            this.btn_asSearchActivity.Click += new System.EventHandler(this.btn_asSearchActivity_Click);
             // 
             // btn_asDeleteParticipant
             // 
-            this.btn_asDeleteParticipant.Location = new System.Drawing.Point(297, 463);
+            this.btn_asDeleteParticipant.Location = new System.Drawing.Point(419, 463);
             this.btn_asDeleteParticipant.Name = "btn_asDeleteParticipant";
             this.btn_asDeleteParticipant.Size = new System.Drawing.Size(42, 42);
             this.btn_asDeleteParticipant.TabIndex = 165;
@@ -2572,7 +2572,7 @@
             // 
             // btn_asDeleteVolunteer
             // 
-            this.btn_asDeleteVolunteer.Location = new System.Drawing.Point(297, 555);
+            this.btn_asDeleteVolunteer.Location = new System.Drawing.Point(419, 555);
             this.btn_asDeleteVolunteer.Name = "btn_asDeleteVolunteer";
             this.btn_asDeleteVolunteer.Size = new System.Drawing.Size(42, 42);
             this.btn_asDeleteVolunteer.TabIndex = 166;
@@ -2581,12 +2581,30 @@
             // 
             // btn_asDeleteStaff
             // 
-            this.btn_asDeleteStaff.Location = new System.Drawing.Point(297, 375);
+            this.btn_asDeleteStaff.Location = new System.Drawing.Point(419, 375);
             this.btn_asDeleteStaff.Name = "btn_asDeleteStaff";
             this.btn_asDeleteStaff.Size = new System.Drawing.Size(42, 42);
             this.btn_asDeleteStaff.TabIndex = 167;
             this.btn_asDeleteStaff.Text = "-";
             this.btn_asDeleteStaff.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(470, 140);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 31);
+            this.textBox1.TabIndex = 145;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(470, 108);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(122, 25);
+            this.label43.TabIndex = 146;
+            this.label43.Text = "Trip Leader";
             // 
             // Form1
             // 
@@ -2838,7 +2856,6 @@
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Button btn_asAddTripLeader;
         private System.Windows.Forms.Button btn_asAddParticipant;
         private System.Windows.Forms.Button btn_asAddVolunteer;
         private System.Windows.Forms.Button btn_asAddStaff;
@@ -2846,7 +2863,8 @@
         private System.Windows.Forms.Button btn_asDeleteStaff;
         private System.Windows.Forms.Button btn_asDeleteVolunteer;
         private System.Windows.Forms.Button btn_asDeleteParticipant;
-        private System.Windows.Forms.Button btn_asDeleteTripLeader;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label43;
     }
 }
 
