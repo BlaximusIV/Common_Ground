@@ -47,6 +47,7 @@ namespace Common_Ground_Project
 
         private void btn_Addparticipant_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             //try
             //{
             //    if (sqlCon.State == ConnectionState.Closed)
@@ -105,6 +106,9 @@ namespace Common_Ground_Project
             //    sqlCon.Close();
             //}
 
+=======
+            
+>>>>>>> Stashed changes
         }
 
         void FillDVGParticipant()
