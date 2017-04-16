@@ -51,7 +51,8 @@ namespace Common_Ground_Project.Models
             Note = rdr["Notes"] == DBNull.Value ? String.Empty : rdr["Notes"].ToString();
             EmergencyPhone = rdr["Emergency_Phone"] == DBNull.Value ? String.Empty : rdr["Emergency_Phone"].ToString();
             EmergencyEmail = rdr["Emergency_Email"] == DBNull.Value ? String.Empty : rdr["Emergency_Email"].ToString();
-
+            IsWaiverSigned = rdr["Waiver_Signed"] == DBNull.Value ? false : Convert.ToBoolean(rdr["Waiver_Signed"]);
+            IsMediaReleased = rdr["Media_Release"] == DBNull.Value ? false : Convert.ToBoolean(rdr["Media_Release"]);
 
             IsFrequentCaller = false;
             IsMediaReleased = false;
