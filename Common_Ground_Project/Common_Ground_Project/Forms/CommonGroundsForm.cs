@@ -27,6 +27,7 @@ namespace Common_Ground_Project.Forms
             Controller = new CommonController();
 
             participantView1.Initialize(Controller);
+            volunteerView1.Initialize(Controller);
         }
     }
 }
