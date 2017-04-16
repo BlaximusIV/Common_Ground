@@ -36,7 +36,7 @@ namespace Common_Ground_Project.Views
 
         private void PopulateDvgVolunteer()
         {
-            string filter = p_search.Text.Trim();
+            string filter = v_search.Text.Trim();
             List<Volunteer> volunteer = Controller.GetVolunteerList(filter);
 
             dvgVolunteer.DataSource = null;
@@ -57,6 +57,8 @@ namespace Common_Ground_Project.Views
                 btn_deleteVolunteer.Enabled = true;
             }
         }
+
+
 
         //private void btn_deleteVolunteer_Click(object sender, EventArgs e)
         //{
