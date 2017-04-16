@@ -591,7 +591,6 @@
             // staffDataSource
             // 
             this.staffDataSource.DataSource = typeof(Common_Ground_Project.Models.Staff);
-            this.staffDataSource.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // StaffView
             // 

@@ -28,6 +28,7 @@ namespace Common_Ground_Project.Forms
 
             participantView1.Initialize(Controller);
             volunteerView1.Initialize(Controller);
+            staffView1.Initialize(Controller);
         }
     }
 }

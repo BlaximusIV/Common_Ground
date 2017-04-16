@@ -12,14 +12,14 @@ namespace Common_Ground_Project.Controllers
     {
         // private Repository references.
         private ParticipantSql ParticipantData;
-        //private VolunteerSql VolunteerData;
+        private VolunteerSql VolunteerData;
         private StaffSql StaffData;
 
         public CommonController()
         {
             // Initialize repositories
             ParticipantData = new ParticipantSql();
-            //VolunteerData = new VolunteerSql();
+            VolunteerData = new VolunteerSql();
             StaffData = new StaffSql();
         }
 
@@ -40,18 +40,18 @@ namespace Common_Ground_Project.Controllers
         #endregion
 
         #region Volunteers
-        //public List<Volunteer> GetVolunteerList(string filter)
-        //{
-        //    return VolunteerData.GetVolunteerList(filter);
-        //}
-        //public void SaveVolunteer(Volunteer volunteer)
-        //{
-        //    ParticipantData.SaveVolunteer(volunteer);
-        //}
-        //public void DeleteVolunteer(Volunteer volunteer)
-        //{
-        //    VolunteerData.DeleteVolunteer(volunteer);
-        //}
+        public List<Volunteer> GetVolunteerList(string filter)
+        {
+            return VolunteerData.GetVolunteerList(filter);
+        }
+        public void SaveVolunteer(Volunteer volunteer)
+        {
+            VolunteerData.SaveVolunteer(volunteer);
+        }
+        public void DeleteVolunteer(Volunteer volunteer)
+        {
+            VolunteerData.DeleteVolunteer(volunteer);
+        }
         #endregion
 
         #region Staff
