@@ -72,6 +72,7 @@
       <DependentUpon>CommonGroundsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginCredentials.cs" />
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="ParticipantHelp.cs">
       <SubType>Form</SubType>
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="Views\ParticipantView.Designer.cs">
       <DependentUpon>ParticipantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VolunteerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\VolunteerView.Designer.cs">
+      <DependentUpon>VolunteerView.cs</DependentUpon>
     </Compile>
     <Compile Include="VolunteerHelp.cs">
       <SubType>Form</SubType>
@@ -120,10 +127,14 @@
     <EmbeddedResource Include="Views\ParticipantView.resx">
       <DependentUpon>ParticipantView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\VolunteerView.resx">
+      <DependentUpon>VolunteerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VolunteerHelp.resx">
       <DependentUpon>VolunteerHelp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Participent.datasource" />
+    <None Include="Properties\DataSources\Common_Ground_Project.Models.Volunteer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

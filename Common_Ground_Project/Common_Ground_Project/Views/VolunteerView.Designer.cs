@@ -1,6 +1,6 @@
 ﻿namespace Common_Ground_Project.Views
 {
-    partial class ParticipantView
+    partial class VolunteerView
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,13 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.voluteerDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.p_notes = new System.Windows.Forms.RichTextBox();
@@ -50,24 +45,30 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.p_DOB = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
             this.p_phoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btn_searchParticipant = new System.Windows.Forms.Button();
+            this.btn_searchVolunteer = new System.Windows.Forms.Button();
             this.p_search = new System.Windows.Forms.TextBox();
-            this.dvgParticipant = new System.Windows.Forms.DataGridView();
-            this.btn_ClearParticipant = new System.Windows.Forms.Button();
-            this.btn_deleteParticipant = new System.Windows.Forms.Button();
-            this.btn_Addparticipant = new System.Windows.Forms.Button();
-            this.participantDataSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dvgVolunteer = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,11 +80,17 @@
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emergencyContactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emergencyPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emergencyEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isWaiverSignedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isMediaReleasedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isFrequentCallerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.volunteerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_clearVolunteer = new System.Windows.Forms.Button();
+            this.btn_deleteVolunteer = new System.Windows.Forms.Button();
+            this.btn_addVolunteer = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.voluteerDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,138 +106,32 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgVolunteer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.btn_ClearParticipant);
-            this.splitContainer1.Panel2.Controls.Add(this.btn_deleteParticipant);
-            this.splitContainer1.Panel2.Controls.Add(this.btn_Addparticipant);
-            this.splitContainer1.Size = new System.Drawing.Size(1616, 1231);
-            this.splitContainer1.SplitterDistance = 1160;
-            this.splitContainer1.SplitterWidth = 8;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.IsSplitterFixed = true;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1616, 1160);
-            this.splitContainer2.SplitterDistance = 476;
-            this.splitContainer2.SplitterWidth = 8;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(476, 1160);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 121);
-            this.panel1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 29);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(295, 63);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Participant";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.checkBox3);
-            this.panel2.Controls.Add(this.checkBox7);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.p_notes);
-            this.panel2.Controls.Add(this.p_emergencyContact);
-            this.panel2.Controls.Add(this.p_zip);
-            this.panel2.Controls.Add(this.p_state);
-            this.panel2.Controls.Add(this.p_city);
-            this.panel2.Controls.Add(this.p_streetAddress);
-            this.panel2.Controls.Add(this.p_email);
-            this.panel2.Controls.Add(this.p_lName);
-            this.panel2.Controls.Add(this.p_fName);
-            this.panel2.Controls.Add(this.label69);
-            this.panel2.Controls.Add(this.label68);
-            this.panel2.Controls.Add(this.label67);
-            this.panel2.Controls.Add(this.label66);
-            this.panel2.Controls.Add(this.label65);
-            this.panel2.Controls.Add(this.label64);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.p_DOB);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.p_phoneNumber);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label42);
-            this.panel2.Location = new System.Drawing.Point(6, 139);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(582, 1017);
-            this.panel2.TabIndex = 1;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsFrequentCaller", true));
-            this.checkBox3.Location = new System.Drawing.Point(10, 548);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "IsFrequentCaller", true));
+            this.checkBox3.Location = new System.Drawing.Point(9, 659);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(192, 29);
             this.checkBox3.TabIndex = 67;
             this.checkBox3.Text = "Frequent Caller";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // voluteerDataSource
+            // 
+            this.voluteerDataSource.DataSource = typeof(Common_Ground_Project.Models.Volunteer);
+            // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsMediaReleased", true));
-            this.checkBox7.Location = new System.Drawing.Point(10, 508);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "IsMediaReleased", true));
+            this.checkBox7.Location = new System.Drawing.Point(9, 619);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(188, 29);
             this.checkBox7.TabIndex = 66;
@@ -240,9 +141,9 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsWaiverSigned", true));
-            this.checkBox2.Location = new System.Drawing.Point(10, 465);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "IsWaiverSigned", true));
+            this.checkBox2.Location = new System.Drawing.Point(9, 576);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(184, 29);
             this.checkBox2.TabIndex = 65;
@@ -251,9 +152,9 @@
             // 
             // p_notes
             // 
-            this.p_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "Note", true));
-            this.p_notes.Location = new System.Drawing.Point(10, 671);
-            this.p_notes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "Note", true));
+            this.p_notes.Location = new System.Drawing.Point(9, 782);
+            this.p_notes.Margin = new System.Windows.Forms.Padding(4);
             this.p_notes.Name = "p_notes";
             this.p_notes.Size = new System.Drawing.Size(564, 214);
             this.p_notes.TabIndex = 53;
@@ -261,9 +162,9 @@
             // 
             // p_emergencyContact
             // 
-            this.p_emergencyContact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyContact", true));
+            this.p_emergencyContact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "EmergencyContact", true));
             this.p_emergencyContact.Location = new System.Drawing.Point(216, 406);
-            this.p_emergencyContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_emergencyContact.Margin = new System.Windows.Forms.Padding(4);
             this.p_emergencyContact.Multiline = false;
             this.p_emergencyContact.Name = "p_emergencyContact";
             this.p_emergencyContact.Size = new System.Drawing.Size(228, 33);
@@ -272,9 +173,9 @@
             // 
             // p_zip
             // 
-            this.p_zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "ZipCode", true));
+            this.p_zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "ZipCode", true));
             this.p_zip.Location = new System.Drawing.Point(216, 362);
-            this.p_zip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_zip.Margin = new System.Windows.Forms.Padding(4);
             this.p_zip.Multiline = false;
             this.p_zip.Name = "p_zip";
             this.p_zip.Size = new System.Drawing.Size(228, 33);
@@ -283,9 +184,9 @@
             // 
             // p_state
             // 
-            this.p_state.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "State", true));
+            this.p_state.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "State", true));
             this.p_state.Location = new System.Drawing.Point(216, 317);
-            this.p_state.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_state.Margin = new System.Windows.Forms.Padding(4);
             this.p_state.Multiline = false;
             this.p_state.Name = "p_state";
             this.p_state.Size = new System.Drawing.Size(70, 33);
@@ -294,9 +195,9 @@
             // 
             // p_city
             // 
-            this.p_city.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "State", true));
+            this.p_city.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "City", true));
             this.p_city.Location = new System.Drawing.Point(216, 273);
-            this.p_city.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_city.Margin = new System.Windows.Forms.Padding(4);
             this.p_city.Multiline = false;
             this.p_city.Name = "p_city";
             this.p_city.Size = new System.Drawing.Size(228, 33);
@@ -305,9 +206,9 @@
             // 
             // p_streetAddress
             // 
-            this.p_streetAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "StreetAddress", true));
+            this.p_streetAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "StreetAddress", true));
             this.p_streetAddress.Location = new System.Drawing.Point(216, 229);
-            this.p_streetAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_streetAddress.Margin = new System.Windows.Forms.Padding(4);
             this.p_streetAddress.Multiline = false;
             this.p_streetAddress.Name = "p_streetAddress";
             this.p_streetAddress.Size = new System.Drawing.Size(228, 33);
@@ -316,9 +217,9 @@
             // 
             // p_email
             // 
-            this.p_email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmailAddress", true));
+            this.p_email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "EmailAddress", true));
             this.p_email.Location = new System.Drawing.Point(216, 185);
-            this.p_email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_email.Margin = new System.Windows.Forms.Padding(4);
             this.p_email.Multiline = false;
             this.p_email.Name = "p_email";
             this.p_email.Size = new System.Drawing.Size(228, 33);
@@ -327,9 +228,9 @@
             // 
             // p_lName
             // 
-            this.p_lName.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.participantDataSource, "LastName", true));
+            this.p_lName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "LastName", true));
             this.p_lName.Location = new System.Drawing.Point(216, 48);
-            this.p_lName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_lName.Margin = new System.Windows.Forms.Padding(4);
             this.p_lName.Multiline = false;
             this.p_lName.Name = "p_lName";
             this.p_lName.Size = new System.Drawing.Size(228, 33);
@@ -338,9 +239,9 @@
             // 
             // p_fName
             // 
-            this.p_fName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "FirstName", true));
+            this.p_fName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "FirstName", true));
             this.p_fName.Location = new System.Drawing.Point(216, 4);
-            this.p_fName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_fName.Margin = new System.Windows.Forms.Padding(4);
             this.p_fName.Multiline = false;
             this.p_fName.Name = "p_fName";
             this.p_fName.Size = new System.Drawing.Size(228, 33);
@@ -350,7 +251,7 @@
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(4, 642);
+            this.label69.Location = new System.Drawing.Point(3, 753);
             this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(74, 25);
@@ -376,16 +277,6 @@
             this.label67.Size = new System.Drawing.Size(48, 25);
             this.label67.TabIndex = 62;
             this.label67.Text = "Zip:";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(4, 323);
-            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(68, 25);
-            this.label66.TabIndex = 61;
-            this.label66.Text = "State:";
             // 
             // label65
             // 
@@ -419,9 +310,9 @@
             // 
             // p_DOB
             // 
-            this.p_DOB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "BirthDay", true));
+            this.p_DOB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "BirthDay", true));
             this.p_DOB.Location = new System.Drawing.Point(216, 138);
-            this.p_DOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_DOB.Margin = new System.Windows.Forms.Padding(4);
             this.p_DOB.Mask = "00/00/0000";
             this.p_DOB.Name = "p_DOB";
             this.p_DOB.Size = new System.Drawing.Size(132, 31);
@@ -438,15 +329,179 @@
             this.label8.TabIndex = 57;
             this.label8.Text = "Date of Birth:";
             // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(4, 323);
+            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(68, 25);
+            this.label66.TabIndex = 61;
+            this.label66.Text = "State:";
+            // 
             // p_phoneNumber
             // 
-            this.p_phoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "PhoneNumber", true));
+            this.p_phoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "PhoneNumber", true));
             this.p_phoneNumber.Location = new System.Drawing.Point(216, 92);
-            this.p_phoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p_phoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.p_phoneNumber.Mask = "(999) 000-0000";
             this.p_phoneNumber.Name = "p_phoneNumber";
             this.p_phoneNumber.Size = new System.Drawing.Size(228, 31);
             this.p_phoneNumber.TabIndex = 45;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(6);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btn_clearVolunteer);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_deleteVolunteer);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_addVolunteer);
+            this.splitContainer1.Size = new System.Drawing.Size(2282, 1380);
+            this.splitContainer1.SplitterDistance = 1272;
+            this.splitContainer1.SplitterWidth = 8;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(6);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(2282, 1272);
+            this.splitContainer2.SplitterDistance = 508;
+            this.splitContainer2.SplitterWidth = 8;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(508, 1272);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 121);
+            this.panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(268, 63);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Volunteer";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.richTextBox2);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.checkBox3);
+            this.panel2.Controls.Add(this.checkBox7);
+            this.panel2.Controls.Add(this.checkBox2);
+            this.panel2.Controls.Add(this.p_notes);
+            this.panel2.Controls.Add(this.p_emergencyContact);
+            this.panel2.Controls.Add(this.p_zip);
+            this.panel2.Controls.Add(this.p_state);
+            this.panel2.Controls.Add(this.p_city);
+            this.panel2.Controls.Add(this.p_streetAddress);
+            this.panel2.Controls.Add(this.p_email);
+            this.panel2.Controls.Add(this.p_lName);
+            this.panel2.Controls.Add(this.p_fName);
+            this.panel2.Controls.Add(this.label69);
+            this.panel2.Controls.Add(this.label68);
+            this.panel2.Controls.Add(this.label67);
+            this.panel2.Controls.Add(this.label66);
+            this.panel2.Controls.Add(this.label65);
+            this.panel2.Controls.Add(this.label64);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.p_DOB);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.p_phoneNumber);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label42);
+            this.panel2.Location = new System.Drawing.Point(6, 139);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(582, 1017);
+            this.panel2.TabIndex = 1;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "EmergencyEmail", true));
+            this.richTextBox2.Location = new System.Drawing.Point(216, 488);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox2.Multiline = false;
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(228, 33);
+            this.richTextBox2.TabIndex = 70;
+            this.richTextBox2.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 494);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(185, 25);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Emergency Email:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluteerDataSource, "EmergencyPhone", true));
+            this.richTextBox1.Location = new System.Drawing.Point(216, 447);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(228, 33);
+            this.richTextBox1.TabIndex = 68;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 453);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 25);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Emergency Phone:";
             // 
             // label9
             // 
@@ -483,57 +538,56 @@
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.btn_searchParticipant);
+            this.splitContainer3.Panel1.Controls.Add(this.btn_searchVolunteer);
             this.splitContainer3.Panel1.Controls.Add(this.p_search);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.dvgParticipant);
-            this.splitContainer3.Size = new System.Drawing.Size(1132, 1160);
-            this.splitContainer3.SplitterDistance = 54;
+            this.splitContainer3.Panel2.Controls.Add(this.dvgVolunteer);
+            this.splitContainer3.Size = new System.Drawing.Size(1766, 1272);
+            this.splitContainer3.SplitterDistance = 40;
             this.splitContainer3.SplitterWidth = 8;
             this.splitContainer3.TabIndex = 0;
             // 
-            // btn_searchParticipant
+            // btn_searchVolunteer
             // 
-            this.btn_searchParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_searchParticipant.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_searchParticipant.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btn_searchParticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btn_searchParticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.btn_searchParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_searchParticipant.Location = new System.Drawing.Point(976, 6);
-            this.btn_searchParticipant.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btn_searchParticipant.Name = "btn_searchParticipant";
-            this.btn_searchParticipant.Size = new System.Drawing.Size(150, 44);
-            this.btn_searchParticipant.TabIndex = 1;
-            this.btn_searchParticipant.Text = "Search";
-            this.btn_searchParticipant.UseVisualStyleBackColor = false;
-            this.btn_searchParticipant.Click += new System.EventHandler(this.btn_searchParticipant_Click);
+            this.btn_searchVolunteer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_searchVolunteer.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_searchVolunteer.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_searchVolunteer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_searchVolunteer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btn_searchVolunteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_searchVolunteer.Location = new System.Drawing.Point(1610, 6);
+            this.btn_searchVolunteer.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_searchVolunteer.Name = "btn_searchVolunteer";
+            this.btn_searchVolunteer.Size = new System.Drawing.Size(150, 44);
+            this.btn_searchVolunteer.TabIndex = 1;
+            this.btn_searchVolunteer.Text = "Search";
+            this.btn_searchVolunteer.UseVisualStyleBackColor = false;
             // 
             // p_search
             // 
             this.p_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.p_search.Location = new System.Drawing.Point(6, 6);
-            this.p_search.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.p_search.Margin = new System.Windows.Forms.Padding(6);
             this.p_search.Name = "p_search";
-            this.p_search.Size = new System.Drawing.Size(908, 31);
+            this.p_search.Size = new System.Drawing.Size(1542, 31);
             this.p_search.TabIndex = 0;
             // 
-            // dvgParticipant
+            // dvgVolunteer
             // 
-            this.dvgParticipant.AllowUserToAddRows = false;
-            this.dvgParticipant.AllowUserToDeleteRows = false;
-            this.dvgParticipant.AutoGenerateColumns = false;
-            this.dvgParticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgParticipant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgVolunteer.AllowUserToAddRows = false;
+            this.dvgVolunteer.AllowUserToDeleteRows = false;
+            this.dvgVolunteer.AutoGenerateColumns = false;
+            this.dvgVolunteer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgVolunteer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
@@ -545,72 +599,23 @@
             this.stateDataGridViewTextBoxColumn,
             this.zipCodeDataGridViewTextBoxColumn,
             this.emergencyContactDataGridViewTextBoxColumn,
+            this.emergencyPhoneDataGridViewTextBoxColumn,
+            this.emergencyEmailDataGridViewTextBoxColumn,
             this.isWaiverSignedDataGridViewCheckBoxColumn,
             this.isMediaReleasedDataGridViewCheckBoxColumn,
             this.isFrequentCallerDataGridViewCheckBoxColumn,
             this.noteDataGridViewTextBoxColumn});
-            this.dvgParticipant.DataSource = this.participantBindingSource;
-            this.dvgParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgParticipant.Location = new System.Drawing.Point(0, 0);
-            this.dvgParticipant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dvgParticipant.MultiSelect = false;
-            this.dvgParticipant.Name = "dvgParticipant";
-            this.dvgParticipant.ReadOnly = true;
-            this.dvgParticipant.RowHeadersVisible = false;
-            this.dvgParticipant.RowTemplate.Height = 33;
-            this.dvgParticipant.Size = new System.Drawing.Size(1132, 1098);
-            this.dvgParticipant.TabIndex = 44;
-            this.dvgParticipant.SelectionChanged += new System.EventHandler(this.dvgParticipant_SelectionChanged);
-            // 
-            // btn_ClearParticipant
-            // 
-            this.btn_ClearParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearParticipant.Location = new System.Drawing.Point(1136, 12);
-            this.btn_ClearParticipant.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btn_ClearParticipant.Name = "btn_ClearParticipant";
-            this.btn_ClearParticipant.Size = new System.Drawing.Size(150, 44);
-            this.btn_ClearParticipant.TabIndex = 2;
-            this.btn_ClearParticipant.Text = "&Clear";
-            this.btn_ClearParticipant.UseVisualStyleBackColor = true;
-            this.btn_ClearParticipant.Click += new System.EventHandler(this.btn_ClearParticipant_Click);
-            // 
-            // btn_deleteParticipant
-            // 
-            this.btn_deleteParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_deleteParticipant.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_deleteParticipant.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.btn_deleteParticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
-            this.btn_deleteParticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.btn_deleteParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_deleteParticipant.Location = new System.Drawing.Point(1298, 12);
-            this.btn_deleteParticipant.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btn_deleteParticipant.Name = "btn_deleteParticipant";
-            this.btn_deleteParticipant.Size = new System.Drawing.Size(150, 44);
-            this.btn_deleteParticipant.TabIndex = 1;
-            this.btn_deleteParticipant.Text = "Delete";
-            this.btn_deleteParticipant.UseVisualStyleBackColor = false;
-            this.btn_deleteParticipant.Click += new System.EventHandler(this.btn_deleteParticipant_Click);
-            // 
-            // btn_Addparticipant
-            // 
-            this.btn_Addparticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Addparticipant.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_Addparticipant.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btn_Addparticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btn_Addparticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.btn_Addparticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Addparticipant.Location = new System.Drawing.Point(1460, 12);
-            this.btn_Addparticipant.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btn_Addparticipant.Name = "btn_Addparticipant";
-            this.btn_Addparticipant.Size = new System.Drawing.Size(150, 44);
-            this.btn_Addparticipant.TabIndex = 0;
-            this.btn_Addparticipant.Text = "&Add";
-            this.btn_Addparticipant.UseVisualStyleBackColor = false;
-            this.btn_Addparticipant.Click += new System.EventHandler(this.btn_Addparticipant_Click);
-            // 
-            // participantDataSource
-            // 
-            this.participantDataSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
+            this.dvgVolunteer.DataSource = this.volunteerBindingSource;
+            this.dvgVolunteer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgVolunteer.Location = new System.Drawing.Point(0, 0);
+            this.dvgVolunteer.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgVolunteer.MultiSelect = false;
+            this.dvgVolunteer.Name = "dvgVolunteer";
+            this.dvgVolunteer.ReadOnly = true;
+            this.dvgVolunteer.RowHeadersVisible = false;
+            this.dvgVolunteer.RowTemplate.Height = 33;
+            this.dvgVolunteer.Size = new System.Drawing.Size(1766, 1224);
+            this.dvgVolunteer.TabIndex = 44;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -690,6 +695,20 @@
             this.emergencyContactDataGridViewTextBoxColumn.Name = "emergencyContactDataGridViewTextBoxColumn";
             this.emergencyContactDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // emergencyPhoneDataGridViewTextBoxColumn
+            // 
+            this.emergencyPhoneDataGridViewTextBoxColumn.DataPropertyName = "EmergencyPhone";
+            this.emergencyPhoneDataGridViewTextBoxColumn.HeaderText = "EmergencyPhone";
+            this.emergencyPhoneDataGridViewTextBoxColumn.Name = "emergencyPhoneDataGridViewTextBoxColumn";
+            this.emergencyPhoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emergencyEmailDataGridViewTextBoxColumn
+            // 
+            this.emergencyEmailDataGridViewTextBoxColumn.DataPropertyName = "EmergencyEmail";
+            this.emergencyEmailDataGridViewTextBoxColumn.HeaderText = "EmergencyEmail";
+            this.emergencyEmailDataGridViewTextBoxColumn.Name = "emergencyEmailDataGridViewTextBoxColumn";
+            this.emergencyEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // isWaiverSignedDataGridViewCheckBoxColumn
             // 
             this.isWaiverSignedDataGridViewCheckBoxColumn.DataPropertyName = "IsWaiverSigned";
@@ -718,18 +737,60 @@
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             this.noteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // participantBindingSource
+            // volunteerBindingSource
             // 
-            this.participantBindingSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
+            this.volunteerBindingSource.DataSource = typeof(Common_Ground_Project.Models.Volunteer);
             // 
-            // ParticipantView
+            // btn_clearVolunteer
+            // 
+            this.btn_clearVolunteer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_clearVolunteer.Location = new System.Drawing.Point(1802, 12);
+            this.btn_clearVolunteer.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_clearVolunteer.Name = "btn_clearVolunteer";
+            this.btn_clearVolunteer.Size = new System.Drawing.Size(150, 44);
+            this.btn_clearVolunteer.TabIndex = 2;
+            this.btn_clearVolunteer.Text = "&Clear";
+            // 
+            // btn_deleteVolunteer
+            // 
+            this.btn_deleteVolunteer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_deleteVolunteer.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_deleteVolunteer.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btn_deleteVolunteer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btn_deleteVolunteer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.btn_deleteVolunteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteVolunteer.Location = new System.Drawing.Point(1964, 12);
+            this.btn_deleteVolunteer.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_deleteVolunteer.Name = "btn_deleteVolunteer";
+            this.btn_deleteVolunteer.Size = new System.Drawing.Size(150, 44);
+            this.btn_deleteVolunteer.TabIndex = 1;
+            this.btn_deleteVolunteer.Text = "Delete";
+            this.btn_deleteVolunteer.UseVisualStyleBackColor = false;
+            // 
+            // btn_addVolunteer
+            // 
+            this.btn_addVolunteer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addVolunteer.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_addVolunteer.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_addVolunteer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_addVolunteer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btn_addVolunteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addVolunteer.Location = new System.Drawing.Point(2126, 12);
+            this.btn_addVolunteer.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_addVolunteer.Name = "btn_addVolunteer";
+            this.btn_addVolunteer.Size = new System.Drawing.Size(150, 44);
+            this.btn_addVolunteer.TabIndex = 0;
+            this.btn_addVolunteer.Text = "&Add";
+            this.btn_addVolunteer.UseVisualStyleBackColor = false;
+            // 
+            // VolunteerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Name = "ParticipantView";
-            this.Size = new System.Drawing.Size(1616, 1231);
+            this.Name = "VolunteerView";
+            this.Size = new System.Drawing.Size(2282, 1380);
+            ((System.ComponentModel.ISupportInitialize)(this.voluteerDataSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -748,27 +809,16 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgVolunteer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button btn_Addparticipant;
-        private System.Windows.Forms.Button btn_deleteParticipant;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Button btn_searchParticipant;
-        private System.Windows.Forms.TextBox p_search;
-        private System.Windows.Forms.DataGridView dvgParticipant;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.RichTextBox p_notes;
         private System.Windows.Forms.RichTextBox p_emergencyContact;
         private System.Windows.Forms.RichTextBox p_zip;
@@ -781,20 +831,30 @@
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox p_DOB;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.MaskedTextBox p_phoneNumber;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.BindingSource participantDataSource;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Button btn_searchVolunteer;
+        private System.Windows.Forms.TextBox p_search;
+        private System.Windows.Forms.DataGridView dvgVolunteer;
+        private System.Windows.Forms.Button btn_clearVolunteer;
+        private System.Windows.Forms.Button btn_deleteVolunteer;
+        private System.Windows.Forms.Button btn_addVolunteer;
+        private System.Windows.Forms.BindingSource voluteerDataSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
@@ -806,11 +866,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emergencyPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emergencyEmailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isWaiverSignedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isMediaReleasedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isFrequentCallerDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource participantBindingSource;
-        private System.Windows.Forms.Button btn_ClearParticipant;
+        private System.Windows.Forms.BindingSource volunteerBindingSource;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
