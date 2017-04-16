@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.staffDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.p_notes = new System.Windows.Forms.RichTextBox();
             this.p_emergencyContact = new System.Windows.Forms.RichTextBox();
@@ -57,6 +58,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.p_phoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,10 +71,7 @@
             this.p_search = new System.Windows.Forms.TextBox();
             this.dvgParticipant = new System.Windows.Forms.DataGridView();
             this.btn_deleteParticipant = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.staffDataSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.staffDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,13 +88,13 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffDataSource)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.staffDataSource, "IsMediaReleased", true));
+            this.checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.staffDataSource, "IsMediaReleased", true));
             this.checkBox7.Location = new System.Drawing.Point(5, 300);
             this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox7.Name = "checkBox7";
@@ -102,10 +103,15 @@
             this.checkBox7.Text = "Media Release";
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
+            // staffDataSource
+            // 
+            this.staffDataSource.DataSource = typeof(Common_Ground_Project.Models.Staff);
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.staffDataSource, "IsWaiverSigned", true));
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.staffDataSource, "IsWaiverSigned", true));
             this.checkBox2.Location = new System.Drawing.Point(5, 279);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
@@ -431,6 +437,38 @@
             this.panel2.Size = new System.Drawing.Size(291, 529);
             this.panel2.TabIndex = 1;
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffDataSource, "EmergencyEmail", true));
+            this.richTextBox2.Location = new System.Drawing.Point(108, 257);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox2.Multiline = false;
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox2.TabIndex = 70;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffDataSource, "EmergencyPhone", true));
+            this.richTextBox1.Location = new System.Drawing.Point(108, 234);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox1.TabIndex = 69;
+            this.richTextBox1.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 260);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 68;
+            this.label2.Text = "Emergency Email:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -556,42 +594,6 @@
             this.btn_deleteParticipant.Text = "Delete";
             this.btn_deleteParticipant.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 260);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "Emergency Email:";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffDataSource, "EmergencyPhone", true));
-            this.richTextBox1.Location = new System.Drawing.Point(108, 234);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(116, 19);
-            this.richTextBox1.TabIndex = 69;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffDataSource, "EmergencyEmail", true));
-            this.richTextBox2.Location = new System.Drawing.Point(108, 257);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox2.Multiline = false;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(116, 19);
-            this.richTextBox2.TabIndex = 70;
-            this.richTextBox2.Text = "";
-            // 
-            // staffDataSource
-            // 
-            this.staffDataSource.DataSource = typeof(Common_Ground_Project.Models.Staff);
-            // 
             // StaffView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +601,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "StaffView";
             this.Size = new System.Drawing.Size(1098, 712);
+            ((System.ComponentModel.ISupportInitialize)(this.staffDataSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -618,7 +621,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffDataSource)).EndInit();
             this.ResumeLayout(false);
 
         }

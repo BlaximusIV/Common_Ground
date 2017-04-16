@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="LoginCredentials.cs" />
     <Compile Include="Models\Participant.cs" />
+    <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="ParticipantHelp.cs">

@@ -55,9 +55,6 @@ namespace Common_Ground_Project.Models
             IsFrequentCaller = rdr["Frequent_Caller"] == DBNull.Value ? false : Convert.ToBoolean(rdr["Frequent_Caller"]);
             Note = rdr["notes"] == DBNull.Value ? String.Empty : rdr["notes"].ToString();
 
-            IsFrequentCaller = false;
-            IsMediaReleased = false;
-            IsWaiverSigned = false;
         }
     }
 }

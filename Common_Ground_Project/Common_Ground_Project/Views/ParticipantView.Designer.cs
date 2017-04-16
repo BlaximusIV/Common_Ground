@@ -36,6 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.participantDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.p_notes = new System.Windows.Forms.RichTextBox();
@@ -64,10 +65,6 @@
             this.btn_searchParticipant = new System.Windows.Forms.Button();
             this.p_search = new System.Windows.Forms.TextBox();
             this.dvgParticipant = new System.Windows.Forms.DataGridView();
-            this.btn_deleteParticipant = new System.Windows.Forms.Button();
-            this.btn_Addparticipant = new System.Windows.Forms.Button();
-            this.btn_ClearParticipant = new System.Windows.Forms.Button();
-            this.participantDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +81,13 @@
             this.isFrequentCallerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_ClearParticipant = new System.Windows.Forms.Button();
+            this.btn_deleteParticipant = new System.Windows.Forms.Button();
+            this.btn_Addparticipant = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,12 +99,12 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,6 +178,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.richTextBox2);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.checkBox3);
             this.panel2.Controls.Add(this.checkBox7);
             this.panel2.Controls.Add(this.checkBox2);
@@ -208,7 +216,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsFrequentCaller", true));
-            this.checkBox3.Location = new System.Drawing.Point(5, 285);
+            this.checkBox3.Location = new System.Drawing.Point(5, 357);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(97, 17);
@@ -216,11 +224,15 @@
             this.checkBox3.Text = "Frequent Caller";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // participantDataSource
+            // 
+            this.participantDataSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
+            // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsMediaReleased", true));
-            this.checkBox7.Location = new System.Drawing.Point(5, 264);
+            this.checkBox7.Location = new System.Drawing.Point(5, 336);
             this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(97, 17);
@@ -232,7 +244,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.participantDataSource, "IsWaiverSigned", true));
-            this.checkBox2.Location = new System.Drawing.Point(5, 242);
+            this.checkBox2.Location = new System.Drawing.Point(5, 314);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(96, 17);
@@ -243,7 +255,7 @@
             // p_notes
             // 
             this.p_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "Note", true));
-            this.p_notes.Location = new System.Drawing.Point(5, 349);
+            this.p_notes.Location = new System.Drawing.Point(5, 402);
             this.p_notes.Margin = new System.Windows.Forms.Padding(2);
             this.p_notes.Name = "p_notes";
             this.p_notes.Size = new System.Drawing.Size(284, 113);
@@ -285,7 +297,7 @@
             // 
             // p_city
             // 
-            this.p_city.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "State", true));
+            this.p_city.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "City", true));
             this.p_city.Location = new System.Drawing.Point(108, 142);
             this.p_city.Margin = new System.Windows.Forms.Padding(2);
             this.p_city.Multiline = false;
@@ -319,6 +331,7 @@
             // p_lName
             // 
             this.p_lName.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.participantDataSource, "LastName", true));
+            this.p_lName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "LastName", true));
             this.p_lName.Location = new System.Drawing.Point(108, 25);
             this.p_lName.Margin = new System.Windows.Forms.Padding(2);
             this.p_lName.Multiline = false;
@@ -341,7 +354,7 @@
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(2, 334);
+            this.label69.Location = new System.Drawing.Point(2, 387);
             this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(38, 13);
@@ -549,53 +562,6 @@
             this.dvgParticipant.TabIndex = 44;
             this.dvgParticipant.SelectionChanged += new System.EventHandler(this.dvgParticipant_SelectionChanged);
             // 
-            // btn_deleteParticipant
-            // 
-            this.btn_deleteParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_deleteParticipant.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_deleteParticipant.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.btn_deleteParticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
-            this.btn_deleteParticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.btn_deleteParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_deleteParticipant.Location = new System.Drawing.Point(649, 6);
-            this.btn_deleteParticipant.Name = "btn_deleteParticipant";
-            this.btn_deleteParticipant.Size = new System.Drawing.Size(75, 23);
-            this.btn_deleteParticipant.TabIndex = 1;
-            this.btn_deleteParticipant.Text = "Delete";
-            this.btn_deleteParticipant.UseVisualStyleBackColor = false;
-            this.btn_deleteParticipant.Click += new System.EventHandler(this.btn_deleteParticipant_Click);
-            // 
-            // btn_Addparticipant
-            // 
-            this.btn_Addparticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Addparticipant.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_Addparticipant.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btn_Addparticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btn_Addparticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.btn_Addparticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Addparticipant.Location = new System.Drawing.Point(730, 6);
-            this.btn_Addparticipant.Name = "btn_Addparticipant";
-            this.btn_Addparticipant.Size = new System.Drawing.Size(75, 23);
-            this.btn_Addparticipant.TabIndex = 0;
-            this.btn_Addparticipant.Text = "&Add";
-            this.btn_Addparticipant.UseVisualStyleBackColor = false;
-            this.btn_Addparticipant.Click += new System.EventHandler(this.btn_Addparticipant_Click);
-            // 
-            // btn_ClearParticipant
-            // 
-            this.btn_ClearParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearParticipant.Location = new System.Drawing.Point(568, 6);
-            this.btn_ClearParticipant.Name = "btn_ClearParticipant";
-            this.btn_ClearParticipant.Size = new System.Drawing.Size(75, 23);
-            this.btn_ClearParticipant.TabIndex = 2;
-            this.btn_ClearParticipant.Text = "&Clear";
-            this.btn_ClearParticipant.UseVisualStyleBackColor = true;
-            this.btn_ClearParticipant.Click += new System.EventHandler(this.btn_ClearParticipant_Click);
-            // 
-            // participantDataSource
-            // 
-            this.participantDataSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -706,6 +672,91 @@
             // 
             this.participantBindingSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
             // 
+            // btn_ClearParticipant
+            // 
+            this.btn_ClearParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearParticipant.Location = new System.Drawing.Point(568, 6);
+            this.btn_ClearParticipant.Name = "btn_ClearParticipant";
+            this.btn_ClearParticipant.Size = new System.Drawing.Size(75, 23);
+            this.btn_ClearParticipant.TabIndex = 2;
+            this.btn_ClearParticipant.Text = "&Clear";
+            this.btn_ClearParticipant.UseVisualStyleBackColor = true;
+            this.btn_ClearParticipant.Click += new System.EventHandler(this.btn_ClearParticipant_Click);
+            // 
+            // btn_deleteParticipant
+            // 
+            this.btn_deleteParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_deleteParticipant.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_deleteParticipant.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btn_deleteParticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btn_deleteParticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.btn_deleteParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteParticipant.Location = new System.Drawing.Point(649, 6);
+            this.btn_deleteParticipant.Name = "btn_deleteParticipant";
+            this.btn_deleteParticipant.Size = new System.Drawing.Size(75, 23);
+            this.btn_deleteParticipant.TabIndex = 1;
+            this.btn_deleteParticipant.Text = "Delete";
+            this.btn_deleteParticipant.UseVisualStyleBackColor = false;
+            this.btn_deleteParticipant.Click += new System.EventHandler(this.btn_deleteParticipant_Click);
+            // 
+            // btn_Addparticipant
+            // 
+            this.btn_Addparticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Addparticipant.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_Addparticipant.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_Addparticipant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_Addparticipant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btn_Addparticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Addparticipant.Location = new System.Drawing.Point(730, 6);
+            this.btn_Addparticipant.Name = "btn_Addparticipant";
+            this.btn_Addparticipant.Size = new System.Drawing.Size(75, 23);
+            this.btn_Addparticipant.TabIndex = 0;
+            this.btn_Addparticipant.Text = "&Add";
+            this.btn_Addparticipant.UseVisualStyleBackColor = false;
+            this.btn_Addparticipant.Click += new System.EventHandler(this.btn_Addparticipant_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyPhone", true));
+            this.richTextBox1.Location = new System.Drawing.Point(108, 234);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox1.TabIndex = 68;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 237);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Emergency Phone";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyEmail", true));
+            this.richTextBox2.Location = new System.Drawing.Point(108, 257);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox2.Multiline = false;
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox2.TabIndex = 70;
+            this.richTextBox2.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 260);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Emergency Email";
+            // 
             // ParticipantView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,13 +777,13 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgParticipant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -795,5 +846,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource participantBindingSource;
         private System.Windows.Forms.Button btn_ClearParticipant;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
