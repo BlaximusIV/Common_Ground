@@ -47,63 +47,6 @@ namespace Common_Ground_Project
 
         private void btn_Addparticipant_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (sqlCon.State == ConnectionState.Closed)
-            //        sqlCon.Open();
-            //    if (btn_Addparticipant.Text == "Save")
-            //    {
-            //        SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
-            //        sqlCmd.CommandType = CommandType.StoredProcedure;
-            //        sqlCmd.Parameters.AddWithValue("@mode", "Add");
-            //        sqlCmd.Parameters.AddWithValue("@personID", 0);
-            //        sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
-
-            //        sqlCmd.ExecuteNonQuery();
-            //        MessageBox.Show("Save Succesful");
-            //    }
-            //    else
-            //    {
-            //        SqlCommand sqlCmd = new SqlCommand("TestingSP", sqlCon);
-            //        sqlCmd.CommandType = CommandType.StoredProcedure;
-            //        sqlCmd.Parameters.AddWithValue("@mode", "Edit");
-            //        sqlCmd.Parameters.AddWithValue("@personID", personID);
-            //        sqlCmd.Parameters.AddWithValue("@firstName", p_fName.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@lastName", p_lName.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@phoneNumber", p_phoneNumber.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@email", p_email.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@emergencyContact", p_emergencyContact.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@streetAddress", p_streetAddress.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@City", p_city.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@residentState", p_state.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@zip", p_zip.Text.Trim());
-            //        sqlCmd.Parameters.AddWithValue("@instructions", p_notes.Text.Trim());
-
-            //        sqlCmd.ExecuteNonQuery();
-            //        MessageBox.Show("Update Succesful");
-
-            //    }
-            //    ResetParticipant();
-            //    FillDVGParticipant();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error Message");
-            //}
-            //finally
-            //{
-            //    sqlCon.Close();
-            //}
 
         }
 

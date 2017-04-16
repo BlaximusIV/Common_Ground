@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Common_Ground_Project.Models
 {
-    class Staff
+    public class Staff
     {
         public int ID { get; set; }
         public string FirstName { get; set; }

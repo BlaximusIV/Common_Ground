@@ -8,24 +8,24 @@ using System.Data.SqlClient;
 
 namespace Common_Ground_Project.DataAccess
 {
-    public class ParticipantSql
+    public class StaffSql
     {
         private string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;" + 
             "Trusted_Connection=True";
 
-        public List<Participant> GetParticipantList(string filter)
+        public List<Staff> GetStaffList(string filter)
         {
-            List<Participant> returnList = new List<Participant>();
+            List<Staff> returnList = new List<Staff>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@firstName", filter));
 
-            SqlCommand cmd = new SqlCommand("participantGridVew1");
+            SqlCommand cmd = new SqlCommand("staffGridVew1");
             returnList = createConnection(cmd, parameters);
 
             return returnList;
         }
 
-        public void SaveParticipant(Participant participant)
+        public void SaveStaff(Staff staff)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -33,25 +33,25 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "ParticipantAddEdit";
-                        if (participant.ID == 0)
+                        cmd.CommandText = "StaffAddEdit";
+                        if (staff.ID == 0)
                             cmd.Parameters.Add(new SqlParameter("@model", "Add"));
                         else
                         {
                             cmd.Parameters.Add(new SqlParameter("@model", "Edit"));
-                            cmd.Parameters.AddWithValue("@personID", participant.ID);
+                            cmd.Parameters.AddWithValue("@personID", staff.ID);
                         }
 
-                        cmd.Parameters.AddWithValue("@firstName", participant.FirstName);
-                        cmd.Parameters.AddWithValue("@lastName", participant.LastName);
-                        cmd.Parameters.AddWithValue("@phoneNumber", participant.PhoneNumber);
-                        cmd.Parameters.AddWithValue("@email", participant.EmailAddress);
-                        cmd.Parameters.AddWithValue("@emergencyContact", participant.EmergencyContact);
-                        cmd.Parameters.AddWithValue("@streetAddress", participant.StreetAddress);
-                        cmd.Parameters.AddWithValue("@City", participant.City);
-                        cmd.Parameters.AddWithValue("@residentState", participant.State);
-                        cmd.Parameters.AddWithValue("@zip", participant.ZipCode);
-                        cmd.Parameters.AddWithValue("@instructions", participant.Note);
+                        cmd.Parameters.AddWithValue("@firstName", staff.FirstName);
+                        cmd.Parameters.AddWithValue("@lastName", staff.LastName);
+                        cmd.Parameters.AddWithValue("@phoneNumber", staff.PhoneNumber);
+                        cmd.Parameters.AddWithValue("@email", staff.EmailAddress);
+                        cmd.Parameters.AddWithValue("@emergencyContact", staff.EmergencyContact);
+                        cmd.Parameters.AddWithValue("@streetAddress", staff.StreetAddress);
+                        cmd.Parameters.AddWithValue("@City", staff.City);
+                        cmd.Parameters.AddWithValue("@residentState", staff.State);
+                        cmd.Parameters.AddWithValue("@zip", staff.ZipCode);
+                        cmd.Parameters.AddWithValue("@instructions", staff.Note);
 
 
                         cmd.Connection = connection;
@@ -71,7 +71,7 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteParticipant(Participant participant)
+        public void DeleteStaff(Staff staff)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -79,9 +79,9 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "deleteParticipant";
+                        cmd.CommandText = "deleteStaff";
                         
-                        cmd.Parameters.AddWithValue("@personID", participant.ID);
+                        cmd.Parameters.AddWithValue("@personID", staff.ID);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -102,9 +102,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Participant> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<Staff> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
-            List<Participant> returnList = new List<Participant>();
+            List<Staff> returnList = new List<Staff>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -121,7 +121,7 @@ namespace Common_Ground_Project.DataAccess
                         {
                             while (rdr.Read())
                             {
-                                returnList.Add(new Participant(rdr));
+                                returnList.Add(new Staff(rdr));
                             }
                         }
                     }
