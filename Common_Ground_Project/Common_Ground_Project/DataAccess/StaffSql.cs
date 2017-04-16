@@ -13,7 +13,7 @@ namespace Common_Ground_Project.DataAccess
         private string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;" + 
             "Trusted_Connection=True";
 
-        public List<Staff> GetParticipantList(string filter)
+        public List<Staff> GetStaffList(string filter)
         {
             List<Staff> returnList = new List<Staff>();
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -25,7 +25,7 @@ namespace Common_Ground_Project.DataAccess
             return returnList;
         }
 
-        public void SaveParticipant(Staff staff)
+        public void SaveStaff(Staff staff)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -71,7 +71,7 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteParticipant(Staff staff)
+        public void DeleteStaff(Staff staff)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
