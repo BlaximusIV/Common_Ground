@@ -24,45 +24,45 @@ namespace Common_Ground_Project.Views
         public void Initialize(CommonController controller)
         {
             Controller = controller;
-            //PopulateDvgVolunteer();
+            PopulateDvgVolunteer();
         }
 
-        //private void ResetForm()
-        //{
-        //    btn_addVolunteer.Text = "Save";
-        //    btn_deleteVolunteer.Enabled = false;
-        //    voluteerDataSource.DataSource = new Volunteer();
-        //}
+        private void ResetForm()
+        {
+            //btn_addVolunteer.Text = "Save";
+            btn_deleteVolunteer.Enabled = false;
+            voluteerDataSource.DataSource = new Volunteer();
+        }
 
-        //private void PopulateDvgVolunteer()
-        //{
-        //    string filter = p_search.Text.Trim();
-        //    List<Volunteer> volunteer = Controller.GetVolunteerList(filter);
+        private void PopulateDvgVolunteer()
+        {
+            string filter = p_search.Text.Trim();
+            List<Volunteer> volunteer = Controller.GetVolunteerList(filter);
 
-        //    dvgVolunteer.DataSource = null;
-        //    dvgVolunteer.DataSource = volunteer;
-        //}
+            dvgVolunteer.DataSource = null;
+            dvgVolunteer.DataSource = volunteer;
+        }
 
-        //private void dvgVolunteer_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (dvgVolunteer.SelectedCells.Count > 0)
-        //    {
-        //        int index = dvgVolunteer.SelectedCells[0].RowIndex;
-        //        Volunteer volunteer = (volunteer)dvgVolunteer.Rows[0].DataBoundItem;
+        private void dvgVolunteer_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dvgVolunteer.SelectedCells.Count > 0)
+            {
+                int index = dvgVolunteer.SelectedCells[0].RowIndex;
+                Volunteer volunteer = (Volunteer)dvgVolunteer.Rows[0].DataBoundItem;
 
-        //        voluteerDataSource.DataSource = volunteer;
+                voluteerDataSource.DataSource = volunteer;
 
-        //        /// Controller
-        //        btn_addVolunteer.Text = "Update";
-        //        btn_deleteVolunteer.Enabled = true;
-        //    }
-        //}
+                /// Controller
+                //btn_addVolunteer.Text = "Update";
+                btn_deleteVolunteer.Enabled = true;
+            }
+        }
 
         //private void btn_deleteVolunteer_Click(object sender, EventArgs e)
         //{
         //    if (voluteerDataSource.DataSource != null)
         //    {
-        //        Volunteer volunteer = (volunteer)voluteerDataSource.DataSource;
+        //        Volunteer volunteer = (Volunteer)voluteerDataSource.DataSource;
 
         //        if (volunteer.ID > 0)
         //            Controller.DeleteVolunteer(volunteer);
@@ -74,11 +74,11 @@ namespace Common_Ground_Project.Views
         //    PopulateDvgVolunteer();
         //}
 
-        //private void btn_addVolunteer(object sender, EventArgs e)
+        //private void btn_addPar(object sender, EventArgs e)
         //{
         //    if (voluteerDataSource.DataSource != null)
         //    {
-        //        Volunteer volunteer = (volunteer)voluteerDataSource.DataSource;
+        //        Volunteer volunteer = (Volunteer)voluteerDataSource.DataSource;
 
         //        if (volunteer.ID > 0)
         //            Controller.SaveVolunteer(volunteer);

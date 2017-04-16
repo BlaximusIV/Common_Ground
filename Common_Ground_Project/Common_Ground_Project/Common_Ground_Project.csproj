@@ -52,6 +52,7 @@
       <DependentUpon>ActivitiesHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="DataAccess\VolunteerSql.cs" />
     <Compile Include="DataAccess\StaffSql.cs" />
     <Compile Include="DataAccess\ParticipantSql.cs" />
     <Compile Include="Form1.cs">
