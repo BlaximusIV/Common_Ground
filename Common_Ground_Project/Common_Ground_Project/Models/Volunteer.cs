@@ -24,7 +24,6 @@ namespace Common_Ground_Project.Models
         public string EmergencyEmail { get; set; }
         public bool IsWaiverSigned { get; set; }
         public bool IsMediaReleased { get; set; }
-        public bool IsFrequentCaller { get; set; }
         public string Note { get; set; }
 
         public Volunteer()
@@ -51,11 +50,9 @@ namespace Common_Ground_Project.Models
             Note = rdr["Notes"] == DBNull.Value ? String.Empty : rdr["Notes"].ToString();
             EmergencyPhone = rdr["Emergency_Phone"] == DBNull.Value ? String.Empty : rdr["Emergency_Phone"].ToString();
             EmergencyEmail = rdr["Emergency_Email"] == DBNull.Value ? String.Empty : rdr["Emergency_Email"].ToString();
-
-
-            IsFrequentCaller = false;
-            IsMediaReleased = false;
-            IsWaiverSigned = false;
+            IsWaiverSigned = rdr["Waiver_Signed"] == DBNull.Value ? false : Convert.ToBoolean(rdr["Waiver_Signed"]);
+            IsMediaReleased = rdr["Media_Release"] == DBNull.Value ? false : Convert.ToBoolean(rdr["Media_Release"]);
+            
         }
     }
 }

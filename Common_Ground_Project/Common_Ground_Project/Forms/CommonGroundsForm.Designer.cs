@@ -34,14 +34,16 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.volunteerView1 = new Common_Ground_Project.Views.VolunteerView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.staffView1 = new Common_Ground_Project.Views.StaffView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.staffView1 = new Common_Ground_Project.Views.StaffView();
+            this.activityView1 = new Common_Ground_Project.Views.ActivityView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -55,7 +57,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -67,9 +69,9 @@
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.participantView1);
             this.tabPage2.Location = new System.Drawing.Point(23, 4);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(654, 377);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Participants";
@@ -78,7 +80,7 @@
             // 
             this.participantView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.participantView1.Location = new System.Drawing.Point(2, 2);
-            this.participantView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.participantView1.Margin = new System.Windows.Forms.Padding(6);
             this.participantView1.Name = "participantView1";
             this.participantView1.Size = new System.Drawing.Size(650, 373);
             this.participantView1.TabIndex = 0;
@@ -88,9 +90,9 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.volunteerView1);
             this.tabPage1.Location = new System.Drawing.Point(23, 4);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(654, 377);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Volunteers";
@@ -99,7 +101,7 @@
             // 
             this.volunteerView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.volunteerView1.Location = new System.Drawing.Point(2, 2);
-            this.volunteerView1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.volunteerView1.Margin = new System.Windows.Forms.Padding(1);
             this.volunteerView1.Name = "volunteerView1";
             this.volunteerView1.Size = new System.Drawing.Size(650, 373);
             this.volunteerView1.TabIndex = 0;
@@ -110,39 +112,10 @@
             this.tabPage6.Controls.Add(this.staffView1);
             this.tabPage6.Location = new System.Drawing.Point(23, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(654, 377);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Staff";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(23, 4);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(780, 545);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Activities";
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.BackColor = System.Drawing.Color.White;
-            this.tabPage8.Location = new System.Drawing.Point(23, 4);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(780, 545);
-            this.tabPage8.TabIndex = 4;
-            this.tabPage8.Text = "Reports";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Location = new System.Drawing.Point(23, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(780, 545);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "Manage";
             // 
             // staffView1
             // 
@@ -151,6 +124,44 @@
             this.staffView1.Name = "staffView1";
             this.staffView1.Size = new System.Drawing.Size(648, 371);
             this.staffView1.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Controls.Add(this.activityView1);
+            this.tabPage4.Location = new System.Drawing.Point(23, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(654, 377);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Activities";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.White;
+            this.tabPage8.Location = new System.Drawing.Point(23, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(654, 377);
+            this.tabPage8.TabIndex = 4;
+            this.tabPage8.Text = "Reports";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Location = new System.Drawing.Point(23, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(654, 377);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Manage";
+            // 
+            // activityView1
+            // 
+            this.activityView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityView1.Location = new System.Drawing.Point(0, 0);
+            this.activityView1.Name = "activityView1";
+            this.activityView1.Size = new System.Drawing.Size(654, 377);
+            this.activityView1.TabIndex = 0;
             // 
             // CommonGroundsForm
             // 
@@ -164,6 +175,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,5 +192,6 @@
         private Views.ParticipantView participantView1;
         private Views.VolunteerView volunteerView1;
         private Views.StaffView staffView1;
+        private Views.ActivityView activityView1;
     }
 }

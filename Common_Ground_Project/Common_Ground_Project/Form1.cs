@@ -18,7 +18,6 @@ namespace Common_Ground_Project
     public partial class Form1 : Form
     {
         SqlConnection sqlCon = new SqlConnection(@"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;");
-        int personID = 0;
         int volunteerID = 0;
         int ActivityID= 0;
         int staffID = 0;
