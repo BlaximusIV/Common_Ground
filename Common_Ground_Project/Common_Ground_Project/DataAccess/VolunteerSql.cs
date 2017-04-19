@@ -10,9 +10,6 @@ namespace Common_Ground_Project.DataAccess
 {
     public class VolunteerSql
     {
-        private string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;" + 
-            "Trusted_Connection=True";
-
         public List<Volunteer> GetVolunteerList(string filter)
         {
             List<Volunteer> returnList = new List<Volunteer>();
@@ -27,7 +24,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void SaveVolunteer(Volunteer volunteer)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -73,7 +70,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void DeleteVolunteer(Volunteer volunteer)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -105,7 +102,7 @@ namespace Common_Ground_Project.DataAccess
         private List<Volunteer> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
             List<Volunteer> returnList = new List<Volunteer>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {

@@ -10,9 +10,6 @@ namespace Common_Ground_Project.DataAccess
 {
     public class ParticipantSql
     {
-        private string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;" + 
-            "Trusted_Connection=True";
-
         public List<Participant> GetParticipantList(string filter)
         {
             List<Participant> returnList = new List<Participant>();
@@ -27,7 +24,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void SaveParticipant(Participant participant)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -73,7 +70,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void DeleteParticipant(Participant participant)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -105,7 +102,7 @@ namespace Common_Ground_Project.DataAccess
         private List<Participant> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
             List<Participant> returnList = new List<Participant>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {

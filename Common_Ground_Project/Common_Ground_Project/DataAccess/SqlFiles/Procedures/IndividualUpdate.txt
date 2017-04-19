@@ -1,0 +1,43 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.IndividualUpdate
+(
+	@IndividualID INT,
+	@IndividualTypeID INT, 
+	@LastName VARCHAR(50), 
+	@FirstName VARCHAR(50), 
+	@PhoneNumber VARCHAR(15), 
+	@Email VARCHAR(50), 
+	@StreetAddress VARCHAR(50), 
+	@City VARCHAR(50), 
+	@State VARCHAR(2), 
+	@ZipCode INT, 
+	@Birthday DATE, 
+	@IsFrequentCaller BIT, 
+	@IsWaiverSigned BIT, 
+	@IsMediaReleased BIT, 
+	@NewID INT OUTPUT
+)
+AS 
+	SET NOCOUNT ON;
+
+	UPDATE Master.dbo.Individual 
+	SET
+		IndividualTypeID = @IndividualTypeID, 
+		LastName = @LastName, 
+		FirstName = @FirstName, 
+		PhoneNumber = @PhoneNumber, 
+		Email = @Email, 
+		StreetAddress = @StreetAddrss, 
+		City = @City, 
+		State = @State, 
+		ZipCode = @ZipCode, 
+		Birthday = @Birthday, 
+		IsFrequentCaller = @IsFrequentCaller, 
+		IsWaiverSigned = @IsWaiverSigned, 
+		IsMediaReleased = @IsMediaReleased
+	WHERE
+		IndividualID = @IndividualID
+
+GO	

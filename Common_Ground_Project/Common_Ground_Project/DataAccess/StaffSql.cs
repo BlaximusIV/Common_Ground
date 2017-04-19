@@ -10,9 +10,6 @@ namespace Common_Ground_Project.DataAccess
 {
     public class StaffSql
     {
-        private string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;" + 
-            "Trusted_Connection=True";
-
         public List<Staff> GetStaffList(string filter)
         {
             List<Staff> returnList = new List<Staff>();
@@ -27,7 +24,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void SaveStaff(Staff staff)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -73,7 +70,7 @@ namespace Common_Ground_Project.DataAccess
 
         public void DeleteStaff(Staff staff)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
@@ -105,7 +102,7 @@ namespace Common_Ground_Project.DataAccess
         private List<Staff> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
             List<Staff> returnList = new List<Staff>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
