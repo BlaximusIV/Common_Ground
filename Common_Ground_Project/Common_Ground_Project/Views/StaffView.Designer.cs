@@ -348,6 +348,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.btn_ClearParticipant);
             this.splitContainer1.Panel2.Controls.Add(this.btn_deleteParticipant);
             this.splitContainer1.Panel2.Controls.Add(this.btn_Addparticipant);
