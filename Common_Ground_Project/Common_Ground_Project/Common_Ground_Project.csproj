@@ -52,9 +52,7 @@
       <DependentUpon>ActivitiesHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommonController.cs" />
-    <Compile Include="DataAccess\VolunteerSql.cs" />
-    <Compile Include="DataAccess\StaffSql.cs" />
-    <Compile Include="DataAccess\ParticipantSql.cs" />
+    <Compile Include="DataAccess\IndividualSql.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,10 +72,13 @@
       <DependentUpon>CommonGroundsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginCredentials.cs" />
-    <Compile Include="Models\Participant.cs" />
     <Compile Include="Models\Activity.cs" />
-    <Compile Include="Models\Volunteer.cs" />
-    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\ActivityNote.cs" />
+    <Compile Include="Models\EmergencyContact.cs" />
+    <Compile Include="Models\Individual.cs" />
+    <Compile Include="Models\IndividualNote.cs" />
+    <Compile Include="Models\IndividualType.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="ParticipantHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,30 +87,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ActivityView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ActivityView.Designer.cs">
-      <DependentUpon>ActivityView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ParticipantView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ParticipantView.Designer.cs">
-      <DependentUpon>ParticipantView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\VolunteerView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\VolunteerView.Designer.cs">
-      <DependentUpon>VolunteerView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\StaffView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\StaffView.Designer.cs">
-      <DependentUpon>StaffView.cs</DependentUpon>
-    </Compile>
     <Compile Include="VolunteerHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,18 +117,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\ActivityView.resx">
-      <DependentUpon>ActivityView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ParticipantView.resx">
-      <DependentUpon>ParticipantView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffView.resx">
-      <DependentUpon>StaffView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\VolunteerView.resx">
-      <DependentUpon>VolunteerView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VolunteerHelp.resx">
       <DependentUpon>VolunteerHelp.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +175,8 @@
     <Content Include="DataAccess\SqlFiles\Tables\TableCreation.txt" />
     <Content Include="DataAccess\SqlFiles\Triggers\TriggerCreation.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

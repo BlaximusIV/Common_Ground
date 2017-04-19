@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Common_Ground_Project.Models
 {
-    class IndividualNote
+    public class IndividualNote
     {
         public int IndividualNoteID { get; set; }
         public int IndividualID { get; set; }

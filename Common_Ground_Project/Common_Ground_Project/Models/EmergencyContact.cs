@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Common_Ground_Project.Models
 {
-    class EmergencyContact
+    public class EmergencyContact
     {
         public int EmergencyContactID { get; set; }
         public int IndividualID { get; set; }
