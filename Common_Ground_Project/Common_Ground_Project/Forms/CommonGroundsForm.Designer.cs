@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.individualTab = new System.Windows.Forms.TabPage();
             this.activityTab = new System.Windows.Forms.TabPage();
+            this.vehicleTab = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.Controls.Add(this.individualTab);
             this.tabControl1.Controls.Add(this.activityTab);
+            this.tabControl1.Controls.Add(this.vehicleTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
@@ -67,6 +69,15 @@
             this.activityTab.Text = "Activity";
             this.activityTab.UseVisualStyleBackColor = true;
             // 
+            // vehicleTab
+            // 
+            this.vehicleTab.Location = new System.Drawing.Point(23, 4);
+            this.vehicleTab.Name = "vehicleTab";
+            this.vehicleTab.Size = new System.Drawing.Size(837, 482);
+            this.vehicleTab.TabIndex = 2;
+            this.vehicleTab.Text = "Vehicles";
+            this.vehicleTab.UseVisualStyleBackColor = true;
+            // 
             // CommonGroundsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,5 +96,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage individualTab;
         private System.Windows.Forms.TabPage activityTab;
+        private System.Windows.Forms.TabPage vehicleTab;
     }
 }
