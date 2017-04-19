@@ -8,35 +8,35 @@ using Common_Ground_Project.Models;
 
 namespace Common_Ground_Project.DataAccess
 {
-    public class ActivitySql
+    public class EmergencyContactSql
     {
-        public Activity GetActivity(Activity activity)
+        public EmergencyContact GetEmergencyContact(EmergencyContact contact)
         {
-            List<Activity> returnList = new List<Activity>();
+            List<EmergencyContact> returnList = new List<EmergencyContact>();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
+            parameters.Add(new SqlParameter("@EmergencyContactID", contact.EmergencyContactID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByID");
+            SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByID");
             returnList = createConnection(cmd, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
-                return new Activity();
+                return new EmergencyContact();
         }
-        public List<Activity> GetActivityList(Individual individual)
+        public List<EmergencyContact> GetEmergencyContactList(Individual individual)
         {
-            List<Activity> returnList = new List<Activity>();
+            List<EmergencyContact> returnList = new List<EmergencyContact>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByIndividual");
+            SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByIndividual");
             returnList = createConnection(cmd, parameters);
 
             return returnList;
         }
 
-        public void SaveActivity(Activity activity)
+        public void SaveEmergencyContact(EmergencyContact contact)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -44,38 +44,32 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        if (activity.ActivityID == 0)
+                        if (contact.EmergencyContactID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.ActivityInsert";
+                            cmd.CommandText = "Master.dbo.EmergencyContactInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.ActivityUpdate";
-                            cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                            cmd.CommandText = "Master.dbo.EmergencyContactUpdate";
+                            cmd.Parameters.AddWithValue("@EmergencyContactID", contact.EmergencyContactID);
                         }
 
-                        cmd.Parameters.AddWithValue("@Title", activity.Title);
-                        cmd.Parameters.AddWithValue("@TripLeaderID", activity.TripLeaderID);
-                        cmd.Parameters.AddWithValue("@Description", activity.Description);
-                        cmd.Parameters.AddWithValue("@Location", activity.Location);
-                        cmd.Parameters.AddWithValue("@StartDate", activity.StartDate);
-                        cmd.Parameters.AddWithValue("@EndDate", activity.EndDate);
-                        cmd.Parameters.AddWithValue("@PickUpTime", activity.PickUpTime);
-                        cmd.Parameters.AddWithValue("@DropOffTime", activity.DropOffTime);
-                        cmd.Parameters.AddWithValue("@StaffArrivalTime", activity.StaffArrivalTime);
-                        cmd.Parameters.AddWithValue("@Cost", activity.Cost);
+                        cmd.Parameters.AddWithValue("@IndividualID", contact.IndividualID);
+                        cmd.Parameters.AddWithValue("@Name", contact.Name);
+                        cmd.Parameters.AddWithValue("@Phone", contact.Phone);
+                        cmd.Parameters.AddWithValue("@Email", contact.Email);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Connection.Open();
                         cmd.ExecuteScalar();
 
-                        if (activity.ActivityID == 0)
+                        if (contact.EmergencyContactID == 0)
                         {
                             int returnID = Convert.ToInt32(cmd.Parameters["@NewID"].Value);
                             if (returnID > 0)
-                                activity.ActivityID = returnID;
+                                contact.EmergencyContactID = returnID;
                         }
                     }
                 }
@@ -90,7 +84,7 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteActivity(Activity activity)
+        public void DeleteEmergencyContact(EmergencyContact contact)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -98,9 +92,9 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.ActivityDelete";
+                        cmd.CommandText = "Master.dbo.EmergencyContactDelete";
 
-                        cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                        cmd.Parameters.AddWithValue("@EmergencyContactID", contact.EmergencyContactID);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -121,9 +115,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Activity> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<EmergencyContact> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
-            List<Activity> returnList = new List<Activity>();
+            List<EmergencyContact> returnList = new List<EmergencyContact>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -140,7 +134,7 @@ namespace Common_Ground_Project.DataAccess
                         {
                             while (rdr.Read())
                             {
-                                returnList.Add(new Activity(rdr));
+                                returnList.Add(new EmergencyContact(rdr));
                             }
                         }
                     }

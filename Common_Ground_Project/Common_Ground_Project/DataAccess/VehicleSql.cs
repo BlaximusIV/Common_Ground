@@ -8,35 +8,44 @@ using Common_Ground_Project.Models;
 
 namespace Common_Ground_Project.DataAccess
 {
-    public class ActivitySql
+    public class VehicleSql
     {
-        public Activity GetActivity(Activity activity)
+        public Vehicle GetVehicle(Vehicle veh)
         {
-            List<Activity> returnList = new List<Activity>();
+            List<Vehicle> returnList = new List<Vehicle>();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
+            parameters.Add(new SqlParameter("@VehicleID", veh.VehicleID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByID");
+            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByID");
             returnList = createConnection(cmd, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
-                return new Activity();
+                return new Vehicle();
         }
-        public List<Activity> GetActivityList(Individual individual)
+        public List<Vehicle> GetVehicleList()
         {
-            List<Activity> returnList = new List<Activity>();
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
+            List<Vehicle> returnList = new List<Vehicle>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByIndividual");
+            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetAll");
+            returnList = createConnection(cmd);
+
+            return returnList;
+        }
+        public List<Vehicle> GetVehicleList(Activity activity)
+        {
+            List<Vehicle> returnList = new List<Vehicle>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByActivity");
             returnList = createConnection(cmd, parameters);
 
             return returnList;
         }
 
-        public void SaveActivity(Activity activity)
+        public void SaveVehicle(Vehicle vehicle)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -44,38 +53,31 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        if (activity.ActivityID == 0)
+                        if (vehicle.VehicleID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.ActivityInsert";
+                            cmd.CommandText = "Master.dbo.VehicleInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.ActivityUpdate";
-                            cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                            cmd.CommandText = "Master.dbo.VehicleUpdate";
+                            cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
                         }
 
-                        cmd.Parameters.AddWithValue("@Title", activity.Title);
-                        cmd.Parameters.AddWithValue("@TripLeaderID", activity.TripLeaderID);
-                        cmd.Parameters.AddWithValue("@Description", activity.Description);
-                        cmd.Parameters.AddWithValue("@Location", activity.Location);
-                        cmd.Parameters.AddWithValue("@StartDate", activity.StartDate);
-                        cmd.Parameters.AddWithValue("@EndDate", activity.EndDate);
-                        cmd.Parameters.AddWithValue("@PickUpTime", activity.PickUpTime);
-                        cmd.Parameters.AddWithValue("@DropOffTime", activity.DropOffTime);
-                        cmd.Parameters.AddWithValue("@StaffArrivalTime", activity.StaffArrivalTime);
-                        cmd.Parameters.AddWithValue("@Cost", activity.Cost);
+                        cmd.Parameters.AddWithValue("@Name", vehicle.Name);
+                        cmd.Parameters.AddWithValue("@Description", vehicle.Description);
+                        cmd.Parameters.AddWithValue("@VIN", vehicle.VIN);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Connection.Open();
                         cmd.ExecuteScalar();
 
-                        if (activity.ActivityID == 0)
+                        if (vehicle.VehicleID == 0)
                         {
                             int returnID = Convert.ToInt32(cmd.Parameters["@NewID"].Value);
                             if (returnID > 0)
-                                activity.ActivityID = returnID;
+                                vehicle.VehicleID = returnID;
                         }
                     }
                 }
@@ -90,7 +92,7 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteActivity(Activity activity)
+        public void DeleteVehicle(Vehicle vehicle)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -98,9 +100,9 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.ActivityDelete";
+                        cmd.CommandText = "Master.dbo.VehicleDelete";
 
-                        cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                        cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -121,9 +123,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Activity> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<Vehicle> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
         {
-            List<Activity> returnList = new List<Activity>();
+            List<Vehicle> returnList = new List<Vehicle>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -140,7 +142,7 @@ namespace Common_Ground_Project.DataAccess
                         {
                             while (rdr.Read())
                             {
-                                returnList.Add(new Activity(rdr));
+                                returnList.Add(new Vehicle(rdr));
                             }
                         }
                     }

@@ -24,6 +24,11 @@ namespace Common_Ground_Project.Models
         public bool IsMediaReleased { get; set; }
         public bool IsFrequentCaller { get; set; }
 
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
+
         public List<Activity> ActivityList { get; set; }
         public List<EmergencyContact> EmergencyContactList { get; set; }
         public List <IndividualNote> IndividualNoteList { get; set; }
@@ -31,6 +36,11 @@ namespace Common_Ground_Project.Models
         public Individual()
         {
             IndividualID = 0;
+
+            BirthDay = new DateTime(1900, 1, 1);
+            IsWaiverSigned = false;
+            IsMediaReleased = false;
+            IsFrequentCaller = false;
         }
         public Individual(int id)
         {
@@ -52,8 +62,6 @@ namespace Common_Ground_Project.Models
             IsWaiverSigned = rdr["IsWaiverSigned"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsWaiverSigned"]);
             IsMediaReleased = rdr["IsMediaReleased"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsMediaReleased"]);
             IsFrequentCaller = rdr["IsFrequentCaller"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsFrequentCaller"]);
-           
-
         }
     }
 }

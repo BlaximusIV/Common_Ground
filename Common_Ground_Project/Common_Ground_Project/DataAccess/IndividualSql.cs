@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Common_Ground_Project.Models;
 using System.Data.SqlClient;
 
@@ -23,6 +20,15 @@ namespace Common_Ground_Project.DataAccess
                 return returnList[0];
             else
                 return new Individual();
+        }
+        public List<Individual> GetIndividualList()
+        {
+            List<Individual> returnList = new List<Individual>();
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetAll");
+            returnList = createConnection(cmd);
+
+            return returnList;
         }
         public List<Individual> GetIndividualList(Activity activity)
         {
@@ -58,7 +64,7 @@ namespace Common_Ground_Project.DataAccess
                         if (individual.IndividualID == 0)
                         {
                             cmd.CommandText = "Master.dbo.IndividualInsert";
-                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                            cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
@@ -92,9 +98,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    var test = e.Message;
                 }
                 finally
                 {

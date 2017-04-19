@@ -19,7 +19,6 @@ namespace Common_Ground_Project.Forms
         public CommonGroundsForm()
         {
             InitializeComponent();
-
             Initialize();
         }
 
@@ -29,6 +28,8 @@ namespace Common_Ground_Project.Forms
 
             // Setup Controls with the Controller
             individualView1.Initialize(Controller);
+            activityView1.Initialize(Controller);
+            vehicalView1.Initialize(Controller);
         }
     }
 }

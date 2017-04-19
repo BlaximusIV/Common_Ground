@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Common_Ground_Project.DataAccess;
 using Common_Ground_Project.Models;
 
@@ -11,81 +7,91 @@ namespace Common_Ground_Project.Controllers
     public class CommonController
     {
         // private Repository references.
+        private ActivitySql ActivityData;
+        private ActivityNoteSql ActivityNoteData;
+        private EmergencyContactSql EmergencyContactData;
         private IndividualSql IndividualData;
+        private IndividualNoteSql IndividualNoteData;
+        private IndividualTypeSql IndividualTypeData;
+        private VehicleSql VehicleData;
 
         public CommonController()
         {
             // Initialize repositories
+            ActivityData = new ActivitySql();
+            ActivityNoteData = new ActivityNoteSql();
+            EmergencyContactData = new EmergencyContactSql();
             IndividualData = new IndividualSql();
-
-            
+            IndividualNoteData = new IndividualNoteSql();
+            IndividualTypeData = new IndividualTypeSql();
+            VehicleData = new VehicleSql();
         }
 
 
-        #region Activity 
+        #region Activity - Done.
         public Activity GetActivity(Activity activity)
         {
-            return activity;
+            return ActivityData.GetActivity(activity);
         }
         public List<Activity> GetActivityList(Individual individual)
         {
-            return new List<Activity>();
+            return ActivityData.GetActivityList(individual);
         }
 
         public void SaveActivity(Activity activity)
         {
-
+            ActivityData.SaveActivity(activity);
         }
         public void DeleteActivity(Activity activity)
         {
-
+            ActivityData.DeleteActivity(activity);
         }
         #endregion
 
-        #region ActivityNote
+        #region ActivityNote - Done.
         public ActivityNote GetActivityNote(ActivityNote note)
         {
-            return note;
+            return ActivityNoteData.GetActivityNote(note);
         }
         public List<ActivityNote> GetActivityNoteList(Activity activity)
         {
-            return new List<ActivityNote>();
+            return ActivityNoteData.GetActivityNoteList(activity);
         }
 
         public void InsertActivityNote(ActivityNote note)
         {
-
+            ActivityNoteData.SaveActivityNote(note);
         }
         #endregion
 
-        #region EmergencyContact
+        #region EmergencyContact - Done.
         public EmergencyContact GetEmergencyContact(EmergencyContact contact)
         {
-            return contact;
+            return EmergencyContactData.GetEmergencyContact(contact);
         }
         public List<EmergencyContact> GetEmergencyContactList(Individual individual)
         {
-            return new List<EmergencyContact>();
+            return EmergencyContactData.GetEmergencyContactList(individual);
         }
 
-        public void InsertEmergencyContact(EmergencyContact contact)
+        public void SaveEmergencyContact(EmergencyContact contact)
         {
-
-        }
-        public void UpdateEmergencyContact(EmergencyContact contact)
-        {
-
+            EmergencyContactData.SaveEmergencyContact(contact);
         }
         public void DeleteEmergencyContact(EmergencyContact contact)
         {
-
+            EmergencyContactData.DeleteEmergencyContact(contact);
         }
         #endregion
 
-        #region Individual
+        #region Individual - Done.
         public Individual GetIndividual(Individual individual)
         {
             return IndividualData.GetIndividual(individual);
+        }
+        public List<Individual> GetIndividualList()
+        {
+            return IndividualData.GetIndividualList();
         }
         public List<Individual> GetIndividualList(IndividualType type)
         {
@@ -106,50 +112,50 @@ namespace Common_Ground_Project.Controllers
         }
         #endregion
 
-        #region IndividualNote
+        #region IndividualNote - Done.
         public IndividualNote GetIndividualNote(IndividualNote note)
         {
-            return note;
+            return IndividualNoteData.GetIndividualNote(note);
         }
         public List<IndividualNote> GetIndividualNoteList(Individual individual)
         {
-            return new List<IndividualNote>();
+            return IndividualNoteData.GetIndividualNoteList(individual);
         }
 
-        public void InsertIndividualNote(IndividualNote note)
+        public void SaveIndividualNote(IndividualNote note)
         {
-            
+            IndividualNoteData.SaveIndividualNote(note);
         }
         #endregion
 
-        #region IndividualType
+        #region IndividualType - Done.
         public IndividualType GetIndividualType(IndividualType type)
         {
-            return type;
+            return IndividualTypeData.GetIndividualType(type);
         }
         public List<IndividualType> GetIndividualTypeList()
         {
-            return new List<IndividualType>();
+            return IndividualTypeData.GetIndividualTypeList();
         }
         #endregion
 
         #region Vehicle
         public Vehicle GetVehicle(Vehicle vehicle)
         {
-            return vehicle;
+            return VehicleData.GetVehicle(vehicle);
+        }
+        public List<Vehicle> GetVehicleList()
+        {
+            return VehicleData.GetVehicleList();
         }
         public List<Vehicle> GetVehicleList(Activity activity)
         {
-            return new List<Vehicle>();
+            return VehicleData.GetVehicleList(activity);
         }
 
-        public void InsertVehicle(Vehicle vehicle)
+        public void SaveVehicle(Vehicle vehicle)
         {
-
-        }
-        public void UpdateVehicle(Vehicle vehicle)
-        {
-
+            VehicleData.SaveVehicle(vehicle);
         }
         #endregion
 
