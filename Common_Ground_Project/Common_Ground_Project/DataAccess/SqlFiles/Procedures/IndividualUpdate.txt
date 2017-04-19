@@ -29,7 +29,7 @@ AS
 		FirstName = @FirstName, 
 		PhoneNumber = @PhoneNumber, 
 		Email = @Email, 
-		StreetAddress = @StreetAddrss, 
+		StreetAddress = @StreetAddress, 
 		City = @City, 
 		State = @State, 
 		ZipCode = @ZipCode, 

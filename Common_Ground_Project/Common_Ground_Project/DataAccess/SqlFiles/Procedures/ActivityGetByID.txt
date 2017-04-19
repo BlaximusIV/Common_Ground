@@ -1,0 +1,28 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.ActivityGetByID
+(
+	@ActivityID INT
+)
+AS 
+	SET NOCOUNT ON;
+
+	SELECT
+		ActivityID, 
+		Title,
+		TripLeaderID, 
+		Description, 
+		Location, 
+		StartDate, 
+		EndDate, 
+		PickUpTime, 
+		DropOffTime, 
+		StaffArrivalTime, 
+		Cost
+	FROM
+		Master.dbo.Activity
+	WHERE
+		ActivityID = @ActivityID
+
+GO	

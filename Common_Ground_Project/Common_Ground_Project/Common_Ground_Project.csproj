@@ -52,7 +52,6 @@
       <DependentUpon>ActivitiesHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommonController.cs" />
-    <Compile Include="DataAccess\ActivitySql.cs" />
     <Compile Include="DataAccess\VolunteerSql.cs" />
     <Compile Include="DataAccess\StaffSql.cs" />
     <Compile Include="DataAccess\ParticipantSql.cs" />
@@ -176,9 +175,23 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityDeleteByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByIndividual.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByActivity.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityVehicleInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityVehicleDeleteByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactDelete.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactGetByIndividual.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualActivityDeleteByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualActivityInsert.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualDeleteByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetByActivity.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetByID.txt" />
@@ -186,7 +199,14 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualInsert.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByIndividual.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetAll.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByActivity.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Tables\TableCreation.txt" />
     <Content Include="DataAccess\SqlFiles\Triggers\TriggerCreation.txt" />
   </ItemGroup>
