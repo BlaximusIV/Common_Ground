@@ -24,6 +24,15 @@ namespace Common_Ground_Project.DataAccess
             else
                 return new Vehicle();
         }
+        public List<Vehicle> GetVehicleList()
+        {
+            List<Vehicle> returnList = new List<Vehicle>();
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetAll");
+            returnList = createConnection(cmd);
+
+            return returnList;
+        }
         public List<Vehicle> GetVehicleList(Activity activity)
         {
             List<Vehicle> returnList = new List<Vehicle>();

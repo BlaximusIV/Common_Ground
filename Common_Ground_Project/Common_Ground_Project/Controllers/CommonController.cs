@@ -144,6 +144,10 @@ namespace Common_Ground_Project.Controllers
         {
             return VehicleData.GetVehicle(vehicle);
         }
+        public List<Vehicle> GetVehicleList()
+        {
+            return VehicleData.GetVehicleList();
+        }
         public List<Vehicle> GetVehicleList(Activity activity)
         {
             return VehicleData.GetVehicleList(activity);
