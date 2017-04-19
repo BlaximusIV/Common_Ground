@@ -10,6 +10,31 @@ namespace Common_Ground_Project.DataAccess
 {
     public class IndividualSql
     {
+        public Individual GetIndividual(Individual individual)
+        {
+            List<Individual> returnList = new List<Individual>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByID");
+            returnList = createConnection(cmd, parameters);
+
+            if (returnList.Count > 0)
+                return returnList[0];
+            else
+                return new Individual();
+        }
+        public List<Individual> GetIndividualList(Activity activity)
+        {
+            List<Individual> returnList = new List<Individual>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByActivity");
+            returnList = createConnection(cmd, parameters);
+
+            return returnList;
+        }
         public List<Individual> GetIndividualList(IndividualType type)
         {
             List<Individual> returnList = new List<Individual>();
@@ -22,7 +47,7 @@ namespace Common_Ground_Project.DataAccess
             return returnList;
         }
 
-        public void SaveParticipant(Individual individual)
+        public void SaveIndividual(Individual individual)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -30,31 +55,41 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        //cmd.CommandText = "ParticipantAddEdit";
-                        //if (participant.ID == 0)
-                        //    cmd.Parameters.Add(new SqlParameter("@model", "Add"));
-                        //else
-                        //{
-                        //    cmd.Parameters.Add(new SqlParameter("@model", "Edit"));
-                        //    cmd.Parameters.AddWithValue("@personID", participant.ID);
-                        //}
+                        if (individual.IndividualID == 0)
+                        {
+                            cmd.CommandText = "Master.dbo.IndividualInsert";
+                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                        }
+                        else
+                        {
+                            cmd.CommandText = "Master.dbo.IndividualUpdate";
+                            cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
+                        }
 
-                        //cmd.Parameters.AddWithValue("@firstName", participant.FirstName);
-                        //cmd.Parameters.AddWithValue("@lastName", participant.LastName);
-                        //cmd.Parameters.AddWithValue("@phoneNumber", participant.PhoneNumber);
-                        //cmd.Parameters.AddWithValue("@email", participant.EmailAddress);
-                        //cmd.Parameters.AddWithValue("@emergencyContact", participant.EmergencyContact);
-                        //cmd.Parameters.AddWithValue("@streetAddress", participant.StreetAddress);
-                        //cmd.Parameters.AddWithValue("@City", participant.City);
-                        //cmd.Parameters.AddWithValue("@residentState", participant.State);
-                        //cmd.Parameters.AddWithValue("@zip", participant.ZipCode);
-                        //cmd.Parameters.AddWithValue("@instructions", participant.Note);
+                        cmd.Parameters.AddWithValue("@IndividualTypeID", individual.IndividualTypeID);
+                        cmd.Parameters.AddWithValue("@LastName", individual.LastName);
+                        cmd.Parameters.AddWithValue("@FirstName", individual.FirstName);
+                        cmd.Parameters.AddWithValue("@PhoneNumber", individual.PhoneNumber);
+                        cmd.Parameters.AddWithValue("@Email", individual.Email);
+                        cmd.Parameters.AddWithValue("@StreetAddress", individual.StreetAddress);
+                        cmd.Parameters.AddWithValue("@City", individual.City);
+                        cmd.Parameters.AddWithValue("@State", individual.State);
+                        cmd.Parameters.AddWithValue("@ZipCode", individual.ZipCode);
+                        cmd.Parameters.AddWithValue("@Birthday", individual.BirthDay);
+                        cmd.Parameters.AddWithValue("@IsFrequentCaller", individual.IsFrequentCaller);
+                        cmd.Parameters.AddWithValue("@IsWaiverSigned", individual.IsWaiverSigned);
+                        cmd.Parameters.AddWithValue("@IsMediaReleased", individual.IsMediaReleased);
 
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
 
-                        //cmd.Connection = connection;
-                        //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        //cmd.Connection.Open();
-                        //cmd.ExecuteScalar();
+                        if (individual.IndividualID == 0) { 
+                            int returnID = Convert.ToInt32(cmd.Parameters["@NewID"].Value);
+                            if (returnID > 0)
+                                individual.IndividualID = returnID;
+                        }
                     }
                 }
                 catch (Exception)
@@ -68,23 +103,23 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteParticipant(Individual individual)
+        public void DeleteIndividual(Individual individual)
         {
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
                 {
-                    //using (SqlCommand cmd = new SqlCommand())
-                    //{
-                    //    cmd.CommandText = "deleteParticipant";
-                        
-                    //    cmd.Parameters.AddWithValue("@personID", participant.ID);
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "Master.dbo.IndividualDelete";
 
-                    //    cmd.Connection = connection;
-                    //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    //    cmd.Connection.Open();
-                    //    cmd.ExecuteScalar();
-                    //}
+                        cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
+
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
+                    }
                 }
                 catch (Exception)
                 {
