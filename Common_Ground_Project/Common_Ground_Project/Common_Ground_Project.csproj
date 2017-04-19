@@ -203,7 +203,10 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByActivity.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Tables\TableCreation.txt" />
     <Content Include="DataAccess\SqlFiles\Triggers\TriggerCreation.txt" />
   </ItemGroup>

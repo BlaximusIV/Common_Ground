@@ -17,10 +17,10 @@ AS
 	)
 	VALUES
 	(
-		@ActivityID INT, 
-		@Note VARCHAR(MAX)
+		@ActivityID, 
+		@Note
 	)
 
-	@NewID = SCOPE_IDENTITY()
+	SET @NewID = SCOPE_IDENTITY()
 
 GO	

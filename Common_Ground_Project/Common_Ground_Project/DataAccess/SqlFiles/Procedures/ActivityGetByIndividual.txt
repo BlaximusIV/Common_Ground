@@ -1,7 +1,7 @@
 ﻿USE MASTER
 GO
 
-CREATE PROCEDURE dbo.ActivityGetByID
+CREATE PROCEDURE dbo.ActivityGetByIndividual
 (
 	@IndividualID INT
 )

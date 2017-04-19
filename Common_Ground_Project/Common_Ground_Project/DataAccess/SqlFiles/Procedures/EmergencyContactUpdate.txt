@@ -3,8 +3,8 @@ GO
 
 CREATE PROCEDURE dbo.EmergencyContactUpdate
 (
-	@EmergencyContactID INT
-	@ParticipantID INT, 
+	@EmergencyContactID INT,
+	@IndividualID INT, 
 	@Name VARCHAR(50), 
 	@Phone VARCHAR(50), 
 	@Email VARCHAR(50), 
@@ -15,7 +15,7 @@ AS
 
 	UPDATE Master.dbo.EmergencyContact
 	SET 
-		ParticipantID = @ParticipantID, 
+		IndividualID = @IndividualID, 
 		Name = @Name, 
 		Phone = @Phone, 
 		Email = @Email

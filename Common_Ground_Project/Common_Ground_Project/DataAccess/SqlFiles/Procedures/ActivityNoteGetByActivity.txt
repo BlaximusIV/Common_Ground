@@ -1,7 +1,7 @@
 ﻿USE MASTER
 GO
 
-CREATE PROCEDURE dbo.ActivityNoteGetByID
+CREATE PROCEDURE dbo.ActivityNoteGetByActivity
 (
 	@ActivityID INT
 )

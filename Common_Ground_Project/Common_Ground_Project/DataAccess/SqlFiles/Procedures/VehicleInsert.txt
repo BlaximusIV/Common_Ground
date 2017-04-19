@@ -24,6 +24,6 @@ AS
 		@VIN
 	)
 
-	@NewID = SCOPE_IDENTITY()
+	SET @NewID = SCOPE_IDENTITY()
 
 GO	

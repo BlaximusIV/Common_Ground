@@ -10,7 +10,7 @@ AS
 
 	SELECT
 		EmergencyContactID, 
-		ParticipantID, 
+		IndividualID, 
 		Name, 
 		Phone, 
 		Email

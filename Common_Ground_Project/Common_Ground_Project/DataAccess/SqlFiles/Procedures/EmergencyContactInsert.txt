@@ -3,7 +3,7 @@ GO
 
 CREATE PROCEDURE dbo.EmergencyContactInsert
 (
-	@ParticipantID INT, 
+	@IndividualID INT, 
 	@Name VARCHAR(50), 
 	@Phone VARCHAR(50), 
 	@Email VARCHAR(50), 
@@ -14,19 +14,19 @@ AS
 
 	INSERT INTO Master.dbo.EmergencyContact
 	(
-		ParticipantID, 
+		IndividualID, 
 		Name, 
 		Phone, 
 		Email
 	)
 	VALUES 
 	(
-		@ParticipantID, 
+		@IndividualID, 
 		@Name, 
 		@Phone, 
 		@Email
 	)
 
-	@NewID = SCOPE_IDENTITY()
+	SET @NewID = SCOPE_IDENTITY()
 
 GO	

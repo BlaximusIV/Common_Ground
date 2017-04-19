@@ -22,8 +22,8 @@ AS
 	SET 
 		Title = @Title, 
 		TripLeaderID = @TripLeaderID, 
-		Description = @Description, 
-		Location = @LocationID, 
+		[Description] = @Description, 
+		[Location] = @Location, 
 		StartDate = @StartDate, 
 		EndDate = @EndDate, 
 		PickUpTime = @PickUpTime, 
