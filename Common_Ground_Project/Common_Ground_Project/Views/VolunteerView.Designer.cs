@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.voluteerDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.voluteerDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.p_notes = new System.Windows.Forms.RichTextBox();
             this.p_emergencyContact = new System.Windows.Forms.RichTextBox();
@@ -108,10 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // voluteerDataSource
-            // 
-            this.voluteerDataSource.DataSource = typeof(Common_Ground_Project.Models.Volunteer);
-            // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
@@ -123,6 +119,10 @@
             this.checkBox7.TabIndex = 66;
             this.checkBox7.Text = "Media Release";
             this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // voluteerDataSource
+            // 
+            this.voluteerDataSource.DataSource = typeof(Common_Ground_Project.Models.Volunteer);
             // 
             // checkBox2
             // 
@@ -339,7 +339,6 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -350,11 +349,12 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.btn_clearVolunteer);
             this.splitContainer1.Panel2.Controls.Add(this.btn_deleteVolunteer);
             this.splitContainer1.Panel2.Controls.Add(this.btn_addVolunteer);
             this.splitContainer1.Size = new System.Drawing.Size(1141, 718);
-            this.splitContainer1.SplitterDistance = 610;
+            this.splitContainer1.SplitterDistance = 678;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -371,8 +371,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1141, 610);
-            this.splitContainer2.SplitterDistance = 508;
+            this.splitContainer2.Size = new System.Drawing.Size(1141, 678);
+            this.splitContainer2.SplitterDistance = 302;
             this.splitContainer2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -527,7 +527,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dvgVolunteer);
-            this.splitContainer3.Size = new System.Drawing.Size(629, 610);
+            this.splitContainer3.Size = new System.Drawing.Size(835, 678);
             this.splitContainer3.SplitterDistance = 40;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -539,7 +539,7 @@
             this.btn_searchVolunteer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.btn_searchVolunteer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.btn_searchVolunteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_searchVolunteer.Location = new System.Drawing.Point(551, 3);
+            this.btn_searchVolunteer.Location = new System.Drawing.Point(757, 3);
             this.btn_searchVolunteer.Name = "btn_searchVolunteer";
             this.btn_searchVolunteer.Size = new System.Drawing.Size(75, 23);
             this.btn_searchVolunteer.TabIndex = 1;
@@ -552,7 +552,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.v_search.Location = new System.Drawing.Point(3, 3);
             this.v_search.Name = "v_search";
-            this.v_search.Size = new System.Drawing.Size(519, 20);
+            this.v_search.Size = new System.Drawing.Size(725, 20);
             this.v_search.TabIndex = 0;
             // 
             // dvgVolunteer
@@ -587,7 +587,7 @@
             this.dvgVolunteer.ReadOnly = true;
             this.dvgVolunteer.RowHeadersVisible = false;
             this.dvgVolunteer.RowTemplate.Height = 33;
-            this.dvgVolunteer.Size = new System.Drawing.Size(629, 566);
+            this.dvgVolunteer.Size = new System.Drawing.Size(835, 634);
             this.dvgVolunteer.TabIndex = 44;
             // 
             // iDDataGridViewTextBoxColumn
@@ -710,11 +710,13 @@
             // btn_clearVolunteer
             // 
             this.btn_clearVolunteer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_clearVolunteer.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_clearVolunteer.Location = new System.Drawing.Point(901, 6);
             this.btn_clearVolunteer.Name = "btn_clearVolunteer";
             this.btn_clearVolunteer.Size = new System.Drawing.Size(75, 23);
             this.btn_clearVolunteer.TabIndex = 2;
             this.btn_clearVolunteer.Text = "&Clear";
+            this.btn_clearVolunteer.UseVisualStyleBackColor = false;
             // 
             // btn_deleteVolunteer
             // 

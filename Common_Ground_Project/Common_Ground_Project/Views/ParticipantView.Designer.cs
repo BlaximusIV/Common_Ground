@@ -35,8 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.participantDataSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.p_notes = new System.Windows.Forms.RichTextBox();
@@ -84,10 +88,6 @@
             this.btn_ClearParticipant = new System.Windows.Forms.Button();
             this.btn_deleteParticipant = new System.Windows.Forms.Button();
             this.btn_Addparticipant = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -122,6 +122,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.btn_ClearParticipant);
             this.splitContainer1.Panel2.Controls.Add(this.btn_deleteParticipant);
             this.splitContainer1.Panel2.Controls.Add(this.btn_Addparticipant);
@@ -212,6 +213,52 @@
             this.panel2.Size = new System.Drawing.Size(291, 529);
             this.panel2.TabIndex = 1;
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyEmail", true));
+            this.richTextBox2.Location = new System.Drawing.Point(108, 257);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox2.Multiline = false;
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox2.TabIndex = 70;
+            this.richTextBox2.Text = "";
+            // 
+            // participantDataSource
+            // 
+            this.participantDataSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 260);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Emergency Email";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyPhone", true));
+            this.richTextBox1.Location = new System.Drawing.Point(108, 234);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(116, 19);
+            this.richTextBox1.TabIndex = 68;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 237);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Emergency Phone";
+            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -223,10 +270,6 @@
             this.checkBox3.TabIndex = 67;
             this.checkBox3.Text = "Frequent Caller";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // participantDataSource
-            // 
-            this.participantDataSource.DataSource = typeof(Common_Ground_Project.Models.Participant);
             // 
             // checkBox7
             // 
@@ -714,48 +757,6 @@
             this.btn_Addparticipant.Text = "&Add";
             this.btn_Addparticipant.UseVisualStyleBackColor = false;
             this.btn_Addparticipant.Click += new System.EventHandler(this.btn_Addparticipant_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyPhone", true));
-            this.richTextBox1.Location = new System.Drawing.Point(108, 234);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(116, 19);
-            this.richTextBox1.TabIndex = 68;
-            this.richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 237);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Emergency Phone";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.participantDataSource, "EmergencyEmail", true));
-            this.richTextBox2.Location = new System.Drawing.Point(108, 257);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox2.Multiline = false;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(116, 19);
-            this.richTextBox2.TabIndex = 70;
-            this.richTextBox2.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 260);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Emergency Email";
             // 
             // ParticipantView
             // 
