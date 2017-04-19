@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Common_Ground_Project.Models
 {
-    class Vehicle
+    public class Vehicle
     {
         public int VehicleID { get; set; }
         public string Name { get; set; }
