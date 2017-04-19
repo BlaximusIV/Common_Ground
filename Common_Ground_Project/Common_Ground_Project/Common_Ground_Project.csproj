@@ -52,6 +52,7 @@
       <DependentUpon>ActivitiesHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="DataAccess\ActivitySql.cs" />
     <Compile Include="DataAccess\VolunteerSql.cs" />
     <Compile Include="DataAccess\StaffSql.cs" />
     <Compile Include="DataAccess\ParticipantSql.cs" />
@@ -186,10 +187,9 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByIndividual.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Tables\TableCreation.txt" />
+    <Content Include="DataAccess\SqlFiles\Triggers\TriggerCreation.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataAccess\SqlFiles\Tables\" />
-    <Folder Include="DataAccess\SqlFiles\Triggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
