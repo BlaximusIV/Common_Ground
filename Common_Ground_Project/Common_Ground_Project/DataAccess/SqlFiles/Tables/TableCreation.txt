@@ -21,7 +21,7 @@ CREATE TABLE IndividualActivity(
 
 CREATE TABLE EmergencyContact(
 	EmergencyContactID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	ParticipantID INT NOT NULL,
+	IndividualID INT NOT NULL,
 	[Name] VARCHAR(50) NOT NULL,
 	Phone VARCHAR(15) NOT NULL,
 	Email VARCHAR(50) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IndividualType(
 CREATE TABLE Activity(
 	ActivityID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Title VARCHAR(50) NOT NULL,
-	TripLeader VARCHAR(50) NOT NULL,
+	TripLeader INT NOT NULL,
 	[Description] VARCHAR(250) NOT NULL,
 	[Location] VARCHAR(50),
 	StartDate DATETIME NOT NULL,

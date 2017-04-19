@@ -10,7 +10,7 @@ AS
 
 	SELECT
 		IndividualNoteID, 
-		ParticipantID, 
+		IndividualID, 
 		Note, 
 		DateTime
 	FROM

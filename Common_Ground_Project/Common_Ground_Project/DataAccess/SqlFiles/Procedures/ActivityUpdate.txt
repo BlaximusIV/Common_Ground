@@ -1,0 +1,36 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.ActivityUpdate
+(
+	@ActivityID INT,
+	@Title VARCHAR(50), 
+	@TripLeaderID INT, 
+	@Description VARCHAR(250), 
+	@Location VARCHAR(50), 
+	@StartDate DATETIME, 
+	@EndDate DATETIME, 
+	@PickUpTime TIME, 
+	@DropOffTime TIME, 
+	@StaffArrivalTime TIME, 
+	@Cost DECIMAL
+)
+AS 
+	SET NOCOUNT ON;
+
+	UPDATE Master.dbo.Activity
+	SET 
+		Title = @Title, 
+		TripLeaderID = @TripLeaderID, 
+		[Description] = @Description, 
+		[Location] = @Location, 
+		StartDate = @StartDate, 
+		EndDate = @EndDate, 
+		PickUpTime = @PickUpTime, 
+		DropOffTime = @DropOffTime, 
+		StaffArrivalTime = @StaffArrivalTime, 
+		Cost = @Cost
+	WHERE
+		ActivityID = @ActivityID
+
+GO	
