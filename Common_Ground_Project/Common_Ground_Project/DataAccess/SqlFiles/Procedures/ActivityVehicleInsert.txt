@@ -1,0 +1,23 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.ActivityVehicleInsert
+(
+	@ActivityID INT, 
+	@VehicleID INT
+)
+AS 
+	SET NOCOUNT ON;
+
+	INSERT INTO Master.dbo.ActivityVehicle
+	(
+		ActivityID, 
+		VehicleID
+	)
+	VALUES
+	(
+		@ActivityID, 
+		@VehicleID
+	)
+
+GO	
