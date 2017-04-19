@@ -1,0 +1,22 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.EmergencyContactGetByID
+(
+	@IndividualID INT
+)
+AS 
+	SET NOCOUNT ON;
+
+	SELECT
+		EmergencyContactID, 
+		ParticipantID, 
+		Name, 
+		Phone, 
+		Email
+	FROM
+		Master.dbo.EmergencyContact
+	WHERE
+		IndividualID = @IndividualID
+
+GO	

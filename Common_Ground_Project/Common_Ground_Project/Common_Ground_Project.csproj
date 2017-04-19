@@ -174,6 +174,22 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactGetByIndividual.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\EmergencyContactInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualDeleteByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetByActivity.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetByType.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteGetByIndividual.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\SqlFiles\Tables\" />
+    <Folder Include="DataAccess\SqlFiles\Triggers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

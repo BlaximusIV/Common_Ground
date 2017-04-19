@@ -72,7 +72,6 @@
             this.a_search = new System.Windows.Forms.TextBox();
             this.dvg_activityParticipants = new System.Windows.Forms.DataGridView();
             this.dvg_activityVolunteers = new System.Windows.Forms.DataGridView();
-            this.dvg_activityStaff = new System.Windows.Forms.DataGridView();
             this.dvg_activities = new System.Windows.Forms.DataGridView();
             this.btn_ClearActivity = new System.Windows.Forms.Button();
             this.btn_deleteActivity = new System.Windows.Forms.Button();
@@ -80,6 +79,10 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.dvg_activityStaff = new System.Windows.Forms.DataGridView();
+            this.staffComboBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -97,7 +100,6 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activityParticipants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activityVolunteers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg_activityStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -111,6 +113,11 @@
             this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvg_activityStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -617,19 +624,6 @@
             this.dvg_activityVolunteers.Size = new System.Drawing.Size(307, 353);
             this.dvg_activityVolunteers.TabIndex = 0;
             // 
-            // dvg_activityStaff
-            // 
-            this.dvg_activityStaff.AllowUserToAddRows = false;
-            this.dvg_activityStaff.AllowUserToDeleteRows = false;
-            this.dvg_activityStaff.AllowUserToOrderColumns = true;
-            this.dvg_activityStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvg_activityStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvg_activityStaff.Location = new System.Drawing.Point(0, 0);
-            this.dvg_activityStaff.Name = "dvg_activityStaff";
-            this.dvg_activityStaff.ReadOnly = true;
-            this.dvg_activityStaff.Size = new System.Drawing.Size(290, 353);
-            this.dvg_activityStaff.TabIndex = 0;
-            // 
             // dvg_activities
             // 
             this.dvg_activities.AllowUserToAddRows = false;
@@ -710,7 +704,7 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.dvg_activityStaff);
+            this.splitContainer5.Panel1.Controls.Add(this.splitContainer7);
             // 
             // splitContainer5.Panel2
             // 
@@ -735,6 +729,64 @@
             this.splitContainer6.Size = new System.Drawing.Size(578, 353);
             this.splitContainer6.SplitterDistance = 307;
             this.splitContainer6.TabIndex = 0;
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.dvg_activityStaff);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.button1);
+            this.splitContainer7.Panel2.Controls.Add(this.staffComboBox);
+            this.splitContainer7.Size = new System.Drawing.Size(290, 353);
+            this.splitContainer7.SplitterDistance = 316;
+            this.splitContainer7.TabIndex = 0;
+            // 
+            // dvg_activityStaff
+            // 
+            this.dvg_activityStaff.AllowUserToAddRows = false;
+            this.dvg_activityStaff.AllowUserToDeleteRows = false;
+            this.dvg_activityStaff.AllowUserToOrderColumns = true;
+            this.dvg_activityStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvg_activityStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvg_activityStaff.Location = new System.Drawing.Point(0, 0);
+            this.dvg_activityStaff.Name = "dvg_activityStaff";
+            this.dvg_activityStaff.ReadOnly = true;
+            this.dvg_activityStaff.Size = new System.Drawing.Size(290, 316);
+            this.dvg_activityStaff.TabIndex = 1;
+            // 
+            // staffComboBox
+            // 
+            this.staffComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.staffComboBox.FormattingEnabled = true;
+            this.staffComboBox.Location = new System.Drawing.Point(4, 4);
+            this.staffComboBox.Name = "staffComboBox";
+            this.staffComboBox.Size = new System.Drawing.Size(202, 21);
+            this.staffComboBox.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.PaleGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(212, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "&Add";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // ActivityView
             // 
@@ -763,7 +815,6 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activityParticipants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activityVolunteers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg_activityStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_activities)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -777,6 +828,11 @@
             this.splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvg_activityStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -823,7 +879,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dvg_activityParticipants;
         private System.Windows.Forms.DataGridView dvg_activityVolunteers;
-        private System.Windows.Forms.DataGridView dvg_activityStaff;
         private System.Windows.Forms.DataGridView dvg_activities;
         private System.Windows.Forms.CheckBox a_vehicle9;
         private System.Windows.Forms.CheckBox a_vehicle8;
@@ -835,5 +890,9 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.DataGridView dvg_activityStaff;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox staffComboBox;
     }
 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common_Ground_Project
 {
-    class LoginCredentials
+    public class LoginCredentials
     {
         static private string password = "testing123";
         static public string Password { get { return LoginCredentials.password; } }
+        public static string ConnectionString { get { return "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; } }
 
         static private bool isAuthenticated = false;
         static public bool IsAuthenticated
