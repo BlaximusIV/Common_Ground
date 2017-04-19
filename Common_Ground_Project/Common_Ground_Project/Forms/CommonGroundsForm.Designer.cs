@@ -31,7 +31,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.individualTab = new System.Windows.Forms.TabPage();
             this.activityTab = new System.Windows.Forms.TabPage();
+            this.individualView1 = new Common_Ground_Project.Views.IndividualView();
             this.tabControl1.SuspendLayout();
+            this.individualTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -49,6 +51,7 @@
             // 
             // individualTab
             // 
+            this.individualTab.Controls.Add(this.individualView1);
             this.individualTab.Location = new System.Drawing.Point(23, 4);
             this.individualTab.Name = "individualTab";
             this.individualTab.Padding = new System.Windows.Forms.Padding(3);
@@ -67,6 +70,14 @@
             this.activityTab.Text = "Activity";
             this.activityTab.UseVisualStyleBackColor = true;
             // 
+            // individualView1
+            // 
+            this.individualView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.individualView1.Location = new System.Drawing.Point(3, 3);
+            this.individualView1.Name = "individualView1";
+            this.individualView1.Size = new System.Drawing.Size(831, 476);
+            this.individualView1.TabIndex = 0;
+            // 
             // CommonGroundsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +87,7 @@
             this.Name = "CommonGroundsForm";
             this.Text = "Common Grounds";
             this.tabControl1.ResumeLayout(false);
+            this.individualTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -85,5 +97,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage individualTab;
         private System.Windows.Forms.TabPage activityTab;
+        private Views.IndividualView individualView1;
     }
 }

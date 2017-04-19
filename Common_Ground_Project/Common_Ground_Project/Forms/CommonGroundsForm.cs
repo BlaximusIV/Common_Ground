@@ -28,7 +28,7 @@ namespace Common_Ground_Project.Forms
             Controller = new CommonController();
 
             // Setup Controls with the Controller
-            //IndividualView.Initialize(Controller);
+            individualView1.Initialize(Controller);
         }
     }
 }

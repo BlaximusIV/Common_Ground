@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\IndividualView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\IndividualView.Designer.cs">
+      <DependentUpon>IndividualView.cs</DependentUpon>
+    </Compile>
     <Compile Include="VolunteerHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,9 +123,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\IndividualView.resx">
+      <DependentUpon>IndividualView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VolunteerHelp.resx">
       <DependentUpon>VolunteerHelp.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Common_Ground_Project.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Participent.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Volunteer.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Staff.datasource" />
@@ -175,8 +185,6 @@
     <Content Include="DataAccess\SqlFiles\Tables\TableCreation.txt" />
     <Content Include="DataAccess\SqlFiles\Triggers\TriggerCreation.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
