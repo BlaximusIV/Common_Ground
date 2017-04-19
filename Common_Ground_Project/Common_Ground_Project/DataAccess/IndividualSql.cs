@@ -64,7 +64,7 @@ namespace Common_Ground_Project.DataAccess
                         if (individual.IndividualID == 0)
                         {
                             cmd.CommandText = "Master.dbo.IndividualInsert";
-                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                            cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
@@ -98,9 +98,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    var test = e.Message;
                 }
                 finally
                 {

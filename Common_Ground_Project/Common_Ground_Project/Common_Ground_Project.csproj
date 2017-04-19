@@ -52,7 +52,13 @@
       <DependentUpon>ActivitiesHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="DataAccess\ActivityNoteSql.cs" />
+    <Compile Include="DataAccess\ActivitySql.cs" />
+    <Compile Include="DataAccess\EmergencyContactSql.cs" />
+    <Compile Include="DataAccess\IndividualNoteSql.cs" />
     <Compile Include="DataAccess\IndividualSql.cs" />
+    <Compile Include="DataAccess\IndividualTypeSql.cs" />
+    <Compile Include="DataAccess\VehicleSql.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +93,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ActivityView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ActivityView.Designer.cs">
+      <DependentUpon>ActivityView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IndividualView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\IndividualView.Designer.cs">
       <DependentUpon>IndividualView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicalView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\VehicalView.Designer.cs">
+      <DependentUpon>VehicalView.cs</DependentUpon>
     </Compile>
     <Compile Include="VolunteerHelp.cs">
       <SubType>Form</SubType>
@@ -123,8 +141,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ActivityView.resx">
+      <DependentUpon>ActivityView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\IndividualView.resx">
       <DependentUpon>IndividualView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicalView.resx">
+      <DependentUpon>VehicalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VolunteerHelp.resx">
       <DependentUpon>VolunteerHelp.cs</DependentUpon>
