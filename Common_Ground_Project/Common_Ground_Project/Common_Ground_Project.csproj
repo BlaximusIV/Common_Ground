@@ -155,6 +155,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Participent.datasource" />
+    <None Include="Properties\DataSources\Common_Ground_Project.Models.Vehicle.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Volunteer.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Staff.datasource" />
     <None Include="Properties\Settings.settings">
@@ -204,6 +205,8 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleDeleteByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByActivity.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleInsert.txt" />

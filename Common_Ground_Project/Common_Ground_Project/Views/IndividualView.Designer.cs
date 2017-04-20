@@ -43,6 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IndividualDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -60,7 +61,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -80,6 +81,11 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.emergencyContactIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emergencyContactListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel15 = new System.Windows.Forms.Panel();
             this.AddEContactButton = new System.Windows.Forms.Button();
@@ -91,20 +97,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.individualNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
-            this.noteText = new System.Windows.Forms.RichTextBox();
-            this.AddNoteButton = new System.Windows.Forms.Button();
-            this.IndividualDataSource = new System.Windows.Forms.BindingSource(this.components);
-            this.emergencyContactIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualNoteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.noteText = new System.Windows.Forms.RichTextBox();
+            this.AddNoteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,6 +120,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IndividualDataSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -153,7 +154,6 @@
             this.splitContainer7.Panel1.SuspendLayout();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IndividualDataSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -331,6 +331,10 @@
             this.textBox1.Size = new System.Drawing.Size(218, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // IndividualDataSource
+            // 
+            this.IndividualDataSource.DataSource = typeof(Common_Ground_Project.Models.Individual);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -479,21 +483,73 @@
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.textBox7);
+            this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Location = new System.Drawing.Point(3, 199);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(330, 22);
             this.panel7.TabIndex = 6;
             // 
-            // textBox7
+            // comboBox1
             // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.IndividualDataSource, "State", true));
-            this.textBox7.Location = new System.Drawing.Point(101, 0);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(53, 20);
-            this.textBox7.TabIndex = 1;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.IndividualDataSource, "State", true));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.comboBox1.Location = new System.Drawing.Point(101, 1);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(88, 21);
+            this.comboBox1.TabIndex = 1;
             // 
             // label7
             // 
@@ -549,7 +605,6 @@
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(88, 20);
             this.maskedTextBox2.TabIndex = 2;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // label9
             // 
@@ -718,6 +773,43 @@
             this.dataGridView1.Size = new System.Drawing.Size(666, 110);
             this.dataGridView1.TabIndex = 0;
             // 
+            // emergencyContactIDDataGridViewTextBoxColumn
+            // 
+            this.emergencyContactIDDataGridViewTextBoxColumn.DataPropertyName = "EmergencyContactID";
+            this.emergencyContactIDDataGridViewTextBoxColumn.HeaderText = "EmergencyContactID";
+            this.emergencyContactIDDataGridViewTextBoxColumn.Name = "emergencyContactIDDataGridViewTextBoxColumn";
+            this.emergencyContactIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emergencyContactIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // emergencyContactListBindingSource
             // 
             this.emergencyContactListBindingSource.DataMember = "EmergencyContactList";
@@ -840,6 +932,36 @@
             this.dataGridView2.Size = new System.Drawing.Size(666, 251);
             this.dataGridView2.TabIndex = 0;
             // 
+            // individualNoteIDDataGridViewTextBoxColumn
+            // 
+            this.individualNoteIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualNoteID";
+            this.individualNoteIDDataGridViewTextBoxColumn.HeaderText = "IndividualNoteID";
+            this.individualNoteIDDataGridViewTextBoxColumn.Name = "individualNoteIDDataGridViewTextBoxColumn";
+            this.individualNoteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualNoteIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualIDDataGridViewTextBoxColumn1
+            // 
+            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
+            this.individualIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.individualIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.noteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // individualNoteListBindingSource
             // 
             this.individualNoteListBindingSource.DataMember = "IndividualNoteList";
@@ -884,77 +1006,6 @@
             this.AddNoteButton.UseVisualStyleBackColor = false;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
-            // IndividualDataSource
-            // 
-            this.IndividualDataSource.DataSource = typeof(Common_Ground_Project.Models.Individual);
-            // 
-            // emergencyContactIDDataGridViewTextBoxColumn
-            // 
-            this.emergencyContactIDDataGridViewTextBoxColumn.DataPropertyName = "EmergencyContactID";
-            this.emergencyContactIDDataGridViewTextBoxColumn.HeaderText = "EmergencyContactID";
-            this.emergencyContactIDDataGridViewTextBoxColumn.Name = "emergencyContactIDDataGridViewTextBoxColumn";
-            this.emergencyContactIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emergencyContactIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // individualIDDataGridViewTextBoxColumn
-            // 
-            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
-            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // individualNoteIDDataGridViewTextBoxColumn
-            // 
-            this.individualNoteIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualNoteID";
-            this.individualNoteIDDataGridViewTextBoxColumn.HeaderText = "IndividualNoteID";
-            this.individualNoteIDDataGridViewTextBoxColumn.Name = "individualNoteIDDataGridViewTextBoxColumn";
-            this.individualNoteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualNoteIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // individualIDDataGridViewTextBoxColumn1
-            // 
-            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
-            this.individualIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.individualIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            this.noteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // IndividualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -980,6 +1031,7 @@
             this.panel13.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IndividualDataSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1025,7 +1077,6 @@
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IndividualDataSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1055,7 +1106,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox8;
@@ -1108,5 +1158,6 @@
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.RichTextBox noteText;
         private System.Windows.Forms.Button AddNoteButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

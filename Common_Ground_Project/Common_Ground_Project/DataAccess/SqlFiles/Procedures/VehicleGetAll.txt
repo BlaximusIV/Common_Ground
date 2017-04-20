@@ -12,5 +12,7 @@ AS
 		VIN
 	FROM
 		Master.dbo.Vehicle
+	WHERE
+		IsInUse = 1
 
 GO	

@@ -9,7 +9,6 @@ namespace Common_Ground_Project.Views
     public partial class IndividualView : UserControl
     {
         private CommonController Controller;
-        private Individual currentIndividual;
 
         public IndividualView()
         {
