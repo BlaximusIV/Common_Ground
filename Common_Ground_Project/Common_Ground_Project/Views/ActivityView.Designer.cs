@@ -64,6 +64,7 @@
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
@@ -520,6 +521,14 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(347, 22);
             this.panel10.TabIndex = 10;
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Cost", true));
+            this.textBox4.Location = new System.Drawing.Point(101, 0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 1;
             // 
             // label11
             // 
