@@ -23,7 +23,10 @@ namespace Common_Ground_Project.Views
         public void Initialize(CommonController controller)
         {
             Controller = controller;
-        }
 
+        }
+        private void populateActivityTree() {
+
+        }
     }
 }

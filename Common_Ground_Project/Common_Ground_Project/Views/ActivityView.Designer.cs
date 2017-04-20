@@ -34,7 +34,7 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.ActivityByDateTree = new System.Windows.Forms.TreeView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -76,8 +76,8 @@
             this.FilterIndividualName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.treeView2 = new System.Windows.Forms.TreeView();
-            this.treeView3 = new System.Windows.Forms.TreeView();
+            this.IndividualSearchTree = new System.Windows.Forms.TreeView();
+            this.IndividualTree = new System.Windows.Forms.TreeView();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -90,7 +90,14 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ActivityDataSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.vehicleListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -146,6 +153,8 @@
             this.splitContainer10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -197,7 +206,7 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.treeView1);
+            this.splitContainer3.Panel2.Controls.Add(this.ActivityByDateTree);
             this.splitContainer3.Size = new System.Drawing.Size(353, 135);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
@@ -221,13 +230,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search By Activity Date";
             // 
-            // treeView1
+            // ActivityByDateTree
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(353, 106);
-            this.treeView1.TabIndex = 0;
+            this.ActivityByDateTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ActivityByDateTree.Location = new System.Drawing.Point(0, 0);
+            this.ActivityByDateTree.Name = "ActivityByDateTree";
+            this.ActivityByDateTree.Size = new System.Drawing.Size(353, 106);
+            this.ActivityByDateTree.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
@@ -455,7 +464,7 @@
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.Controls.Add(this.textBox4);
+            this.panel10.Controls.Add(this.maskedTextBox1);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Location = new System.Drawing.Point(3, 255);
             this.panel10.Name = "panel10";
@@ -601,7 +610,7 @@
             // 
             // splitContainer6.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.treeView3);
+            this.splitContainer6.Panel2.Controls.Add(this.IndividualTree);
             this.splitContainer6.Size = new System.Drawing.Size(363, 661);
             this.splitContainer6.SplitterDistance = 327;
             this.splitContainer6.TabIndex = 0;
@@ -622,7 +631,7 @@
             // 
             // splitContainer7.Panel2
             // 
-            this.splitContainer7.Panel2.Controls.Add(this.treeView2);
+            this.splitContainer7.Panel2.Controls.Add(this.IndividualSearchTree);
             this.splitContainer7.Size = new System.Drawing.Size(335, 330);
             this.splitContainer7.SplitterDistance = 70;
             this.splitContainer7.TabIndex = 0;
@@ -661,21 +670,21 @@
             this.label14.TabIndex = 4;
             this.label14.Text = "Find Name";
             // 
-            // treeView2
+            // IndividualSearchTree
             // 
-            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView2.Location = new System.Drawing.Point(0, 0);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(335, 256);
-            this.treeView2.TabIndex = 0;
+            this.IndividualSearchTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IndividualSearchTree.Location = new System.Drawing.Point(0, 0);
+            this.IndividualSearchTree.Name = "IndividualSearchTree";
+            this.IndividualSearchTree.Size = new System.Drawing.Size(335, 256);
+            this.IndividualSearchTree.TabIndex = 0;
             // 
-            // treeView3
+            // IndividualTree
             // 
-            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView3.Location = new System.Drawing.Point(0, 0);
-            this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(363, 330);
-            this.treeView3.TabIndex = 0;
+            this.IndividualTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IndividualTree.Location = new System.Drawing.Point(0, 0);
+            this.IndividualTree.Name = "IndividualTree";
+            this.IndividualTree.Size = new System.Drawing.Size(363, 330);
+            this.IndividualTree.TabIndex = 0;
             // 
             // splitContainer8
             // 
@@ -742,11 +751,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.vINDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.vehicleListBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(335, 239);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -807,10 +823,16 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.noteDataGridViewTextBoxColumn,
+            this.dateTimeDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.activityNoteListBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(363, 239);
             this.dataGridView2.TabIndex = 0;
             // 
@@ -818,13 +840,62 @@
             // 
             this.ActivityDataSource.DataSource = typeof(Common_Ground_Project.Models.Activity);
             // 
-            // textBox4
+            // maskedTextBox1
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Cost", true));
-            this.textBox4.Location = new System.Drawing.Point(101, 0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 1;
+            this.maskedTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Cost", true));
+            this.maskedTextBox1.Location = new System.Drawing.Point(101, 1);
+            this.maskedTextBox1.Mask = "$00000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 1;
+            // 
+            // vehicleListBindingSource
+            // 
+            this.vehicleListBindingSource.DataMember = "VehicleList";
+            this.vehicleListBindingSource.DataSource = this.ActivityDataSource;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vINDataGridViewTextBoxColumn
+            // 
+            this.vINDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.vINDataGridViewTextBoxColumn.DataPropertyName = "VIN";
+            this.vINDataGridViewTextBoxColumn.HeaderText = "VIN";
+            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
+            this.vINDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // activityNoteListBindingSource
+            // 
+            this.activityNoteListBindingSource.DataMember = "ActivityNoteList";
+            this.activityNoteListBindingSource.DataSource = this.ActivityDataSource;
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
             // 
             // ActivityView
             // 
@@ -901,6 +972,8 @@
             this.splitContainer10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -912,7 +985,7 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView ActivityByDateTree;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
@@ -960,14 +1033,21 @@
         private System.Windows.Forms.TextBox FilterIndividualName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TreeView treeView2;
-        private System.Windows.Forms.TreeView treeView3;
+        private System.Windows.Forms.TreeView IndividualSearchTree;
+        private System.Windows.Forms.TreeView IndividualTree;
         private System.Windows.Forms.SplitContainer splitContainer9;
         private System.Windows.Forms.SplitContainer splitContainer10;
         private System.Windows.Forms.BindingSource ActivityDataSource;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button AddNoteButton;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vINDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vehicleListBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource activityNoteListBindingSource;
     }
 }
