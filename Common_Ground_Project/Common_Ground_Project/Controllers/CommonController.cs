@@ -29,133 +29,133 @@ namespace Common_Ground_Project.Controllers
 
 
         #region Activity - Done.
-        public Activity GetActivity(Activity activity)
+        public Activity GetActivity(Activity activity, out string errorMessage)
         {
-            return ActivityData.GetActivity(activity);
+            return ActivityData.GetActivity(activity, out errorMessage);
         }
-        public List<Activity> GetActivityList(Individual individual)
+        public List<Activity> GetActivityList(Individual individual, out string errorMessage)
         {
-            return ActivityData.GetActivityList(individual);
+            return ActivityData.GetActivityList(individual, out errorMessage);
         }
 
-        public void SaveActivity(Activity activity)
+        public void SaveActivity(Activity activity, out string errorMessage)
         {
-            ActivityData.SaveActivity(activity);
+            ActivityData.SaveActivity(activity, out errorMessage);
         }
-        public void DeleteActivity(Activity activity)
+        public void DeleteActivity(Activity activity, out string errorMessage)
         {
-            ActivityData.DeleteActivity(activity);
+            ActivityData.DeleteActivity(activity, out errorMessage);
         }
         #endregion
 
         #region ActivityNote - Done.
-        public ActivityNote GetActivityNote(ActivityNote note)
+        public ActivityNote GetActivityNote(ActivityNote note, out string errorMessage)
         {
-            return ActivityNoteData.GetActivityNote(note);
+            return ActivityNoteData.GetActivityNote(note, out errorMessage);
         }
-        public List<ActivityNote> GetActivityNoteList(Activity activity)
+        public List<ActivityNote> GetActivityNoteList(Activity activity, out string errorMessage)
         {
-            return ActivityNoteData.GetActivityNoteList(activity);
+            return ActivityNoteData.GetActivityNoteList(activity, out errorMessage);
         }
 
-        public void InsertActivityNote(ActivityNote note)
+        public void InsertActivityNote(ActivityNote note, out string errorMessage)
         {
-            ActivityNoteData.SaveActivityNote(note);
+            ActivityNoteData.SaveActivityNote(note, out errorMessage);
         }
         #endregion
 
         #region EmergencyContact - Done.
-        public EmergencyContact GetEmergencyContact(EmergencyContact contact)
+        public EmergencyContact GetEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
-            return EmergencyContactData.GetEmergencyContact(contact);
+            return EmergencyContactData.GetEmergencyContact(contact, out errorMessage);
         }
-        public List<EmergencyContact> GetEmergencyContactList(Individual individual)
+        public List<EmergencyContact> GetEmergencyContactList(Individual individual, out string errorMessage)
         {
-            return EmergencyContactData.GetEmergencyContactList(individual);
+            return EmergencyContactData.GetEmergencyContactList(individual, out errorMessage);
         }
 
-        public void SaveEmergencyContact(EmergencyContact contact)
+        public void SaveEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
-            EmergencyContactData.SaveEmergencyContact(contact);
+            EmergencyContactData.SaveEmergencyContact(contact, out errorMessage);
         }
-        public void DeleteEmergencyContact(EmergencyContact contact)
+        public void DeleteEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
-            EmergencyContactData.DeleteEmergencyContact(contact);
+            EmergencyContactData.DeleteEmergencyContact(contact, out errorMessage);
         }
         #endregion
 
         #region Individual - Done.
-        public Individual GetIndividual(Individual individual)
+        public Individual GetIndividual(Individual individual, out string errorMessage)
         {
-            return IndividualData.GetIndividual(individual);
+            return IndividualData.GetIndividual(individual, out errorMessage);
         }
-        public List<Individual> GetIndividualList()
+        public List<Individual> GetIndividualList(out string errorMessage)
         {
-            return IndividualData.GetIndividualList();
+            return IndividualData.GetIndividualList(out errorMessage);
         }
-        public List<Individual> GetIndividualList(IndividualType type)
+        public List<Individual> GetIndividualList(IndividualType type, out string errorMessage)
         {
-            return IndividualData.GetIndividualList(type);
+            return IndividualData.GetIndividualList(type, out errorMessage);
         }
-        public List<Individual> GetIndividualList(Activity activity)
+        public List<Individual> GetIndividualList(Activity activity, out string errorMessage)
         {
-            return IndividualData.GetIndividualList(activity);
+            return IndividualData.GetIndividualList(activity, out errorMessage);
         }
 
-        public void SaveIndividual(Individual individual)
+        public void SaveIndividual(Individual individual, out string errorMessage)
         {
-            IndividualData.SaveIndividual(individual);
+            IndividualData.SaveIndividual(individual, out errorMessage);
         }
-        public void DeleteIndividual(Individual individual)
+        public void DeleteIndividual(Individual individual, out string errorMessage)
         {
-            IndividualData.DeleteIndividual(individual);
+            IndividualData.DeleteIndividual(individual, out errorMessage);
         }
         #endregion
 
         #region IndividualNote - Done.
-        public IndividualNote GetIndividualNote(IndividualNote note)
+        public IndividualNote GetIndividualNote(IndividualNote note, out string errorMessage)
         {
-            return IndividualNoteData.GetIndividualNote(note);
+            return IndividualNoteData.GetIndividualNote(note, out errorMessage);
         }
-        public List<IndividualNote> GetIndividualNoteList(Individual individual)
+        public List<IndividualNote> GetIndividualNoteList(Individual individual, out string errorMessage)
         {
-            return IndividualNoteData.GetIndividualNoteList(individual);
+            return IndividualNoteData.GetIndividualNoteList(individual, out errorMessage);
         }
 
-        public void SaveIndividualNote(IndividualNote note)
+        public void SaveIndividualNote(IndividualNote note, out string errorMessage)
         {
-            IndividualNoteData.SaveIndividualNote(note);
+            IndividualNoteData.SaveIndividualNote(note, out errorMessage);
         }
         #endregion
 
         #region IndividualType - Done.
-        public IndividualType GetIndividualType(IndividualType type)
+        public IndividualType GetIndividualType(IndividualType type, out string errorMessage)
         {
-            return IndividualTypeData.GetIndividualType(type);
+            return IndividualTypeData.GetIndividualType(type, out errorMessage);
         }
-        public List<IndividualType> GetIndividualTypeList()
+        public List<IndividualType> GetIndividualTypeList(out string errorMessage)
         {
-            return IndividualTypeData.GetIndividualTypeList();
+            return IndividualTypeData.GetIndividualTypeList(out errorMessage);
         }
         #endregion
 
         #region Vehicle
-        public Vehicle GetVehicle(Vehicle vehicle)
+        public Vehicle GetVehicle(Vehicle vehicle, out string errorMessage)
         {
-            return VehicleData.GetVehicle(vehicle);
+            return VehicleData.GetVehicle(vehicle, out errorMessage);
         }
-        public List<Vehicle> GetVehicleList()
+        public List<Vehicle> GetVehicleList(out string errorMessage)
         {
-            return VehicleData.GetVehicleList();
+            return VehicleData.GetVehicleList(out errorMessage);
         }
-        public List<Vehicle> GetVehicleList(Activity activity)
+        public List<Vehicle> GetVehicleList(Activity activity, out string errorMessage)
         {
-            return VehicleData.GetVehicleList(activity);
+            return VehicleData.GetVehicleList(activity, out errorMessage);
         }
 
-        public void SaveVehicle(Vehicle vehicle)
+        public void SaveVehicle(Vehicle vehicle, out string errorMessage)
         {
-            VehicleData.SaveVehicle(vehicle);
+            VehicleData.SaveVehicle(vehicle, out errorMessage);
         }
         #endregion
 

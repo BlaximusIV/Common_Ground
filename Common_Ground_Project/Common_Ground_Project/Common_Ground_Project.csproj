@@ -174,6 +174,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.txt" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityDeleteByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByIndividual.txt" />

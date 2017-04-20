@@ -10,34 +10,35 @@ namespace Common_Ground_Project.DataAccess
 {
     public class ActivitySql
     {
-        public Activity GetActivity(Activity activity)
+        public Activity GetActivity(Activity activity, out string errorMessage)
         {
             List<Activity> returnList = new List<Activity>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByID");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
                 return new Activity();
         }
-        public List<Activity> GetActivityList(Individual individual)
+        public List<Activity> GetActivityList(Individual individual, out string errorMessage)
         {
             List<Activity> returnList = new List<Activity>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByIndividual");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
         }
 
-        public void SaveActivity(Activity activity)
+        public void SaveActivity(Activity activity, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -47,7 +48,7 @@ namespace Common_Ground_Project.DataAccess
                         if (activity.ActivityID == 0)
                         {
                             cmd.CommandText = "Master.dbo.ActivityInsert";
-                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                            cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
@@ -79,9 +80,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error occured when saving: " + e.Message;
                 }
                 finally
                 {
@@ -90,8 +91,9 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteActivity(Activity activity)
+        public void DeleteActivity(Activity activity, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -108,9 +110,9 @@ namespace Common_Ground_Project.DataAccess
                         cmd.ExecuteScalar();
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Activity Connection Error: " + e.Message;
                 }
                 finally
                 {
@@ -121,8 +123,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Activity> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<Activity> createConnection(SqlCommand cmd, out string errorMessage, List<SqlParameter> parameters = null)
         {
+            errorMessage = String.Empty;
             List<Activity> returnList = new List<Activity>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -145,9 +148,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Activity Connection Error: " + e.Message;
                 }
                 finally
                 {

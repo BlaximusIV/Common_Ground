@@ -75,7 +75,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.UpdateIndividualButton = new System.Windows.Forms.Button();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.AddIndividualButton = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -84,17 +83,17 @@
             this.emergencyContactListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel15 = new System.Windows.Forms.Panel();
             this.AddEContactButton = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.ecEmailText = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.ecPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ecNameText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.individualNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.noteText = new System.Windows.Forms.RichTextBox();
             this.AddNoteButton = new System.Windows.Forms.Button();
             this.IndividualDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.emergencyContactIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -624,7 +623,6 @@
             // panel14
             // 
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.Controls.Add(this.UpdateIndividualButton);
             this.panel14.Controls.Add(this.DeleteIndividualButton);
             this.panel14.Controls.Add(this.AddIndividualButton);
             this.panel14.Location = new System.Drawing.Point(3, 314);
@@ -632,27 +630,15 @@
             this.panel14.Size = new System.Drawing.Size(339, 46);
             this.panel14.TabIndex = 15;
             // 
-            // UpdateIndividualButton
-            // 
-            this.UpdateIndividualButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.UpdateIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.UpdateIndividualButton.Location = new System.Drawing.Point(112, 4);
-            this.UpdateIndividualButton.Name = "UpdateIndividualButton";
-            this.UpdateIndividualButton.Size = new System.Drawing.Size(106, 39);
-            this.UpdateIndividualButton.TabIndex = 2;
-            this.UpdateIndividualButton.Text = "Update";
-            this.UpdateIndividualButton.UseVisualStyleBackColor = false;
-            this.UpdateIndividualButton.Click += new System.EventHandler(this.UpdateIndividualButton_Click);
-            // 
             // DeleteIndividualButton
             // 
             this.DeleteIndividualButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.DeleteIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DeleteIndividualButton.Location = new System.Drawing.Point(6, 4);
+            this.DeleteIndividualButton.Location = new System.Drawing.Point(118, 4);
             this.DeleteIndividualButton.Name = "DeleteIndividualButton";
             this.DeleteIndividualButton.Size = new System.Drawing.Size(100, 39);
             this.DeleteIndividualButton.TabIndex = 1;
-            this.DeleteIndividualButton.Text = "Delete";
+            this.DeleteIndividualButton.Text = "&Delete";
             this.DeleteIndividualButton.UseVisualStyleBackColor = false;
             this.DeleteIndividualButton.Click += new System.EventHandler(this.DeleteIndividualButton_Click);
             // 
@@ -664,7 +650,7 @@
             this.AddIndividualButton.Name = "AddIndividualButton";
             this.AddIndividualButton.Size = new System.Drawing.Size(106, 39);
             this.AddIndividualButton.TabIndex = 0;
-            this.AddIndividualButton.Text = "Add";
+            this.AddIndividualButton.Text = "&Save";
             this.AddIndividualButton.UseVisualStyleBackColor = false;
             this.AddIndividualButton.Click += new System.EventHandler(this.AddIndividualButton_Click);
             // 
@@ -684,7 +670,7 @@
             this.splitContainer3.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
             this.splitContainer3.Size = new System.Drawing.Size(666, 516);
-            this.splitContainer3.SplitterDistance = 119;
+            this.splitContainer3.SplitterDistance = 147;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer4
@@ -704,8 +690,8 @@
             // 
             this.splitContainer4.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer4.Panel2.Controls.Add(this.panel15);
-            this.splitContainer4.Size = new System.Drawing.Size(666, 119);
-            this.splitContainer4.SplitterDistance = 82;
+            this.splitContainer4.Size = new System.Drawing.Size(666, 147);
+            this.splitContainer4.SplitterDistance = 110;
             this.splitContainer4.TabIndex = 0;
             // 
             // dataGridView1
@@ -715,6 +701,7 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.emergencyContactIDDataGridViewTextBoxColumn,
@@ -727,7 +714,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(666, 82);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(666, 110);
             this.dataGridView1.TabIndex = 0;
             // 
             // emergencyContactListBindingSource
@@ -739,11 +727,11 @@
             // 
             this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel15.Controls.Add(this.AddEContactButton);
-            this.panel15.Controls.Add(this.textBox9);
+            this.panel15.Controls.Add(this.ecEmailText);
             this.panel15.Controls.Add(this.label13);
-            this.panel15.Controls.Add(this.maskedTextBox3);
+            this.panel15.Controls.Add(this.ecPhoneText);
             this.panel15.Controls.Add(this.label12);
-            this.panel15.Controls.Add(this.textBox3);
+            this.panel15.Controls.Add(this.ecNameText);
             this.panel15.Controls.Add(this.label11);
             this.panel15.Location = new System.Drawing.Point(2, -1);
             this.panel15.Name = "panel15";
@@ -757,15 +745,16 @@
             this.AddEContactButton.Name = "AddEContactButton";
             this.AddEContactButton.Size = new System.Drawing.Size(154, 23);
             this.AddEContactButton.TabIndex = 6;
-            this.AddEContactButton.Text = "Add Emergency Contact";
+            this.AddEContactButton.Text = "Add &Emergency Contact";
             this.AddEContactButton.UseVisualStyleBackColor = false;
+            this.AddEContactButton.Click += new System.EventHandler(this.AddEContactButton_Click);
             // 
-            // textBox9
+            // ecEmailText
             // 
-            this.textBox9.Location = new System.Drawing.Point(359, 8);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(118, 20);
-            this.textBox9.TabIndex = 5;
+            this.ecEmailText.Location = new System.Drawing.Point(359, 8);
+            this.ecEmailText.Name = "ecEmailText";
+            this.ecEmailText.Size = new System.Drawing.Size(118, 20);
+            this.ecEmailText.TabIndex = 5;
             // 
             // label13
             // 
@@ -776,13 +765,13 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "Email";
             // 
-            // maskedTextBox3
+            // ecPhoneText
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(216, 8);
-            this.maskedTextBox3.Mask = "(999) 000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 3;
+            this.ecPhoneText.Location = new System.Drawing.Point(216, 8);
+            this.ecPhoneText.Mask = "(999) 000-0000";
+            this.ecPhoneText.Name = "ecPhoneText";
+            this.ecPhoneText.Size = new System.Drawing.Size(100, 20);
+            this.ecPhoneText.TabIndex = 3;
             // 
             // label12
             // 
@@ -793,12 +782,12 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "Phone";
             // 
-            // textBox3
+            // ecNameText
             // 
-            this.textBox3.Location = new System.Drawing.Point(59, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(107, 20);
-            this.textBox3.TabIndex = 1;
+            this.ecNameText.Location = new System.Drawing.Point(59, 8);
+            this.ecNameText.Name = "ecNameText";
+            this.ecNameText.Size = new System.Drawing.Size(107, 20);
+            this.ecNameText.TabIndex = 1;
             // 
             // label11
             // 
@@ -823,8 +812,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer5.Size = new System.Drawing.Size(666, 393);
-            this.splitContainer5.SplitterDistance = 271;
+            this.splitContainer5.Size = new System.Drawing.Size(666, 365);
+            this.splitContainer5.SplitterDistance = 251;
             this.splitContainer5.TabIndex = 0;
             // 
             // dataGridView2
@@ -834,6 +823,7 @@
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.individualNoteIDDataGridViewTextBoxColumn,
@@ -846,7 +836,8 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(666, 271);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(666, 251);
             this.dataGridView2.TabIndex = 0;
             // 
             // individualNoteListBindingSource
@@ -863,23 +854,23 @@
             // 
             // splitContainer7.Panel1
             // 
-            this.splitContainer7.Panel1.Controls.Add(this.richTextBox1);
+            this.splitContainer7.Panel1.Controls.Add(this.noteText);
             // 
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.AddNoteButton);
-            this.splitContainer7.Size = new System.Drawing.Size(666, 118);
+            this.splitContainer7.Size = new System.Drawing.Size(666, 110);
             this.splitContainer7.SplitterDistance = 520;
             this.splitContainer7.TabIndex = 2;
             // 
-            // richTextBox1
+            // noteText
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(520, 118);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.noteText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noteText.Location = new System.Drawing.Point(0, 0);
+            this.noteText.Name = "noteText";
+            this.noteText.Size = new System.Drawing.Size(520, 110);
+            this.noteText.TabIndex = 1;
+            this.noteText.Text = "";
             // 
             // AddNoteButton
             // 
@@ -889,8 +880,9 @@
             this.AddNoteButton.Name = "AddNoteButton";
             this.AddNoteButton.Size = new System.Drawing.Size(136, 45);
             this.AddNoteButton.TabIndex = 2;
-            this.AddNoteButton.Text = "Add Note";
+            this.AddNoteButton.Text = "Add &Note";
             this.AddNoteButton.UseVisualStyleBackColor = false;
+            this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
             // IndividualDataSource
             // 
@@ -1088,21 +1080,20 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ecNameText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button AddEContactButton;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox ecEmailText;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox ecPhoneText;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.ComboBox FilterIndividualType;
         private System.Windows.Forms.TextBox FilterIndividualName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TreeView individualTreeView;
-        private System.Windows.Forms.Button UpdateIndividualButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContactIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -1115,7 +1106,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource individualNoteListBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox noteText;
         private System.Windows.Forms.Button AddNoteButton;
     }
 }

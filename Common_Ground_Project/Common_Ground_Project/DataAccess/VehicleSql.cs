@@ -10,43 +10,44 @@ namespace Common_Ground_Project.DataAccess
 {
     public class VehicleSql
     {
-        public Vehicle GetVehicle(Vehicle veh)
+        public Vehicle GetVehicle(Vehicle vehicle, out string errorMessage)
         {
             List<Vehicle> returnList = new List<Vehicle>();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@VehicleID", veh.VehicleID));
+            parameters.Add(new SqlParameter("@VehicleID", vehicle.VehicleID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByID");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
                 return new Vehicle();
         }
-        public List<Vehicle> GetVehicleList()
+        public List<Vehicle> GetVehicleList(out string errorMessage)
         {
             List<Vehicle> returnList = new List<Vehicle>();
 
             SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetAll");
-            returnList = createConnection(cmd);
+            returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
         }
-        public List<Vehicle> GetVehicleList(Activity activity)
+        public List<Vehicle> GetVehicleList(Activity activity, out string errorMessage)
         {
             List<Vehicle> returnList = new List<Vehicle>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByActivity");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
         }
 
-        public void SaveVehicle(Vehicle vehicle)
+        public void SaveVehicle(Vehicle vehicle, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -56,7 +57,7 @@ namespace Common_Ground_Project.DataAccess
                         if (vehicle.VehicleID == 0)
                         {
                             cmd.CommandText = "Master.dbo.VehicleInsert";
-                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                            cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
@@ -81,9 +82,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error occured while saving Vehicle: " + e.Message;
                 }
                 finally
                 {
@@ -92,8 +93,9 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteVehicle(Vehicle vehicle)
+        public void DeleteVehicle(Vehicle vehicle, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -110,9 +112,9 @@ namespace Common_Ground_Project.DataAccess
                         cmd.ExecuteScalar();
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error occured while deleting Vehicle: " + e.Message;
                 }
                 finally
                 {
@@ -123,8 +125,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Vehicle> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<Vehicle> createConnection(SqlCommand cmd, out string errorMessage, List<SqlParameter> parameters = null)
         {
+            errorMessage = String.Empty;
             List<Vehicle> returnList = new List<Vehicle>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -147,9 +150,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Vehicle connection error: " + e.Message;
                 }
                 finally
                 {

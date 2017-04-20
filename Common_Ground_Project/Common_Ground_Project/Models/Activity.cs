@@ -28,6 +28,10 @@ namespace Common_Ground_Project.Models
         public Activity()
         {
             ActivityID = 0;
+
+            IndividualList = new List<Individual>();
+            VehicleList = new List<Vehicle>();
+            ActivityNoteList = new List<ActivityNote>();
         }
         public Activity(int id)
         {
@@ -46,6 +50,10 @@ namespace Common_Ground_Project.Models
             StaffArrivalTime = rdr["Staff_Arrival_Time"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Staff_Arrival_Time"]);
             Location = rdr["Location"] == DBNull.Value ? String.Empty : rdr["Location"].ToString();
             Cost = rdr["Cost"] == DBNull.Value ? 0.00M : Convert.ToDecimal(rdr["Cost"]);
+
+            IndividualList = new List<Individual>();
+            VehicleList = new List<Vehicle>();
+            ActivityNoteList = new List<ActivityNote>();
         }
     }
 }
