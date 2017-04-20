@@ -153,6 +153,7 @@
     <EmbeddedResource Include="VolunteerHelp.resx">
       <DependentUpon>VolunteerHelp.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Common_Ground_Project.Models.Activity.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Participent.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Vehicle.datasource" />
