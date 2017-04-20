@@ -28,7 +28,7 @@ namespace Common_Ground_Project.Models
             VehicleID = rdr["VehicleID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["VehicleID"]);
             Name = rdr["Name"] == DBNull.Value ? String.Empty : rdr["Name"].ToString();
             Description = rdr["Description"] == DBNull.Value ? String.Empty : rdr["Description"].ToString();
-            VIN = rdr["Email"] == DBNull.Value ? String.Empty : rdr["VIN"].ToString();
+            VIN = rdr["VIN"] == DBNull.Value ? String.Empty : rdr["VIN"].ToString();
         }
     }
 }

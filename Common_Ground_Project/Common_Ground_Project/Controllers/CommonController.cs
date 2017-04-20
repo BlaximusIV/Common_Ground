@@ -139,7 +139,7 @@ namespace Common_Ground_Project.Controllers
         }
         #endregion
 
-        #region Vehicle
+        #region Vehicle - Done.
         public Vehicle GetVehicle(Vehicle vehicle, out string errorMessage)
         {
             return VehicleData.GetVehicle(vehicle, out errorMessage);
@@ -156,6 +156,11 @@ namespace Common_Ground_Project.Controllers
         public void SaveVehicle(Vehicle vehicle, out string errorMessage)
         {
             VehicleData.SaveVehicle(vehicle, out errorMessage);
+        }
+
+        public void DeleteVehicle(Vehicle vehicle, out string errorMessage)
+        {
+            VehicleData.DeleteVehicle(vehicle, out errorMessage);
         }
         #endregion
 

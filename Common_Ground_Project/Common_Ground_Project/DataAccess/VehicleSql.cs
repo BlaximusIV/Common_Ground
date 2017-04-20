@@ -102,7 +102,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.VehicleDelete";
+                        cmd.CommandText = "Master.dbo.VehicleDeleteByID";
 
                         cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
 
