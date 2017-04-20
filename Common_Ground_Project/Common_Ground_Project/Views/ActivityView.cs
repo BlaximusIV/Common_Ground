@@ -24,5 +24,6 @@ namespace Common_Ground_Project.Views
         {
             Controller = controller;
         }
+
     }
 }
