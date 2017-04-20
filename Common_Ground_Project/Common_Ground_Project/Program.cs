@@ -18,16 +18,7 @@ namespace Common_Ground_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-#if DEBUG
-            //Application.Run(new Form1());
-            Application.Run(new CommonGroundsForm());
-#else
-            Application.Run(new Form2());
-            if (LoginCredentials.IsAuthenticated)
-            {
-                Application.Run(new Form1());
-            }
-#endif
+            Application.Run(new LoginForm());
         }
     }
 }

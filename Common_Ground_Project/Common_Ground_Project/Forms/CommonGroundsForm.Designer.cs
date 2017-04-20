@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommonGroundsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.individualTab = new System.Windows.Forms.TabPage();
             this.individualView1 = new Common_Ground_Project.Views.IndividualView();
@@ -37,15 +36,19 @@
             this.vehicleTab = new System.Windows.Forms.TabPage();
             this.vehicalView1 = new Common_Ground_Project.Views.VehicalView();
             this.reportTab = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.frequentCallers = new System.Windows.Forms.ToolStripButton();
-            this.userDays = new System.Windows.Forms.ToolStripButton();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.frequentCallerReport1 = new Common_Ground_Project.Views.FrequentCallerReport();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.userDayReport1 = new Common_Ground_Project.Views.UserDayReport();
             this.tabControl1.SuspendLayout();
             this.individualTab.SuspendLayout();
             this.activityTab.SuspendLayout();
             this.vehicleTab.SuspendLayout();
             this.reportTab.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -121,7 +124,7 @@
             // 
             // reportTab
             // 
-            this.reportTab.Controls.Add(this.toolStrip1);
+            this.reportTab.Controls.Add(this.tabControl2);
             this.reportTab.Location = new System.Drawing.Point(23, 4);
             this.reportTab.Name = "reportTab";
             this.reportTab.Padding = new System.Windows.Forms.Padding(3);
@@ -130,32 +133,54 @@
             this.reportTab.Text = "Reports";
             this.reportTab.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
+            // tabControl2
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.frequentCallers,
-            this.userDays});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1015, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1015, 476);
+            this.tabControl2.TabIndex = 0;
             // 
-            // frequentCallers
+            // tabPage1
             // 
-            this.frequentCallers.Image = ((System.Drawing.Image)(resources.GetObject("frequentCallers.Image")));
-            this.frequentCallers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.frequentCallers.Name = "frequentCallers";
-            this.frequentCallers.Size = new System.Drawing.Size(112, 22);
-            this.frequentCallers.Text = "Frequent Callers";
+            this.tabPage1.Controls.Add(this.frequentCallerReport1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1007, 450);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Frequent Caller";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // userDays
+            // frequentCallerReport1
             // 
-            this.userDays.Image = ((System.Drawing.Image)(resources.GetObject("userDays.Image")));
-            this.userDays.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.userDays.Name = "userDays";
-            this.userDays.Size = new System.Drawing.Size(78, 22);
-            this.userDays.Text = "User Days";
+            this.frequentCallerReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frequentCallerReport1.Location = new System.Drawing.Point(3, 3);
+            this.frequentCallerReport1.Name = "frequentCallerReport1";
+            this.frequentCallerReport1.Size = new System.Drawing.Size(1001, 444);
+            this.frequentCallerReport1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.userDayReport1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1007, 450);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "User Days";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // userDayReport1
+            // 
+            this.userDayReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userDayReport1.Location = new System.Drawing.Point(3, 3);
+            this.userDayReport1.Name = "userDayReport1";
+            this.userDayReport1.Size = new System.Drawing.Size(1001, 444);
+            this.userDayReport1.TabIndex = 0;
             // 
             // CommonGroundsForm
             // 
@@ -165,14 +190,15 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "CommonGroundsForm";
             this.Text = "Common Grounds";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CommonGroundsForm_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.individualTab.ResumeLayout(false);
             this.activityTab.ResumeLayout(false);
             this.vehicleTab.ResumeLayout(false);
             this.reportTab.ResumeLayout(false);
-            this.reportTab.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -187,8 +213,10 @@
         private Views.ActivityView activityView1;
         private Views.VehicalView vehicalView1;
         private System.Windows.Forms.TabPage reportTab;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton frequentCallers;
-        private System.Windows.Forms.ToolStripButton userDays;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Views.FrequentCallerReport frequentCallerReport1;
+        private Views.UserDayReport userDayReport1;
     }
 }

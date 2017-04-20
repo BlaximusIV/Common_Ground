@@ -14,12 +14,15 @@ namespace Common_Ground_Project.Forms
     public partial class CommonGroundsForm : Form
     {
         public CommonController Controller;
+        private LoginForm loginForm;
 
 
-        public CommonGroundsForm()
+        public CommonGroundsForm(LoginForm loginParent)
         {
             InitializeComponent();
             Initialize();
+
+            loginForm = loginParent;
         }
 
         private void Initialize()
@@ -30,6 +33,14 @@ namespace Common_Ground_Project.Forms
             individualView1.Initialize(Controller);
             activityView1.Initialize(Controller);
             vehicalView1.Initialize(Controller);
+
+            frequentCallerReport1.Initialize(Controller);
+            userDayReport1.Initialize(Controller);
+        }
+
+        private void CommonGroundsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            loginForm.Close();
         }
     }
 }
