@@ -205,6 +205,7 @@
             // 
             // splitContainer6.Panel1
             // 
+            this.splitContainer6.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer6.Panel1.Controls.Add(this.FilterIndividualType);
             this.splitContainer6.Panel1.Controls.Add(this.FilterIndividualName);
             this.splitContainer6.Panel1.Controls.Add(this.label15);
@@ -678,6 +679,7 @@
             // panel14
             // 
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel14.Controls.Add(this.DeleteIndividualButton);
             this.panel14.Controls.Add(this.AddIndividualButton);
             this.panel14.Location = new System.Drawing.Point(3, 314);
@@ -818,6 +820,7 @@
             // panel15
             // 
             this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel15.Controls.Add(this.AddEContactButton);
             this.panel15.Controls.Add(this.ecEmailText);
             this.panel15.Controls.Add(this.label13);

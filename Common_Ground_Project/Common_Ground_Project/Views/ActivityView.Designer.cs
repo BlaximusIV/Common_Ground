@@ -49,28 +49,33 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.AddIndividualButton = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.FilterIndividualType = new System.Windows.Forms.ComboBox();
             this.FilterIndividualName = new System.Windows.Forms.TextBox();
@@ -84,11 +89,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer10 = new System.Windows.Forms.SplitContainer();
-            this.AddNoteButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.splitContainer10 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.AddNoteButton = new System.Windows.Forms.Button();
             this.ActivityDataSource = new System.Windows.Forms.BindingSource(this.components);
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.vehicleListBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -130,28 +136,28 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
-            this.splitContainer6.Panel1.SuspendLayout();
-            this.splitContainer6.Panel2.SuspendLayout();
-            this.splitContainer6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
-            this.splitContainer7.Panel1.SuspendLayout();
-            this.splitContainer7.Panel2.SuspendLayout();
-            this.splitContainer7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
             this.splitContainer8.Panel2.SuspendLayout();
             this.splitContainer8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
             this.splitContainer9.Panel1.SuspendLayout();
             this.splitContainer9.Panel2.SuspendLayout();
             this.splitContainer9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
             this.splitContainer10.Panel1.SuspendLayout();
             this.splitContainer10.Panel2.SuspendLayout();
             this.splitContainer10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).BeginInit();
@@ -160,6 +166,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -170,13 +177,14 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer1.Size = new System.Drawing.Size(1059, 661);
+            this.splitContainer1.Size = new System.Drawing.Size(1061, 458);
             this.splitContainer1.SplitterDistance = 353;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -188,8 +196,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(353, 661);
-            this.splitContainer2.SplitterDistance = 135;
+            this.splitContainer2.Size = new System.Drawing.Size(353, 458);
+            this.splitContainer2.SplitterDistance = 121;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -201,12 +209,12 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer3.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainer3.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.ActivityByDateTree);
             this.splitContainer3.Size = new System.Drawing.Size(353, 135);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
@@ -230,14 +238,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search By Activity Date";
             // 
-            // ActivityByDateTree
-            // 
-            this.ActivityByDateTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ActivityByDateTree.Location = new System.Drawing.Point(0, 0);
-            this.ActivityByDateTree.Name = "ActivityByDateTree";
-            this.ActivityByDateTree.Size = new System.Drawing.Size(353, 106);
-            this.ActivityByDateTree.TabIndex = 0;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
@@ -254,7 +254,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(353, 522);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(353, 333);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -376,6 +376,16 @@
             this.panel5.Size = new System.Drawing.Size(347, 22);
             this.panel5.TabIndex = 5;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StartDate", true));
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StartDate", true));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(101, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker2.TabIndex = 1;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -394,6 +404,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(347, 22);
             this.panel6.TabIndex = 6;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "EndDate", true));
+            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "EndDate", true));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(101, 2);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker3.TabIndex = 2;
             // 
             // label7
             // 
@@ -414,6 +434,16 @@
             this.panel7.Size = new System.Drawing.Size(347, 22);
             this.panel7.TabIndex = 7;
             // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "PickUpTime", true));
+            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "PickUpTime", true));
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker4.Location = new System.Drawing.Point(101, 0);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker4.TabIndex = 2;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -433,6 +463,16 @@
             this.panel8.Size = new System.Drawing.Size(347, 22);
             this.panel8.TabIndex = 8;
             // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "DropOffTime", true));
+            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "DropOffTime", true));
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker5.Location = new System.Drawing.Point(101, 2);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker5.TabIndex = 2;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -451,6 +491,16 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(347, 22);
             this.panel9.TabIndex = 9;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StaffArrivalTime", true));
+            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StaffArrivalTime", true));
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(101, 0);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker6.TabIndex = 2;
             // 
             // label10
             // 
@@ -483,6 +533,7 @@
             // panel11
             // 
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel11.Controls.Add(this.DeleteIndividualButton);
             this.panel11.Controls.Add(this.AddIndividualButton);
             this.panel11.Location = new System.Drawing.Point(3, 283);
@@ -512,56 +563,6 @@
             this.AddIndividualButton.Text = "&Save";
             this.AddIndividualButton.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StartDate", true));
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StartDate", true));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(101, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "EndDate", true));
-            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "EndDate", true));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(101, 2);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker3.TabIndex = 2;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "PickUpTime", true));
-            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "PickUpTime", true));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(101, 0);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker4.TabIndex = 2;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "DropOffTime", true));
-            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "DropOffTime", true));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(101, 2);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker5.TabIndex = 2;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StaffArrivalTime", true));
-            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StaffArrivalTime", true));
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(101, 0);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker6.TabIndex = 2;
-            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -575,7 +576,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer4.Size = new System.Drawing.Size(702, 661);
+            this.splitContainer4.Size = new System.Drawing.Size(704, 458);
             this.splitContainer4.SplitterDistance = 335;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -593,37 +594,91 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer5.Size = new System.Drawing.Size(335, 661);
-            this.splitContainer5.SplitterDistance = 327;
+            this.splitContainer5.Size = new System.Drawing.Size(335, 458);
+            this.splitContainer5.SplitterDistance = 226;
             this.splitContainer5.TabIndex = 0;
             // 
-            // splitContainer6
+            // splitContainer8
             // 
-            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer8.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer8.Name = "splitContainer8";
+            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer6.Panel1
+            // splitContainer8.Panel1
             // 
-            this.splitContainer6.Panel1.Controls.Add(this.splitContainer9);
+            this.splitContainer8.Panel1.Controls.Add(this.dataGridView1);
             // 
-            // splitContainer6.Panel2
+            // splitContainer8.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.IndividualTree);
             this.splitContainer6.Size = new System.Drawing.Size(363, 661);
             this.splitContainer6.SplitterDistance = 327;
             this.splitContainer6.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(335, 135);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(227, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 39);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "&Remove Vehicle";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.Location = new System.Drawing.Point(227, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 39);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "&Add Vehicle";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(89, 10);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Select Vehicle";
+            // 
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer7.Location = new System.Drawing.Point(0, 0);
             this.splitContainer7.Name = "splitContainer7";
             this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer7.Panel1.Controls.Add(this.FilterIndividualType);
             this.splitContainer7.Panel1.Controls.Add(this.FilterIndividualName);
             this.splitContainer7.Panel1.Controls.Add(this.label15);
@@ -631,7 +686,6 @@
             // 
             // splitContainer7.Panel2
             // 
-            this.splitContainer7.Panel2.Controls.Add(this.IndividualSearchTree);
             this.splitContainer7.Size = new System.Drawing.Size(335, 330);
             this.splitContainer7.SplitterDistance = 70;
             this.splitContainer7.TabIndex = 0;
@@ -640,14 +694,14 @@
             // 
             this.FilterIndividualType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FilterIndividualType.FormattingEnabled = true;
-            this.FilterIndividualType.Location = new System.Drawing.Point(103, 12);
+            this.FilterIndividualType.Location = new System.Drawing.Point(72, 3);
             this.FilterIndividualType.Name = "FilterIndividualType";
             this.FilterIndividualType.Size = new System.Drawing.Size(192, 21);
             this.FilterIndividualType.TabIndex = 7;
             // 
             // FilterIndividualName
             // 
-            this.FilterIndividualName.Location = new System.Drawing.Point(103, 39);
+            this.FilterIndividualName.Location = new System.Drawing.Point(72, 30);
             this.FilterIndividualName.Name = "FilterIndividualName";
             this.FilterIndividualName.Size = new System.Drawing.Size(192, 20);
             this.FilterIndividualName.TabIndex = 6;
@@ -655,7 +709,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(44, 15);
+            this.label15.Location = new System.Drawing.Point(8, 6);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(54, 13);
             this.label15.TabIndex = 5;
@@ -664,38 +718,21 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(39, 42);
+            this.label14.Location = new System.Drawing.Point(8, 33);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 4;
             this.label14.Text = "Find Name";
             // 
-            // IndividualSearchTree
+            // splitContainer6.Panel1
             // 
-            this.IndividualSearchTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IndividualSearchTree.Location = new System.Drawing.Point(0, 0);
-            this.IndividualSearchTree.Name = "IndividualSearchTree";
-            this.IndividualSearchTree.Size = new System.Drawing.Size(335, 256);
-            this.IndividualSearchTree.TabIndex = 0;
+            this.splitContainer6.Panel1.Controls.Add(this.splitContainer9);
             // 
-            // IndividualTree
+            // splitContainer6.Panel2
             // 
-            this.IndividualTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IndividualTree.Location = new System.Drawing.Point(0, 0);
-            this.IndividualTree.Name = "IndividualTree";
-            this.IndividualTree.Size = new System.Drawing.Size(363, 330);
-            this.IndividualTree.TabIndex = 0;
-            // 
-            // splitContainer8
-            // 
-            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer8.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer8.Name = "splitContainer8";
-            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer8.Panel1
-            // 
-            this.splitContainer8.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer6.Size = new System.Drawing.Size(365, 458);
+            this.splitContainer6.SplitterDistance = 226;
+            this.splitContainer6.TabIndex = 0;
             // 
             // splitContainer8.Panel2
             // 
@@ -751,24 +788,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.vINDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vehicleListBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(335, 239);
             this.dataGridView1.TabIndex = 0;
             // 
             // splitContainer9
             // 
             this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer9.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer9.Location = new System.Drawing.Point(0, 0);
             this.splitContainer9.Name = "splitContainer9";
             this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -780,9 +811,18 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer10);
-            this.splitContainer9.Size = new System.Drawing.Size(363, 327);
-            this.splitContainer9.SplitterDistance = 239;
+            this.splitContainer9.Size = new System.Drawing.Size(365, 226);
+            this.splitContainer9.SplitterDistance = 165;
             this.splitContainer9.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(365, 165);
+            this.dataGridView2.TabIndex = 0;
             // 
             // splitContainer10
             // 
@@ -797,42 +837,36 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.AddNoteButton);
-            this.splitContainer10.Size = new System.Drawing.Size(363, 84);
-            this.splitContainer10.SplitterDistance = 209;
+            this.splitContainer10.Size = new System.Drawing.Size(365, 57);
+            this.splitContainer10.SplitterDistance = 210;
             this.splitContainer10.TabIndex = 0;
-            // 
-            // AddNoteButton
-            // 
-            this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddNoteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.AddNoteButton.Location = new System.Drawing.Point(3, 3);
-            this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(136, 45);
-            this.AddNoteButton.TabIndex = 3;
-            this.AddNoteButton.Text = "Add &Note";
-            this.AddNoteButton.UseVisualStyleBackColor = false;
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(209, 84);
+            this.richTextBox1.Size = new System.Drawing.Size(210, 57);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
+            // AddNoteButton
+            // 
+            this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddNoteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.AddNoteButton.Location = new System.Drawing.Point(4, 3);
+            this.AddNoteButton.Name = "AddNoteButton";
+            this.AddNoteButton.Size = new System.Drawing.Size(136, 45);
+            this.AddNoteButton.TabIndex = 3;
+            this.AddNoteButton.Text = "Add &Note";
+            this.AddNoteButton.UseVisualStyleBackColor = false;
+            // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noteDataGridViewTextBoxColumn,
-            this.dateTimeDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.activityNoteListBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(363, 239);
             this.dataGridView2.TabIndex = 0;
             // 
@@ -840,70 +874,13 @@
             // 
             this.ActivityDataSource.DataSource = typeof(Common_Ground_Project.Models.Activity);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Cost", true));
-            this.maskedTextBox1.Location = new System.Drawing.Point(101, 1);
-            this.maskedTextBox1.Mask = "$00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 1;
-            // 
-            // vehicleListBindingSource
-            // 
-            this.vehicleListBindingSource.DataMember = "VehicleList";
-            this.vehicleListBindingSource.DataSource = this.ActivityDataSource;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vINDataGridViewTextBoxColumn
-            // 
-            this.vINDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.vINDataGridViewTextBoxColumn.DataPropertyName = "VIN";
-            this.vINDataGridViewTextBoxColumn.HeaderText = "VIN";
-            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
-            this.vINDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // activityNoteListBindingSource
-            // 
-            this.activityNoteListBindingSource.DataMember = "ActivityNoteList";
-            this.activityNoteListBindingSource.DataSource = this.ActivityDataSource;
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            // 
             // ActivityView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "ActivityView";
-            this.Size = new System.Drawing.Size(1059, 661);
+            this.Size = new System.Drawing.Size(1061, 458);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -947,30 +924,30 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
-            this.splitContainer6.Panel1.ResumeLayout(false);
-            this.splitContainer6.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
-            this.splitContainer6.ResumeLayout(false);
-            this.splitContainer7.Panel1.ResumeLayout(false);
-            this.splitContainer7.Panel1.PerformLayout();
-            this.splitContainer7.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
-            this.splitContainer7.ResumeLayout(false);
             this.splitContainer8.Panel1.ResumeLayout(false);
             this.splitContainer8.Panel2.ResumeLayout(false);
             this.splitContainer8.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
             this.splitContainer8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel1.PerformLayout();
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             this.splitContainer9.Panel1.ResumeLayout(false);
             this.splitContainer9.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
             this.splitContainer9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.splitContainer10.Panel1.ResumeLayout(false);
             this.splitContainer10.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
             this.splitContainer10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).EndInit();

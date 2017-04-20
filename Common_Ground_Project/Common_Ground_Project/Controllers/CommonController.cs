@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using Common_Ground_Project.DataAccess;
 using Common_Ground_Project.Models;
 
@@ -14,6 +15,7 @@ namespace Common_Ground_Project.Controllers
         private IndividualSql IndividualData;
         private IndividualNoteSql IndividualNoteData;
         private IndividualTypeSql IndividualTypeData;
+        private ReportSql ReportData;
         private VehicleSql VehicleData;
 
         public CommonController()
@@ -25,9 +27,21 @@ namespace Common_Ground_Project.Controllers
             IndividualData = new IndividualSql();
             IndividualNoteData = new IndividualNoteSql();
             IndividualTypeData = new IndividualTypeSql();
+            ReportData = new ReportSql();
             VehicleData = new VehicleSql();
         }
 
+
+        #region Authorization 
+        public bool IsAuthenticated(string username, string password)
+        {
+            // Check DB by username and validate password.
+            if (password == LoginCredentials.Password)
+                return true;
+            else
+                return false;
+        }
+        #endregion
 
         #region Activity - Done.
         public Activity GetActivity(Activity activity, out string errorMessage)
@@ -168,6 +182,18 @@ namespace Common_Ground_Project.Controllers
             VehicleData.DeleteVehicle(vehicle, out errorMessage);
         }
         #endregion
+
+        #region Reports
+        public DataTable UserDayReport(DateTime startTime, DateTime endTime, out string errorMessage)
+        {
+            return ReportData.UserDayReport(startTime, endTime, out errorMessage);
+        }
+        public DataTable FrequentCallerReport(out string errorMessage)
+        {
+            return ReportData.FrequentCallerReport(out errorMessage);
+        }
+
+        #endregion 
 
     }
 }
