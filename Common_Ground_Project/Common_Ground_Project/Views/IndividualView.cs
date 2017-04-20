@@ -30,65 +30,94 @@ namespace Common_Ground_Project.Views
 
         private void populateFilterType()
         {
-            List<IndividualType> types = Controller.GetIndividualTypeList();
-            FilterIndividualType.DataSource = types;
-            FilterIndividualType.DisplayMember = "Name";
-            FilterIndividualType.ValueMember = "IndividualTypeID";
+            string errorMessage = String.Empty;
+            List<IndividualType> types = Controller.GetIndividualTypeList(out errorMessage);
 
-            individualTypeComboBox.Items.Clear();
-            foreach (IndividualType type in types)
-                individualTypeComboBox.Items.Add(type);
+            if (String.IsNullOrEmpty(errorMessage))
+            {
+                FilterIndividualType.DataSource = types;
+                FilterIndividualType.DisplayMember = "Name";
+                FilterIndividualType.ValueMember = "IndividualTypeID";
 
-            individualTypeComboBox.DisplayMember = "Name";
-            individualTypeComboBox.ValueMember = "IndividualTypeID";
+                individualTypeComboBox.Items.Clear();
+                foreach (IndividualType type in types)
+                    individualTypeComboBox.Items.Add(type);
+
+                individualTypeComboBox.DisplayMember = "Name";
+                individualTypeComboBox.ValueMember = "IndividualTypeID";
+            }
+            else
+                MessageBox.Show(errorMessage);
         }
 
         private void populateIndividuals()
         {
+            string errorMessage = String.Empty;
             IndividualDataSource.DataSource = new Individual();
             individualTreeView.Nodes.Clear();
 
-            List<Individual> indList = Controller.GetIndividualList();
-            TreeNode node = new TreeNode();
-            foreach (Individual ind in indList)
+            List<Individual> indList = Controller.GetIndividualList(out errorMessage);
+
+            if (String.IsNullOrEmpty(errorMessage))
             {
-                node = new TreeNode { Text = ind.FullName, Tag = ind };
-                individualTreeView.Nodes.Add(node);
-            }   
+                TreeNode node = new TreeNode();
+                foreach (Individual ind in indList)
+                {
+                    node = new TreeNode { Text = ind.FullName, Tag = ind };
+                    individualTreeView.Nodes.Add(node);
+                }
+            }
+            else
+                MessageBox.Show(errorMessage);
         }
 
         private void AddIndividualButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = String.Empty;
             try
             {
                 Individual individual = (Individual)IndividualDataSource.DataSource;
                 if (individualTypeComboBox.SelectedItem != null)
                     individual.IndividualTypeID = ((IndividualType)individualTypeComboBox.SelectedItem).IndividualTypeID;
 
-                Controller.SaveIndividual(individual);
-                populateFilterType();
+                Controller.SaveIndividual(individual, out errorMessage);
+
+                if (String.IsNullOrEmpty(errorMessage))
+                    populateFilterType();
+                else
+                    MessageBox.Show(errorMessage);
             }
             catch (Exception)
-            { }
+            {
+                MessageBox.Show(errorMessage);
+            }
         }
 
         private void UpdateIndividualButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = String.Empty;
             try
             {
                 Individual individual = (Individual)IndividualDataSource.DataSource;
                 if (individualTypeComboBox.SelectedItem != null)
                     individual.IndividualTypeID = ((IndividualType)individualTypeComboBox.SelectedItem).IndividualTypeID;
 
-                Controller.SaveIndividual(individual);
-                populateFilterType();
+                Controller.SaveIndividual(individual, out errorMessage);
+
+                if (String.IsNullOrEmpty(errorMessage))
+                    populateFilterType();
+                else
+                    MessageBox.Show(errorMessage);
             }
             catch (Exception)
-            { }
+            {
+                MessageBox.Show(errorMessage);
+            }
         }
 
         private void DeleteIndividualButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = String.Empty;
             try
             {
                 Individual individual = (Individual)IndividualDataSource.DataSource;
@@ -96,8 +125,12 @@ namespace Common_Ground_Project.Views
 
                 if (answer == DialogResult.Yes)
                 {
-                    Controller.DeleteIndividual(individual);
-                    populateFilterType();
+                    Controller.DeleteIndividual(individual, out errorMessage);
+
+                    if (String.IsNullOrEmpty(errorMessage))
+                        populateFilterType();
+                    else
+                        MessageBox.Show(errorMessage);
                 }
             }
             catch (Exception)
@@ -108,11 +141,34 @@ namespace Common_Ground_Project.Views
 
         private void individualTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            string errorMessage = String.Empty;
             Individual individual = (Individual)individualTreeView.SelectedNode.Tag;
             IndividualDataSource.DataSource = individual;
 
             if (individual.IndividualTypeID > 0)
                 individualTypeComboBox.SelectedItem = individualTypeComboBox.Items[individual.IndividualTypeID - 1];
+
+            if (individual.EmergencyContactList != null && individual.EmergencyContactList.Count > 0)
+            {
+                individual.EmergencyContactList = new List<EmergencyContact>();
+                individual.EmergencyContactList = Controller.GetEmergencyContactList(individual, out errorMessage);
+
+                if (!String.IsNullOrEmpty(errorMessage))
+                    MessageBox.Show(errorMessage);
+                else
+                    emergencyContactListBindingSource.DataSource = individual.EmergencyContactList;
+            }
+
+            if (individual.IndividualNoteList != null && individual.IndividualNoteList.Count > 0)
+            {
+                individual.IndividualNoteList = new List<IndividualNote>();
+                individual.IndividualNoteList = Controller.GetIndividualNoteList(individual, out errorMessage);
+
+                if (!String.IsNullOrEmpty(errorMessage))
+                    MessageBox.Show(errorMessage);
+                else
+                    individualNoteListBindingSource.DataSource = individual.IndividualNoteList;
+            }
         }
 
         private void FilterIndividualName_TextChanged(object sender, EventArgs e)
@@ -150,5 +206,70 @@ namespace Common_Ground_Project.Views
                     node.Remove();
         }
 
+        private void AddEContactButton_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+            string name = ecNameText.Text.Trim();
+            string email = ecEmailText.Text.Trim();
+            string phone = ecPhoneText.Text.Trim();
+
+            if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(phone))
+                MessageBox.Show("Please provide a Contact Name and Phone number.");
+            else
+            {
+                Individual individual = (Individual)individualTreeView.SelectedNode.Tag;
+                EmergencyContact contact = new EmergencyContact
+                {
+                    IndividualID = individual.IndividualID,
+                    Name = name,
+                    Phone = phone,
+                    Email = email
+                };
+
+                Controller.SaveEmergencyContact(contact, out errorMessage);
+
+                if (!String.IsNullOrEmpty(errorMessage))
+                    MessageBox.Show(errorMessage);
+                else
+                {
+                    individual.EmergencyContactList.Add(contact);
+                    individualTreeView.SelectedNode.Tag = individual;
+
+                    ecNameText.Text = String.Empty;
+                    ecEmailText.Text = String.Empty;
+                    ecPhoneText.Text = String.Empty;
+                }
+            }
+        }
+
+        private void AddNoteButton_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+            string note = noteText.Text.Trim();
+
+            if (String.IsNullOrEmpty(note))
+                MessageBox.Show("Please enter a new Note.");
+            else
+            {
+                Individual individual = (Individual)individualTreeView.SelectedNode.Tag;
+                IndividualNote idividualNote = new IndividualNote
+                {
+                    IndividualID = individual.IndividualID,
+                    Note = note
+                };
+
+                Controller.SaveIndividualNote(idividualNote, out errorMessage);
+
+                if (!String.IsNullOrEmpty(errorMessage))
+                    MessageBox.Show(errorMessage);
+                else
+                {
+                    individual.IndividualNoteList.Add(idividualNote);
+                    individualTreeView.SelectedNode.Tag = individual;
+
+                    noteText.Text = String.Empty;
+                }
+            }
+        }
     }
 }

@@ -13,12 +13,14 @@ AS
 	INSERT INTO Master.dbo.IndividualNote
 	(
 		IndividualID, 
-		Note
+		Note, 
+		DateTime
 	)
 	VALUES
 	(
 		@IndividualID, 
-		@Note
+		@Note, 
+		GETDATE()
 	)
 
 	SET @NewID = SCOPE_IDENTITY()

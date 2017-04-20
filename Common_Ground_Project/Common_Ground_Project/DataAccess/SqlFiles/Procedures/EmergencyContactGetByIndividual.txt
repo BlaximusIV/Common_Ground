@@ -1,7 +1,7 @@
 ﻿USE MASTER
 GO
 
-CREATE PROCEDURE dbo.EmergencyContactGetByID
+CREATE PROCEDURE dbo.EmergencyContactGetByIndividual
 (
 	@IndividualID INT
 )

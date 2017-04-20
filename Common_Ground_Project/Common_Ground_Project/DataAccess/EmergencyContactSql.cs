@@ -10,34 +10,35 @@ namespace Common_Ground_Project.DataAccess
 {
     public class EmergencyContactSql
     {
-        public EmergencyContact GetEmergencyContact(EmergencyContact contact)
+        public EmergencyContact GetEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
             List<EmergencyContact> returnList = new List<EmergencyContact>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@EmergencyContactID", contact.EmergencyContactID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByID");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
                 return new EmergencyContact();
         }
-        public List<EmergencyContact> GetEmergencyContactList(Individual individual)
+        public List<EmergencyContact> GetEmergencyContactList(Individual individual, out string errorMessage)
         {
             List<EmergencyContact> returnList = new List<EmergencyContact>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByIndividual");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
         }
 
-        public void SaveEmergencyContact(EmergencyContact contact)
+        public void SaveEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -47,7 +48,7 @@ namespace Common_Ground_Project.DataAccess
                         if (contact.EmergencyContactID == 0)
                         {
                             cmd.CommandText = "Master.dbo.EmergencyContactInsert";
-                            cmd.Parameters.Add(new SqlParameter("@NewID", DBNull.Value).Direction = System.Data.ParameterDirection.ReturnValue);
+                            cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
@@ -73,9 +74,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error while saving Emergency Contact: " + e.Message;
                 }
                 finally
                 {
@@ -84,8 +85,9 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteEmergencyContact(EmergencyContact contact)
+        public void DeleteEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -102,9 +104,9 @@ namespace Common_Ground_Project.DataAccess
                         cmd.ExecuteScalar();
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error while deleting Emergency Contact: " + e.Message;
                 }
                 finally
                 {
@@ -115,8 +117,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<EmergencyContact> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<EmergencyContact> createConnection(SqlCommand cmd, out string errorMessage, List<SqlParameter> parameters = null)
         {
+            errorMessage = String.Empty;
             List<EmergencyContact> returnList = new List<EmergencyContact>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -139,9 +142,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Emergency Contact Connection Error: " + e.Message;
                 }
                 finally
                 {

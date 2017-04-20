@@ -38,6 +38,9 @@ namespace Common_Ground_Project.Models
             IndividualID = 0;
 
             BirthDay = new DateTime(1900, 1, 1);
+            ActivityList = new List<Activity>();
+            EmergencyContactList = new List<EmergencyContact>();
+            IndividualNoteList = new List<IndividualNote>();
             IsWaiverSigned = false;
             IsMediaReleased = false;
             IsFrequentCaller = false;
@@ -62,6 +65,10 @@ namespace Common_Ground_Project.Models
             IsWaiverSigned = rdr["IsWaiverSigned"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsWaiverSigned"]);
             IsMediaReleased = rdr["IsMediaReleased"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsMediaReleased"]);
             IsFrequentCaller = rdr["IsFrequentCaller"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsFrequentCaller"]);
+
+            ActivityList = new List<Activity>();
+            EmergencyContactList = new List<EmergencyContact>();
+            IndividualNoteList = new List<IndividualNote>();
         }
     }
 }

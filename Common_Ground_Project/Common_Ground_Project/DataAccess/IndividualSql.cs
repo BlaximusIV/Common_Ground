@@ -7,54 +7,55 @@ namespace Common_Ground_Project.DataAccess
 {
     public class IndividualSql
     {
-        public Individual GetIndividual(Individual individual)
+        public Individual GetIndividual(Individual individual, out string errorMessage)
         {
             List<Individual> returnList = new List<Individual>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByID");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
                 return returnList[0];
             else
                 return new Individual();
         }
-        public List<Individual> GetIndividualList()
+        public List<Individual> GetIndividualList(out string errorMessage)
         {
             List<Individual> returnList = new List<Individual>();
 
             SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetAll");
-            returnList = createConnection(cmd);
+            returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
         }
-        public List<Individual> GetIndividualList(Activity activity)
+        public List<Individual> GetIndividualList(Activity activity, out string errorMessage)
         {
             List<Individual> returnList = new List<Individual>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByActivity");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
         }
-        public List<Individual> GetIndividualList(IndividualType type)
+        public List<Individual> GetIndividualList(IndividualType type, out string errorMessage)
         {
             List<Individual> returnList = new List<Individual>();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualTypeID", type.IndividualTypeID));
 
             SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByType");
-            returnList = createConnection(cmd, parameters);
+            returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
         }
 
-        public void SaveIndividual(Individual individual)
+        public void SaveIndividual(Individual individual, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -100,7 +101,7 @@ namespace Common_Ground_Project.DataAccess
                 }
                 catch (Exception e)
                 {
-                    var test = e.Message;
+                    errorMessage = "Error occured while saving Individual: " + e.Message;
                 }
                 finally
                 {
@@ -109,8 +110,9 @@ namespace Common_Ground_Project.DataAccess
             }
         }
 
-        public void DeleteIndividual(Individual individual)
+        public void DeleteIndividual(Individual individual, out string errorMessage)
         {
+            errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
                 try
@@ -127,9 +129,9 @@ namespace Common_Ground_Project.DataAccess
                         cmd.ExecuteScalar();
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Error occured while deleting Individual: " + e.Message;
                 }
                 finally
                 {
@@ -140,8 +142,9 @@ namespace Common_Ground_Project.DataAccess
 
 
 
-        private List<Individual> createConnection(SqlCommand cmd, List<SqlParameter> parameters = null)
+        private List<Individual> createConnection(SqlCommand cmd, out string errorMessage, List<SqlParameter> parameters = null)
         {
+            errorMessage = String.Empty;
             List<Individual> returnList = new List<Individual>();
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
             {
@@ -164,9 +167,9 @@ namespace Common_Ground_Project.DataAccess
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    errorMessage = "Individual connection error: " + e.Message;
                 }
                 finally
                 {
