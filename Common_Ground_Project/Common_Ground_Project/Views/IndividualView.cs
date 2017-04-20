@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common_Ground_Project.Controllers;
 using Common_Ground_Project.Models;
@@ -15,6 +9,7 @@ namespace Common_Ground_Project.Views
     public partial class IndividualView : UserControl
     {
         private CommonController Controller;
+        private Individual currentIndividual;
 
         public IndividualView()
         {
@@ -217,7 +212,7 @@ namespace Common_Ground_Project.Views
                 MessageBox.Show("Please provide a Contact Name and Phone number.");
             else
             {
-                Individual individual = (Individual)individualTreeView.SelectedNode.Tag;
+                Individual individual = (Individual)IndividualDataSource.DataSource;
                 EmergencyContact contact = new EmergencyContact
                 {
                     IndividualID = individual.IndividualID,
@@ -233,6 +228,7 @@ namespace Common_Ground_Project.Views
                 else
                 {
                     individual.EmergencyContactList.Add(contact);
+                    IndividualDataSource.DataSource = individual;
                     individualTreeView.SelectedNode.Tag = individual;
 
                     ecNameText.Text = String.Empty;
@@ -251,7 +247,7 @@ namespace Common_Ground_Project.Views
                 MessageBox.Show("Please enter a new Note.");
             else
             {
-                Individual individual = (Individual)individualTreeView.SelectedNode.Tag;
+                Individual individual = (Individual)IndividualDataSource.DataSource;
                 IndividualNote idividualNote = new IndividualNote
                 {
                     IndividualID = individual.IndividualID,
@@ -265,6 +261,7 @@ namespace Common_Ground_Project.Views
                 else
                 {
                     individual.IndividualNoteList.Add(idividualNote);
+                    IndividualDataSource.DataSource = individual;
                     individualTreeView.SelectedNode.Tag = individual;
 
                     noteText.Text = String.Empty;
