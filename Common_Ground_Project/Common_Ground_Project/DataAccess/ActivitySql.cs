@@ -24,6 +24,17 @@ namespace Common_Ground_Project.DataAccess
             else
                 return new Activity();
         }
+        public List<Activity> GetActivityList(DateTime date, out string errorMessage)
+        {
+            List<Activity> returnList = new List<Activity>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@Date", date));
+
+            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByDate");
+            returnList = createConnection(cmd, out errorMessage, parameters);
+
+            return returnList;
+        }
         public List<Activity> GetActivityList(Individual individual, out string errorMessage)
         {
             List<Activity> returnList = new List<Activity>();

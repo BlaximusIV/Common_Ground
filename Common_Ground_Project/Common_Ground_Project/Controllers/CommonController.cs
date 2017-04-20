@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Common_Ground_Project.DataAccess;
 using Common_Ground_Project.Models;
 
@@ -32,6 +33,10 @@ namespace Common_Ground_Project.Controllers
         public Activity GetActivity(Activity activity, out string errorMessage)
         {
             return ActivityData.GetActivity(activity, out errorMessage);
+        }
+        public List<Activity> GetActivityList(DateTime date, out string errorMessage)
+        {
+            return ActivityData.GetActivityList(date, out errorMessage);
         }
         public List<Activity> GetActivityList(Individual individual, out string errorMessage)
         {
