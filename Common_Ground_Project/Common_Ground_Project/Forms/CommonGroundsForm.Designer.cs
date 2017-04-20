@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommonGroundsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.individualTab = new System.Windows.Forms.TabPage();
             this.individualView1 = new Common_Ground_Project.Views.IndividualView();
             this.activityTab = new System.Windows.Forms.TabPage();
-            this.vehicleTab = new System.Windows.Forms.TabPage();
             this.activityView1 = new Common_Ground_Project.Views.ActivityView();
+            this.vehicleTab = new System.Windows.Forms.TabPage();
             this.vehicalView1 = new Common_Ground_Project.Views.VehicalView();
+            this.reportTab = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.frequentCallers = new System.Windows.Forms.ToolStripButton();
+            this.userDays = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.individualTab.SuspendLayout();
             this.activityTab.SuspendLayout();
             this.vehicleTab.SuspendLayout();
+            this.reportTab.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -47,6 +54,7 @@
             this.tabControl1.Controls.Add(this.individualTab);
             this.tabControl1.Controls.Add(this.activityTab);
             this.tabControl1.Controls.Add(this.vehicleTab);
+            this.tabControl1.Controls.Add(this.reportTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
@@ -85,6 +93,14 @@
             this.activityTab.Text = "Activity";
             this.activityTab.UseVisualStyleBackColor = true;
             // 
+            // activityView1
+            // 
+            this.activityView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityView1.Location = new System.Drawing.Point(3, 3);
+            this.activityView1.Name = "activityView1";
+            this.activityView1.Size = new System.Drawing.Size(1015, 476);
+            this.activityView1.TabIndex = 0;
+            // 
             // vehicleTab
             // 
             this.vehicleTab.Controls.Add(this.vehicalView1);
@@ -95,14 +111,6 @@
             this.vehicleTab.Text = "Vehicles";
             this.vehicleTab.UseVisualStyleBackColor = true;
             // 
-            // activityView1
-            // 
-            this.activityView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityView1.Location = new System.Drawing.Point(3, 3);
-            this.activityView1.Name = "activityView1";
-            this.activityView1.Size = new System.Drawing.Size(1015, 476);
-            this.activityView1.TabIndex = 0;
-            // 
             // vehicalView1
             // 
             this.vehicalView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,6 +118,44 @@
             this.vehicalView1.Name = "vehicalView1";
             this.vehicalView1.Size = new System.Drawing.Size(1021, 482);
             this.vehicalView1.TabIndex = 0;
+            // 
+            // reportTab
+            // 
+            this.reportTab.Controls.Add(this.toolStrip1);
+            this.reportTab.Location = new System.Drawing.Point(23, 4);
+            this.reportTab.Name = "reportTab";
+            this.reportTab.Padding = new System.Windows.Forms.Padding(3);
+            this.reportTab.Size = new System.Drawing.Size(1021, 482);
+            this.reportTab.TabIndex = 3;
+            this.reportTab.Text = "Reports";
+            this.reportTab.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.frequentCallers,
+            this.userDays});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1015, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // frequentCallers
+            // 
+            this.frequentCallers.Image = ((System.Drawing.Image)(resources.GetObject("frequentCallers.Image")));
+            this.frequentCallers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.frequentCallers.Name = "frequentCallers";
+            this.frequentCallers.Size = new System.Drawing.Size(112, 22);
+            this.frequentCallers.Text = "Frequent Callers";
+            // 
+            // userDays
+            // 
+            this.userDays.Image = ((System.Drawing.Image)(resources.GetObject("userDays.Image")));
+            this.userDays.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.userDays.Name = "userDays";
+            this.userDays.Size = new System.Drawing.Size(78, 22);
+            this.userDays.Text = "User Days";
             // 
             // CommonGroundsForm
             // 
@@ -123,6 +169,10 @@
             this.individualTab.ResumeLayout(false);
             this.activityTab.ResumeLayout(false);
             this.vehicleTab.ResumeLayout(false);
+            this.reportTab.ResumeLayout(false);
+            this.reportTab.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +186,9 @@
         private System.Windows.Forms.TabPage vehicleTab;
         private Views.ActivityView activityView1;
         private Views.VehicalView vehicalView1;
+        private System.Windows.Forms.TabPage reportTab;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton frequentCallers;
+        private System.Windows.Forms.ToolStripButton userDays;
     }
 }

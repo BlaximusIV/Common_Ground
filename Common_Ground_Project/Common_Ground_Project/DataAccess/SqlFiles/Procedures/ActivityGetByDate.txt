@@ -1,0 +1,28 @@
+﻿USE MASTER
+GO
+
+CREATE PROCEDURE dbo.ActivityGetByDate
+(
+	@Date DATETIME
+)
+AS 
+	SET NOCOUNT ON;
+
+	SELECT
+		a.ActivityID, 
+		a.Title,
+		a.TripLeaderID, 
+		a.Description, 
+		a.Location, 
+		a.StartDate, 
+		a.EndDate, 
+		a.PickUpTime, 
+		a.DropOffTime, 
+		a.StaffArrivalTime, 
+		a.Cost
+	FROM
+		Master.dbo.Activity a
+	WHERE
+		CONVERT(DATE, a.StartDate) = @Date
+
+GO	
