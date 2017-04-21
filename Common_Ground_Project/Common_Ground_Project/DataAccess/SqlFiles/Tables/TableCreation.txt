@@ -14,6 +14,24 @@
 	IsWaiverSigned BIT NOT NULL DEFAULT(0),
 	IsMediaReleased BIT NOT NULL DEFAULT(0)
 )
+
+CREATE TABLE Staff(
+	IndividualID INT PRIMARY KEY NOT NULL, 
+	Username VARCHAR(50) NOT NULL, 
+	Password NVARCHAR(255) NOT NULL, 
+	HireDate DATETIME NULL, 
+	LeaveDate DATETIME NULL, 
+	PermissionID INT NOT NULL DEFAULT(1), 
+	IsEligibleDriver BIT NOT NULL DEFAULT(0), 
+	IsEmployeed BIT NOT NULL DEFAULT(0)
+)
+
+CREATE TABLE Permission(
+	PermissionID INT IDENTITY(1,1) PRIMARY KEY NOT NULL, 
+	Name VARCHAR(50) NOT NULL, 
+	IsAllowedEntry BIT NOT NULL DEFAULT(0)
+)
+
 CREATE TABLE IndividualActivity(
 	IndividualID INT NOT NULL,
 	ActivityID INT NOT NULL
@@ -41,9 +59,8 @@ CREATE TABLE IndividualType(
 
 CREATE TABLE Activity(
 	ActivityID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Title VARCHAR(50) NOT NULL,
-	TripLeader INT NOT NULL,
-	[Description] VARCHAR(250) NOT NULL,
+	ActivityTypeID INT NOT NULL,
+	TripLeaderID INT NOT NULL,
 	[Location] VARCHAR(50),
 	StartDate DATETIME NOT NULL,
 	EndDate DATETIME NOT NULL,
@@ -53,9 +70,16 @@ CREATE TABLE Activity(
 	Cost DECIMAL NOT NULL
 )
 
+CREATE TABLE ActivityType(
+	ActivityTypeID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Name] VARCHAR(50) NOT NULL, 
+	[Description] VARCHAR(MAX) NOT NULL
+)
+
 CREATE TABLE ActivityVehicle(
 	ActivityID INT NOT NULL,
-	VehicleID INT NOT NULL
+	VehicleID INT NOT NULL, 
+	StaffID INT NOT NULL
 )
 
 CREATE TABLE ActivityNote(

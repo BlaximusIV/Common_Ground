@@ -22,7 +22,7 @@ AS
 		i.Birthday, 
 		i.IsFrequentCaller, 
 		i.IsWaiverSigned, 
-		IsMediaReleased
+		i.IsMediaReleased
 	FROM
 		Master.dbo.Individual i
 		JOIN Master.dbo.InvidiualActivity ia ON ia.IndividualID = i.IndividualID

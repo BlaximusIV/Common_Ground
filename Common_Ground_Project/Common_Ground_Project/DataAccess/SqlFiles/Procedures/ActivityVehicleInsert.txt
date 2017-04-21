@@ -4,7 +4,8 @@ GO
 CREATE PROCEDURE dbo.ActivityVehicleInsert
 (
 	@ActivityID INT, 
-	@VehicleID INT
+	@VehicleID INT, 
+	@DriverID INT
 )
 AS 
 	SET NOCOUNT ON;
@@ -12,12 +13,14 @@ AS
 	INSERT INTO Master.dbo.ActivityVehicle
 	(
 		ActivityID, 
-		VehicleID
+		VehicleID, 
+		StaffID
 	)
 	VALUES
 	(
 		@ActivityID, 
-		@VehicleID
+		@VehicleID, 
+		@DriverID
 	)
 
 GO	
