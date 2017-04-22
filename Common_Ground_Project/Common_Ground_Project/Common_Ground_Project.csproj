@@ -176,9 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataAccess\SqlFiles\DataInserts\ActivityType.sql" />
-    <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.txt" />
-    <Content Include="DataAccess\SqlFiles\DataInserts\Permission.txt" />
-    <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.txt" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.sql" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Permission.sql" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityDeleteByID.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByID.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByDate.sql" />
@@ -188,6 +188,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByID.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteInsert.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetAll.sql" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffAuthenticate.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffGetAll.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdate.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffInsert.sql" />
