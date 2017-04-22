@@ -153,6 +153,7 @@
       <DependentUpon>VehicalView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Activity.datasource" />
+    <None Include="Properties\DataSources\Common_Ground_Project.Models.Activity1.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Participent.datasource" />
     <None Include="Properties\DataSources\Common_Ground_Project.Models.Vehicle.datasource" />
@@ -190,6 +191,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualGetAll.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffAuthenticate.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffGetAll.sql" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdatePassword.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdate.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffInsert.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffGetByID.sql" />

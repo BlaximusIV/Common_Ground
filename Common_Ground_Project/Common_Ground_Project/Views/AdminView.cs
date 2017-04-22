@@ -106,5 +106,22 @@ namespace Common_Ground_Project.Views
                     MessageBox.Show(errorMessage);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (staffDataGrid.SelectedCells != null && staffDataGrid.SelectedCells.Count > 0)
+            {
+                Staff staff = (Staff)staffDataGrid.Rows[staffDataGrid.SelectedCells[0].RowIndex].DataBoundItem;
+                if (staff != null && staff.StaffID > 0)
+                {
+                    string password = Controller.PasswordStaff(staff, out errorMessage);
+                    if (!String.IsNullOrEmpty(errorMessage))
+                        MessageBox.Show(errorMessage);
+                    else
+                        MessageBox.Show("Please let " + staff.Name + " know their password has changed to " + password + " temporarily.");
+                }
+            }
+        }
     }
 }
