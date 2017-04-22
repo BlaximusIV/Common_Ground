@@ -10,6 +10,7 @@ namespace Common_Ground_Project.Models
     public class Permission
     {
         public int PermissionID { get; set; }
+        public string UserName { get; set; }
         public string Name { get; set; }
         public bool IsAllowedEntry { get; set; }
 

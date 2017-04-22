@@ -30,17 +30,19 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.individualTab = new System.Windows.Forms.TabPage();
-            this.individualView1 = new Common_Ground_Project.Views.IndividualView();
             this.activityTab = new System.Windows.Forms.TabPage();
-            this.activityView1 = new Common_Ground_Project.Views.ActivityView();
             this.vehicleTab = new System.Windows.Forms.TabPage();
-            this.vehicalView1 = new Common_Ground_Project.Views.VehicalView();
             this.reportTab = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.frequentCallerReport1 = new Common_Ground_Project.Views.FrequentCallerReport();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.adminTab = new System.Windows.Forms.TabPage();
+            this.individualView1 = new Common_Ground_Project.Views.IndividualView();
+            this.activityView1 = new Common_Ground_Project.Views.ActivityView();
+            this.vehicalView1 = new Common_Ground_Project.Views.VehicalView();
+            this.frequentCallerReport1 = new Common_Ground_Project.Views.FrequentCallerReport();
             this.userDayReport1 = new Common_Ground_Project.Views.UserDayReport();
+            this.adminView1 = new Common_Ground_Project.Views.AdminView();
             this.tabControl1.SuspendLayout();
             this.individualTab.SuspendLayout();
             this.activityTab.SuspendLayout();
@@ -49,6 +51,7 @@
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.adminTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -57,6 +60,7 @@
             this.tabControl1.Controls.Add(this.individualTab);
             this.tabControl1.Controls.Add(this.activityTab);
             this.tabControl1.Controls.Add(this.vehicleTab);
+            this.tabControl1.Controls.Add(this.adminTab);
             this.tabControl1.Controls.Add(this.reportTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -77,14 +81,6 @@
             this.individualTab.Text = "Individual";
             this.individualTab.UseVisualStyleBackColor = true;
             // 
-            // individualView1
-            // 
-            this.individualView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.individualView1.Location = new System.Drawing.Point(3, 3);
-            this.individualView1.Name = "individualView1";
-            this.individualView1.Size = new System.Drawing.Size(1015, 476);
-            this.individualView1.TabIndex = 0;
-            // 
             // activityTab
             // 
             this.activityTab.Controls.Add(this.activityView1);
@@ -96,14 +92,6 @@
             this.activityTab.Text = "Activity";
             this.activityTab.UseVisualStyleBackColor = true;
             // 
-            // activityView1
-            // 
-            this.activityView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityView1.Location = new System.Drawing.Point(3, 3);
-            this.activityView1.Name = "activityView1";
-            this.activityView1.Size = new System.Drawing.Size(1015, 476);
-            this.activityView1.TabIndex = 0;
-            // 
             // vehicleTab
             // 
             this.vehicleTab.Controls.Add(this.vehicalView1);
@@ -113,14 +101,6 @@
             this.vehicleTab.TabIndex = 2;
             this.vehicleTab.Text = "Vehicles";
             this.vehicleTab.UseVisualStyleBackColor = true;
-            // 
-            // vehicalView1
-            // 
-            this.vehicalView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehicalView1.Location = new System.Drawing.Point(0, 0);
-            this.vehicalView1.Name = "vehicalView1";
-            this.vehicalView1.Size = new System.Drawing.Size(1021, 482);
-            this.vehicalView1.TabIndex = 0;
             // 
             // reportTab
             // 
@@ -155,14 +135,6 @@
             this.tabPage1.Text = "Frequent Caller";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // frequentCallerReport1
-            // 
-            this.frequentCallerReport1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frequentCallerReport1.Location = new System.Drawing.Point(3, 3);
-            this.frequentCallerReport1.Name = "frequentCallerReport1";
-            this.frequentCallerReport1.Size = new System.Drawing.Size(1001, 444);
-            this.frequentCallerReport1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.userDayReport1);
@@ -174,6 +146,49 @@
             this.tabPage2.Text = "User Days";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // adminTab
+            // 
+            this.adminTab.BackColor = System.Drawing.Color.Transparent;
+            this.adminTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminTab.Controls.Add(this.adminView1);
+            this.adminTab.Location = new System.Drawing.Point(23, 4);
+            this.adminTab.Name = "adminTab";
+            this.adminTab.Size = new System.Drawing.Size(1021, 482);
+            this.adminTab.TabIndex = 4;
+            this.adminTab.Text = "Admin";
+            // 
+            // individualView1
+            // 
+            this.individualView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.individualView1.Location = new System.Drawing.Point(3, 3);
+            this.individualView1.Name = "individualView1";
+            this.individualView1.Size = new System.Drawing.Size(1015, 476);
+            this.individualView1.TabIndex = 0;
+            // 
+            // activityView1
+            // 
+            this.activityView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityView1.Location = new System.Drawing.Point(3, 3);
+            this.activityView1.Name = "activityView1";
+            this.activityView1.Size = new System.Drawing.Size(1015, 476);
+            this.activityView1.TabIndex = 0;
+            // 
+            // vehicalView1
+            // 
+            this.vehicalView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehicalView1.Location = new System.Drawing.Point(0, 0);
+            this.vehicalView1.Name = "vehicalView1";
+            this.vehicalView1.Size = new System.Drawing.Size(1021, 482);
+            this.vehicalView1.TabIndex = 0;
+            // 
+            // frequentCallerReport1
+            // 
+            this.frequentCallerReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frequentCallerReport1.Location = new System.Drawing.Point(3, 3);
+            this.frequentCallerReport1.Name = "frequentCallerReport1";
+            this.frequentCallerReport1.Size = new System.Drawing.Size(1001, 444);
+            this.frequentCallerReport1.TabIndex = 0;
+            // 
             // userDayReport1
             // 
             this.userDayReport1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -181,6 +196,14 @@
             this.userDayReport1.Name = "userDayReport1";
             this.userDayReport1.Size = new System.Drawing.Size(1001, 444);
             this.userDayReport1.TabIndex = 0;
+            // 
+            // adminView1
+            // 
+            this.adminView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adminView1.Location = new System.Drawing.Point(0, 0);
+            this.adminView1.Name = "adminView1";
+            this.adminView1.Size = new System.Drawing.Size(1021, 482);
+            this.adminView1.TabIndex = 0;
             // 
             // CommonGroundsForm
             // 
@@ -199,6 +222,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.adminTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,5 +242,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Views.FrequentCallerReport frequentCallerReport1;
         private Views.UserDayReport userDayReport1;
+        private System.Windows.Forms.TabPage adminTab;
+        private Views.AdminView adminView1;
     }
 }

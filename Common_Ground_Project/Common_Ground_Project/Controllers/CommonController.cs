@@ -8,6 +8,8 @@ namespace Common_Ground_Project.Controllers
 {
     public class CommonController
     {
+        public Permission Permission { get; set; }
+
         // private Repository references.
         private ActivitySql ActivityData;
         private ActivityNoteSql ActivityNoteData;
@@ -23,6 +25,8 @@ namespace Common_Ground_Project.Controllers
 
         public CommonController()
         {
+            Permission = new Permission();
+
             // Initialize repositories
             ActivityData = new ActivitySql();
             ActivityNoteData = new ActivityNoteSql();
@@ -41,11 +45,27 @@ namespace Common_Ground_Project.Controllers
         #region Authorization 
         public bool IsAuthenticated(string username, string password)
         {
-            // Check DB by username and validate password.
-            if (password == LoginCredentials.Password)
-                return true;
+            Permission.UserName = username;
+            if (username.ToLower() == "admin")
+            {
+                Permission.PermissionID = 5;
+                Permission.Name = "Admin";
+                Permission.IsAllowedEntry = true;
+
+                if (password == LoginCredentials.Password)
+                    return true;
+                else
+                    return false;
+            }
             else
+            {
+                // Check DB by username and validate password.
+
+                // Populate Permission Object
+                // Don't forget IsAllowedEntry
+
                 return false;
+            }  
         }
         #endregion
 
@@ -138,6 +158,11 @@ namespace Common_Ground_Project.Controllers
             return IndividualData.GetIndividualList(activity, out errorMessage);
         }
 
+        public void ResetIndividualWaiver(out string errorMessage)
+        {
+            errorMessage = String.Empty;
+
+        }
         public void SaveIndividual(Individual individual, out string errorMessage)
         {
             IndividualData.SaveIndividual(individual, out errorMessage);
