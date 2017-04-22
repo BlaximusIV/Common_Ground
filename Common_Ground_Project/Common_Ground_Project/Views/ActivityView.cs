@@ -29,7 +29,7 @@ namespace Common_Ground_Project.Views
 
         private void populateActivityTree() {
             string errorMsg = String.Empty;
-            ActivityTreeView.Nodes.Clear();
+            activityTreeView.Nodes.Clear();
             DateTime filterDate = Convert.ToDateTime(ActivitySearch.Text);
 
             List<Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
@@ -40,7 +40,7 @@ namespace Common_Ground_Project.Views
                 node = new TreeNode();
                 node.Text = act.ActivityTypeName;
                 node.Tag = act;
-                ActivityTreeView.Nodes.Add(node);
+                activityTreeView.Nodes.Add(node);
             }
         }
 
@@ -49,10 +49,38 @@ namespace Common_Ground_Project.Views
             populateActivityTree();
         }
 
-        private void ActivityTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        private void activityTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             Activity activity = (Activity)e.Node.Tag;
-            ActivityViewDataSource.DataSource = activity;
+            activityDataSource.DataSource = activity;
+
+            populateActivityVehicles();
+            populateActivityNotes();
+            populateActivityParticipants();
+        }
+
+        private void populateActivityVehicles()
+        {
+            string errorMessage = String.Empty;
+            Activity activity = (Activity)activityDataSource.DataSource;
+            activity.VehicleList = Controller.GetVehicleList(activity, out errorMessage);
+            activityDataSource.DataSource = activity;
+        }
+
+        private void populateActivityNotes()
+        {
+            string errorMessage = String.Empty;
+            Activity activity = (Activity)activityDataSource.DataSource;
+            activity.ActivityNoteList = Controller.GetActivityNoteList(activity, out errorMessage);
+            activityDataSource.DataSource = activity;
+        }
+
+        private void populateActivityParticipants()
+        {
+            string errorMessage = String.Empty;
+            Activity activity = (Activity)activityDataSource.DataSource;
+            activity.IndividualList = Controller.GetIndividualList(activity, out errorMessage);
+            activityDataSource.DataSource = activity;
         }
     }
 }

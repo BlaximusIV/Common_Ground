@@ -45,6 +45,7 @@ namespace Common_Ground_Project.Controllers
         #region Authorization 
         public bool IsAuthenticated(string username, string password)
         {
+            string errorMessage = String.Empty;
             Permission.UserName = username;
             if (username.ToLower() == "admin")
             {
@@ -59,13 +60,14 @@ namespace Common_Ground_Project.Controllers
             }
             else
             {
-                // Check DB by username and validate password.
+                int permissionID = StaffData.AuthenticateStaff(username, password, out errorMessage);
+                Permission = new Permission(permissionID);
 
-                // Populate Permission Object
-                // Don't forget IsAllowedEntry
-
-                return false;
-            }  
+                if (permissionID > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
         #endregion
 

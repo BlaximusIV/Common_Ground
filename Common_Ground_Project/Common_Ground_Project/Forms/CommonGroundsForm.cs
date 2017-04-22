@@ -30,11 +30,8 @@ namespace Common_Ground_Project.Forms
             loginForm = loginParent;
             Controller = loginForm.Controller;
 
-            if (Controller.Permission.PermissionID < 4) // Admin / Owner / Manager 
-                adminTab.Hide();
-
             InitializeComponent();
-            Initialize();   
+            Initialize();
         }
 
         private void Initialize()
@@ -59,6 +56,13 @@ namespace Common_Ground_Project.Forms
             {
                 // NO ONE CARES!
             }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Admin Tab - Assistant / Manager / Owner / Admin
+            if (Controller.Permission.PermissionID < 3 && tabControl1.SelectedIndex == 3) 
+                tabControl1.SelectedIndex = 0;
         }
     }
 }
