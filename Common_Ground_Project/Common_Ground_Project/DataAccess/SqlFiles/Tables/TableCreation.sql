@@ -48,7 +48,7 @@ CREATE TABLE EmergencyContact(
 CREATE TABLE IndividualNote(
 	IndividualNoteID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IndividualID INT NOT NULL,
-	Note VARCHAR(50) NOT NULL,
+	Note VARCHAR(MAX) NOT NULL,
 	[DateTime] DATETIME NOT NULL
 )
 

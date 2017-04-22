@@ -11,7 +11,7 @@ namespace Common_Ground_Project
         static private string password = "!@#admin123";
         static public string Password { get { return LoginCredentials.password; } }
         //public static string ConnectionString { get { return "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;"; } }
-        public static string ConnectionString { get { return "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; } }
+        public static string ConnectionString { get { return "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;"; } }
 
         static private bool isAuthenticated = false;
         static public bool IsAuthenticated

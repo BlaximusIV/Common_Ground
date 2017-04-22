@@ -9,7 +9,6 @@ AS
 	SET NOCOUNT ON;
 
 	SELECT
-		SELECT
 		a.ActivityID, 
 		a.ActivityTypeID,
 		a.TripLeaderID, 
