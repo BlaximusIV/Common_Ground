@@ -11,6 +11,7 @@ namespace Common_Ground_Project.Models
     {
         public int ActivityID { get; set; }
         public int ActivityTypeID { get; set; }
+        public string ActivityTypeName { get; set; }
         public int TripLeaderID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
