@@ -44,7 +44,8 @@ namespace Common_Ground_Project.DataAccess
                         if (staff.StaffID == 0)
                         {
                             cmd.CommandText = "Master.dbo.StaffInsert";
-                            //cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
+                            cmd.Parameters.AddWithValue("@Password", ""); //TODO: Encrypt and send default password
+                            staff.StaffID = staff.IndividualID;
                         }
                         else
                         {
@@ -53,7 +54,6 @@ namespace Common_Ground_Project.DataAccess
 
                         cmd.Parameters.AddWithValue("@IndividualID", staff.StaffID);
                         cmd.Parameters.AddWithValue("@Username", staff.Username);
-                        cmd.Parameters.AddWithValue("@Password", ""); //TODO: Encrypt and send default password
                         cmd.Parameters.AddWithValue("@HireDate", staff.HireDate);
                         cmd.Parameters.AddWithValue("@LeaveDate", staff.LeaveDate);
                         cmd.Parameters.AddWithValue("@PermissionID", staff.PermissionID);

@@ -4,7 +4,7 @@ GO
 CREATE PROCEDURE dbo.StaffUpdate
 (
 	@IndividualID INT,
-	@Username VARCHAR(50), 
+	@Username VARCHAR(50) = NULL, 
 	@HireDate DATETIME = NULL, 
 	@LeaveDate DATETIME = NULL, 
 	@PermissionID INT = 1, 
@@ -16,7 +16,7 @@ AS
 
 	UPDATE Master.dbo.Staff
 	SET
-		Username = @Username, 
+		Username = ISNULL(@Username, Username), 
 		HireDate = @HireDate, 
 		LeaveDate = @LeaveDate, 
 		PermissionID = @PermissionID, 

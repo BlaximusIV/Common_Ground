@@ -17,6 +17,14 @@ namespace Common_Ground_Project.Forms
         private LoginForm loginForm;
 
 
+        public CommonGroundsForm()
+        {
+            Controller = new CommonController();
+            this.FormClosed -= CommonGroundsForm_FormClosed;
+
+            InitializeComponent();
+            Initialize();
+        }
         public CommonGroundsForm(LoginForm loginParent)
         {
             loginForm = loginParent;
@@ -43,7 +51,14 @@ namespace Common_Ground_Project.Forms
 
         private void CommonGroundsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            loginForm.Close();
+            try
+            {
+                loginForm.Close();
+            }
+            catch (Exception)
+            {
+                // NO ONE CARES!
+            }
         }
     }
 }

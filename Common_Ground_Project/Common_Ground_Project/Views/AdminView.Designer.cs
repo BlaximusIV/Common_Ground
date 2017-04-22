@@ -30,9 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.staffDataGrid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.DeleteIndividualButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.DeleteIndividualButton);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(1106, 590);
-            this.splitContainer1.SplitterDistance = 410;
+            this.splitContainer1.SplitterDistance = 569;
             this.splitContainer1.TabIndex = 2;
             // 
             // staffDataGrid
@@ -70,8 +70,29 @@
             this.staffDataGrid.Location = new System.Drawing.Point(0, 0);
             this.staffDataGrid.Name = "staffDataGrid";
             this.staffDataGrid.RowHeadersVisible = false;
-            this.staffDataGrid.Size = new System.Drawing.Size(410, 590);
+            this.staffDataGrid.Size = new System.Drawing.Size(569, 590);
             this.staffDataGrid.TabIndex = 0;
+            this.staffDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.staffDataGrid_CellEndEdit);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Usually occurs on December 1st.";
+            // 
+            // DeleteIndividualButton
+            // 
+            this.DeleteIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DeleteIndividualButton.Location = new System.Drawing.Point(222, 15);
+            this.DeleteIndividualButton.Name = "DeleteIndividualButton";
+            this.DeleteIndividualButton.Size = new System.Drawing.Size(99, 27);
+            this.DeleteIndividualButton.TabIndex = 2;
+            this.DeleteIndividualButton.Text = "Reset";
+            this.DeleteIndividualButton.UseVisualStyleBackColor = false;
+            this.DeleteIndividualButton.Click += new System.EventHandler(this.DeleteIndividualButton_Click);
             // 
             // label1
             // 
@@ -82,27 +103,6 @@
             this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reset Waivers";
-            // 
-            // DeleteIndividualButton
-            // 
-            this.DeleteIndividualButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.DeleteIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DeleteIndividualButton.Location = new System.Drawing.Point(222, 15);
-            this.DeleteIndividualButton.Name = "DeleteIndividualButton";
-            this.DeleteIndividualButton.Size = new System.Drawing.Size(99, 27);
-            this.DeleteIndividualButton.TabIndex = 2;
-            this.DeleteIndividualButton.Text = "Reset";
-            this.DeleteIndividualButton.UseVisualStyleBackColor = false;
-            this.DeleteIndividualButton.Click += new System.EventHandler(this.DeleteIndividualButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Usually occurs on December 1st.";
             // 
             // AdminView
             // 

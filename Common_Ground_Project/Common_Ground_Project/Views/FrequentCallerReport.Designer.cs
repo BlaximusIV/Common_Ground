@@ -65,6 +65,7 @@
             this.frequentCallerGrid.Enabled = false;
             this.frequentCallerGrid.Location = new System.Drawing.Point(0, 0);
             this.frequentCallerGrid.Name = "frequentCallerGrid";
+            this.frequentCallerGrid.RowHeadersVisible = false;
             this.frequentCallerGrid.Size = new System.Drawing.Size(843, 471);
             this.frequentCallerGrid.TabIndex = 1;
             // 

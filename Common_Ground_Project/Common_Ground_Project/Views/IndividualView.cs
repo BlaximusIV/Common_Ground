@@ -143,37 +143,8 @@ namespace Common_Ground_Project.Views
             if (individual.IndividualTypeID > 0)
                 individualTypeComboBox.SelectedItem = individualTypeComboBox.Items[individual.IndividualTypeID - 1];
 
-            if (individual.EmergencyContactList == null || individual.EmergencyContactList.Count == 0)
-            {
-                individual.EmergencyContactList = new List<EmergencyContact>();
-                individual.EmergencyContactList = Controller.GetEmergencyContactList(individual, out errorMessage);
-
-                if (!String.IsNullOrEmpty(errorMessage))
-                    MessageBox.Show(errorMessage);
-                else
-                {
-                    individualTreeView.SelectedNode.Tag = individual;
-                    emergencyContactListBindingSource.DataSource = individual.EmergencyContactList;
-                }
-            }
-            else
-                emergencyContactListBindingSource.DataSource = individual.EmergencyContactList;
-
-            if (individual.IndividualNoteList == null || individual.IndividualNoteList.Count == 0)
-            {
-                individual.IndividualNoteList = new List<IndividualNote>();
-                individual.IndividualNoteList = Controller.GetIndividualNoteList(individual, out errorMessage);
-
-                if (!String.IsNullOrEmpty(errorMessage))
-                    MessageBox.Show(errorMessage);
-                else
-                {
-                    individualTreeView.SelectedNode.Tag = individual;
-                    individualNoteListBindingSource.DataSource = individual.IndividualNoteList;
-                }
-            }
-            else
-                individualNoteListBindingSource.DataSource = individual.IndividualNoteList;
+            getIndividualContacts();
+            getIndividualNotes();
         }
 
         private void FilterIndividualName_TextChanged(object sender, EventArgs e)
@@ -185,9 +156,6 @@ namespace Common_Ground_Project.Views
         {
             FilterTreeNames();
         }
-
-
-
 
         private void FilterTreeNames()
         {
@@ -224,7 +192,8 @@ namespace Common_Ground_Project.Views
             {
                 Individual individual = (Individual)IndividualDataSource.DataSource;
 
-                if (individual != null && individual.IndividualID > 0) { 
+                if (individual != null && individual.IndividualID > 0)
+                { 
                     EmergencyContact contact = new EmergencyContact
                     {
                         IndividualID = individual.IndividualID,
@@ -239,10 +208,7 @@ namespace Common_Ground_Project.Views
                         MessageBox.Show(errorMessage);
                     else
                     {
-                        individual.EmergencyContactList.Add(contact);
-                        IndividualDataSource.DataSource = individual;
-                        individualTreeView.SelectedNode.Tag = individual;
-                        dataGridView1.DataSource = individual.EmergencyContactList;
+                        getIndividualContacts();
 
                         ecNameText.Text = String.Empty;
                         ecEmailText.Text = String.Empty;
@@ -264,26 +230,63 @@ namespace Common_Ground_Project.Views
             else
             {
                 Individual individual = (Individual)IndividualDataSource.DataSource;
-                IndividualNote idividualNote = new IndividualNote
+                if (individual != null && individual.IndividualID > 0)
                 {
-                    IndividualID = individual.IndividualID,
-                    Note = note
-                };
+                    IndividualNote idividualNote = new IndividualNote
+                    {
+                        IndividualID = individual.IndividualID,
+                        Note = note
+                    };
 
-                Controller.SaveIndividualNote(idividualNote, out errorMessage);
+                    Controller.SaveIndividualNote(idividualNote, out errorMessage);
 
-                if (!String.IsNullOrEmpty(errorMessage))
-                    MessageBox.Show(errorMessage);
-                else
-                {
-                    individual.IndividualNoteList.Add(idividualNote);
-                    IndividualDataSource.DataSource = individual;
-                    individualTreeView.SelectedNode.Tag = individual;
-                    dataGridView2.DataSource = individual.IndividualNoteList;
-
-                    noteText.Text = String.Empty;
+                    if (!String.IsNullOrEmpty(errorMessage))
+                        MessageBox.Show(errorMessage);
+                    else
+                    {
+                        getIndividualNotes();
+                        noteText.Text = String.Empty;
+                    }
                 }
+                else
+                    MessageBox.Show("Please select an individual first.");
             }
+        }
+
+
+
+        private void getIndividualNotes()
+        {
+            string errorMessage = String.Empty;
+            Individual individual = (Individual)IndividualDataSource.DataSource;
+            individual.IndividualNoteList = new List<IndividualNote>();
+            individual.IndividualNoteList = Controller.GetIndividualNoteList(individual, out errorMessage);
+
+            if (!String.IsNullOrEmpty(errorMessage))
+                MessageBox.Show(errorMessage);
+            else
+                individualNoteListBindingSource.DataSource = individual.IndividualNoteList;
+        }
+
+        private void getIndividualContacts()
+        {
+            string errorMessage = String.Empty;
+            Individual individual = (Individual)IndividualDataSource.DataSource;
+            individual.IndividualNoteList = new List<IndividualNote>();
+            individual.IndividualNoteList = Controller.GetIndividualNoteList(individual, out errorMessage);
+
+            individual.EmergencyContactList = new List<EmergencyContact>();
+            individual.EmergencyContactList = Controller.GetEmergencyContactList(individual, out errorMessage);
+
+            if (!String.IsNullOrEmpty(errorMessage))
+                MessageBox.Show(errorMessage);
+            else
+                emergencyContactListBindingSource.DataSource = individual.EmergencyContactList;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IndividualDataSource.DataSource = new Individual();
         }
     }
 }
