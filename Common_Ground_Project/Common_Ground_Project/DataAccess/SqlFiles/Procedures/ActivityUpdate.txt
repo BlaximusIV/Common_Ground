@@ -4,9 +4,8 @@ GO
 CREATE PROCEDURE dbo.ActivityUpdate
 (
 	@ActivityID INT,
-	@Title VARCHAR(50), 
+	@ActivityTypeID INT, 
 	@TripLeaderID INT, 
-	@Description VARCHAR(250), 
 	@Location VARCHAR(50), 
 	@StartDate DATETIME, 
 	@EndDate DATETIME, 
@@ -20,9 +19,8 @@ AS
 
 	UPDATE Master.dbo.Activity
 	SET 
-		Title = @Title, 
+		ActivityTypeID = @ActivityTypeID, 
 		TripLeaderID = @TripLeaderID, 
-		[Description] = @Description, 
 		[Location] = @Location, 
 		StartDate = @StartDate, 
 		EndDate = @EndDate, 

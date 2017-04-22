@@ -51,7 +51,10 @@
     <Compile Include="DataAccess\ActivitySql.cs" />
     <Compile Include="DataAccess\EmergencyContactSql.cs" />
     <Compile Include="DataAccess\IndividualNoteSql.cs" />
+    <Compile Include="DataAccess\Staffsql.cs" />
     <Compile Include="DataAccess\IndividualSql.cs" />
+    <Compile Include="DataAccess\ActivityTypeSql.cs" />
+    <Compile Include="DataAccess\PermissionSql.cs" />
     <Compile Include="DataAccess\IndividualTypeSql.cs" />
     <Compile Include="DataAccess\ReportSql.cs" />
     <Compile Include="DataAccess\VehicleSql.cs" />
@@ -73,7 +76,10 @@
     <Compile Include="Models\EmergencyContact.cs" />
     <Compile Include="Models\Individual.cs" />
     <Compile Include="Models\IndividualNote.cs" />
+    <Compile Include="Models\ActivityType.cs" />
     <Compile Include="Models\IndividualType.cs" />
+    <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.txt" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Permission.txt" />
     <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityDeleteByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByID.txt" />
@@ -170,6 +177,17 @@
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByActivity.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffGetAll.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\PermissionGetAll.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\PermissionGetByID.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\PermissionInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\PermissionUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityTypeUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityTypeInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityTypeGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityVehicleInsert.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityVehicleDeleteByID.txt" />
@@ -192,6 +210,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\FrequentCallerReport.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\ActivityTypeGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\UserDayReport.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleDeleteByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\VehicleGetAll.txt" />

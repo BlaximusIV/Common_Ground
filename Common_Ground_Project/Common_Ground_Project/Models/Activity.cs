@@ -10,9 +10,8 @@ namespace Common_Ground_Project.Models
     public class Activity
     {
         public int ActivityID { get; set; }
-        public string Title { get; set; }
+        public int ActivityTypeID { get; set; }
         public int TripLeaderID { get; set; }
-        public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime PickUpTime { get; set; }
@@ -40,9 +39,8 @@ namespace Common_Ground_Project.Models
         public Activity(SqlDataReader rdr)
         {
             ActivityID = rdr["ActivityID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["ActivityID"]);
-            Title = rdr["Title"] == DBNull.Value ? String.Empty : rdr["Title"].ToString();
+            ActivityTypeID = rdr["ActivityTypeID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["ActivityTypeID"]);
             TripLeaderID = rdr["TripLeaderID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["TripLeaderID"]);
-            Description = rdr["Description"] == DBNull.Value ? String.Empty : rdr["Description"].ToString();
             StartDate = rdr["Start_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Start_Date"]);
             EndDate = rdr["End_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["End_Date"]);
             PickUpTime = rdr["Pick_Up_Time"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Pick_Up_Time"]);

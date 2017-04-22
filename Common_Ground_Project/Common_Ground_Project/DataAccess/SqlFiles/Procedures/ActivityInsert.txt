@@ -3,9 +3,8 @@ GO
 
 CREATE PROCEDURE dbo.ActivityInsert
 (
-	@Title VARCHAR(50), 
+	@ActivityTypeID INT, 
 	@TripLeaderID INT, 
-	@Description VARCHAR(250), 
 	@Location VARCHAR(50), 
 	@StartDate DATETIME, 
 	@EndDate DATETIME, 
@@ -20,9 +19,8 @@ AS
 
 	INSERT INTO Master.dbo.Activity
 	(
-		Title, 
+		ActivityTypeID, 
 		TripLeaderID, 
-		Description, 
 		Location, 
 		StartDate, 
 		EndDate, 
@@ -33,9 +31,8 @@ AS
 	)
 	VALUES 
 	(
-		@Title, 
+		@ActivityTypeID, 
 		@TripLeaderID, 
-		@Description, 
 		@Location, 
 		@StartDate, 
 		@EndDate, 

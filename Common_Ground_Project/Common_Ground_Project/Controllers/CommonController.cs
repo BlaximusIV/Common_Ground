@@ -11,11 +11,14 @@ namespace Common_Ground_Project.Controllers
         // private Repository references.
         private ActivitySql ActivityData;
         private ActivityNoteSql ActivityNoteData;
+        private ActivityTypeSql ActivityTypeData;
         private EmergencyContactSql EmergencyContactData;
         private IndividualSql IndividualData;
         private IndividualNoteSql IndividualNoteData;
         private IndividualTypeSql IndividualTypeData;
+        private PermissionSql PermissionData;
         private ReportSql ReportData;
+        private StaffSql StaffData;
         private VehicleSql VehicleData;
 
         public CommonController()
@@ -23,11 +26,14 @@ namespace Common_Ground_Project.Controllers
             // Initialize repositories
             ActivityData = new ActivitySql();
             ActivityNoteData = new ActivityNoteSql();
+            ActivityTypeData = new ActivityTypeSql();
             EmergencyContactData = new EmergencyContactSql();
             IndividualData = new IndividualSql();
             IndividualNoteData = new IndividualNoteSql();
             IndividualTypeData = new IndividualTypeSql();
+            PermissionData = new PermissionSql();
             ReportData = new ReportSql();
+            StaffData = new StaffSql();
             VehicleData = new VehicleSql();
         }
 
@@ -80,6 +86,17 @@ namespace Common_Ground_Project.Controllers
         public void InsertActivityNote(ActivityNote note, out string errorMessage)
         {
             ActivityNoteData.SaveActivityNote(note, out errorMessage);
+        }
+        #endregion
+
+        #region ActivityType - Done.
+        public ActivityType GetActivityType(ActivityType type, out string errorMessage)
+        {
+            return ActivityTypeData.GetActivityType(type, out errorMessage);
+        }
+        public List<ActivityType> GetActivityTypeList(out string errorMessage)
+        {
+            return ActivityTypeData.GetActivityTypeList(out errorMessage);
         }
         #endregion
 
@@ -158,6 +175,44 @@ namespace Common_Ground_Project.Controllers
         }
         #endregion
 
+        #region Permission - Done.
+        public Permission GetPermission(Permission permission, out string errorMessage)
+        {
+            return PermissionData.GetPermission(permission, out errorMessage);
+        }
+        public List<Permission> GetPermissionList(out string errorMessage)
+        {
+            return PermissionData.GetPermissionList(out errorMessage);
+        }
+        #endregion
+
+        #region Reports
+        public DataTable UserDayReport(DateTime startTime, DateTime endTime, out string errorMessage)
+        {
+            return ReportData.UserDayReport(startTime, endTime, out errorMessage);
+        }
+        public DataTable FrequentCallerReport(out string errorMessage)
+        {
+            return ReportData.FrequentCallerReport(out errorMessage);
+        }
+
+        #endregion 
+
+        #region Staff
+        public Staff GetStaff(Staff staff, out string errorMessage)
+        {
+            return StaffData.GetStaff(staff, out errorMessage);
+        }
+        public List<Staff> GetStaffList(out string errorMessage)
+        {
+            return StaffData.GetStaffList(out errorMessage);
+        }
+        public void SaveStaff(Staff staff, out string errorMessage)
+        {
+            StaffData.SaveStaff(staff, out errorMessage);
+        }
+        #endregion
+
         #region Vehicle - Done.
         public Vehicle GetVehicle(Vehicle vehicle, out string errorMessage)
         {
@@ -182,18 +237,6 @@ namespace Common_Ground_Project.Controllers
             VehicleData.DeleteVehicle(vehicle, out errorMessage);
         }
         #endregion
-
-        #region Reports
-        public DataTable UserDayReport(DateTime startTime, DateTime endTime, out string errorMessage)
-        {
-            return ReportData.UserDayReport(startTime, endTime, out errorMessage);
-        }
-        public DataTable FrequentCallerReport(out string errorMessage)
-        {
-            return ReportData.FrequentCallerReport(out errorMessage);
-        }
-
-        #endregion 
 
     }
 }

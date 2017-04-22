@@ -67,9 +67,8 @@ namespace Common_Ground_Project.DataAccess
                             cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
                         }
 
-                        cmd.Parameters.AddWithValue("@Title", activity.Title);
+                        cmd.Parameters.AddWithValue("@ActivityTypeID", activity.ActivityTypeID);
                         cmd.Parameters.AddWithValue("@TripLeaderID", activity.TripLeaderID);
-                        cmd.Parameters.AddWithValue("@Description", activity.Description);
                         cmd.Parameters.AddWithValue("@Location", activity.Location);
                         cmd.Parameters.AddWithValue("@StartDate", activity.StartDate);
                         cmd.Parameters.AddWithValue("@EndDate", activity.EndDate);
