@@ -237,6 +237,12 @@ namespace Common_Ground_Project.Controllers
         {
             StaffData.SaveStaff(staff, out errorMessage);
         }
+        public string PasswordStaff(Staff staff, out string errorMessage)
+        {
+            string password = "PoorForgottenPuppies";
+            StaffData.SaveStaffPassword(staff, password, out errorMessage);
+            return password;
+        }
         #endregion
 
         #region Vehicle - Done.

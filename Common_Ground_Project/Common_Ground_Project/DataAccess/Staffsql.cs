@@ -79,7 +79,7 @@ namespace Common_Ground_Project.DataAccess
                         if (staff.StaffID == 0)
                         {
                             cmd.CommandText = "Master.dbo.StaffInsert";
-                            cmd.Parameters.AddWithValue("@Password", "PuppiesForSale"); //TODO: Encrypt and send default password
+                            cmd.Parameters.AddWithValue("@Password", "PuppiesForSale");
                             staff.StaffID = staff.IndividualID;
                         }
                         else
@@ -111,7 +111,35 @@ namespace Common_Ground_Project.DataAccess
                 }
             }
         }
+        public void SaveStaffPassword(Staff staff, string password, out string errorMessage)
+        {
+            errorMessage = String.Empty;
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "Master.dbo.StaffUpdatePassword";
+                        cmd.Parameters.AddWithValue("@Password", password);
+                        cmd.Parameters.AddWithValue("@IndividualID", staff.StaffID);
 
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessage = "Error occured while saving Individual: " + e.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
 
 
         private List<Staff> createConnection(SqlCommand cmd, out string errorMessage, List<SqlParameter> parameters = null)

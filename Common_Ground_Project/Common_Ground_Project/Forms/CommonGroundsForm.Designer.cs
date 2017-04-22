@@ -213,6 +213,7 @@
             this.ClientSize = new System.Drawing.Size(1048, 490);
             this.Controls.Add(this.tabControl1);
             this.Name = "CommonGroundsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Common Grounds";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CommonGroundsForm_FormClosed);
             this.tabControl1.ResumeLayout(false);

@@ -20,6 +20,8 @@ namespace Common_Ground_Project.Forms
         public CommonGroundsForm()
         {
             Controller = new CommonController();
+            Controller.Permission = new Models.Permission();
+            Controller.Permission.PermissionID = 5; // Admin
             this.FormClosed -= CommonGroundsForm_FormClosed;
 
             InitializeComponent();

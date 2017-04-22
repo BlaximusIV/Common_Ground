@@ -33,6 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,6 +56,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.DeleteIndividualButton);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
@@ -68,6 +74,7 @@
             this.staffDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.staffDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.staffDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.staffDataGrid.MultiSelect = false;
             this.staffDataGrid.Name = "staffDataGrid";
             this.staffDataGrid.RowHeadersVisible = false;
             this.staffDataGrid.Size = new System.Drawing.Size(569, 590);
@@ -104,6 +111,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Reset Waivers";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Reset Staff Password";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(222, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 27);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 26);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Users new temporary password \r\nwill be displayed after it\'s saved.";
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +165,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button DeleteIndividualButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

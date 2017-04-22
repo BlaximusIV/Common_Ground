@@ -30,9 +30,11 @@ namespace Common_Ground_Project.Views
         private void populateActivityTree() {
             string errorMsg = String.Empty;
             activityTreeView.Nodes.Clear();
-            DateTime filterDate = Convert.ToDateTime(ActivitySearch.Text);
+            DateTime date;
+            DateTime.TryParse(ActivitySearch.Text, out date);
+            DateTime filterDate = date;
 
-            List<Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
+            List <Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
 
             TreeNode node = new TreeNode();
             foreach(Activity act in acvityList)
