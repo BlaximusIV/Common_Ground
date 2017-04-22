@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.treeView3 = new System.Windows.Forms.TreeView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -68,31 +68,27 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.AddIndividualButton = new System.Windows.Forms.Button();
-            this.ActivityByDateTree = new System.Windows.Forms.TreeView();
-            this.IndividualSearchTree = new System.Windows.Forms.TreeView();
-            this.IndividualTree = new System.Windows.Forms.TreeView();
-            this.vehicleListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activityNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.vehicleDataGrid = new System.Windows.Forms.DataGridView();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.noteDataGrid = new System.Windows.Forms.DataGridView();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.assigneeTree = new System.Windows.Forms.TreeView();
             this.splitContainer10 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.treeView2 = new System.Windows.Forms.TreeView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.treeView3 = new System.Windows.Forms.TreeView();
-            this.ActivityDataSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.assignedTree = new System.Windows.Forms.TreeView();
+            this.ActivityByDateTree = new System.Windows.Forms.TreeView();
+            this.IndividualSearchTree = new System.Windows.Forms.TreeView();
+            this.IndividualTree = new System.Windows.Forms.TreeView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -117,8 +113,6 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -130,9 +124,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noteDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel2.SuspendLayout();
             this.splitContainer8.SuspendLayout();
@@ -144,9 +140,6 @@
             this.splitContainer10.Panel1.SuspendLayout();
             this.splitContainer10.Panel2.SuspendLayout();
             this.splitContainer10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -208,8 +201,6 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StartDate", true));
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StartDate", true));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(138, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -224,6 +215,14 @@
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search By Activity Date";
+            // 
+            // treeView3
+            // 
+            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView3.Location = new System.Drawing.Point(0, 0);
+            this.treeView3.Name = "treeView3";
+            this.treeView3.Size = new System.Drawing.Size(401, 170);
+            this.treeView3.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -256,7 +255,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Title", true));
             this.textBox1.Location = new System.Drawing.Point(101, 1);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 20);
@@ -283,7 +281,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "TripLeaderID", true));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(101, 1);
             this.comboBox1.Name = "comboBox1";
@@ -311,7 +308,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Description", true));
             this.textBox2.Location = new System.Drawing.Point(101, 1);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 20);
@@ -338,7 +334,6 @@
             // 
             // textBox3
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "Location", true));
             this.textBox3.Location = new System.Drawing.Point(101, 1);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(218, 20);
@@ -365,8 +360,6 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StartDate", true));
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StartDate", true));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(93, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -394,8 +387,6 @@
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "EndDate", true));
-            this.dateTimePicker3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "EndDate", true));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker3.Location = new System.Drawing.Point(93, 2);
             this.dateTimePicker3.Name = "dateTimePicker3";
@@ -423,8 +414,6 @@
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "PickUpTime", true));
-            this.dateTimePicker4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "PickUpTime", true));
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker4.Location = new System.Drawing.Point(93, 0);
             this.dateTimePicker4.Name = "dateTimePicker4";
@@ -452,8 +441,6 @@
             // 
             // dateTimePicker5
             // 
-            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "DropOffTime", true));
-            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "DropOffTime", true));
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker5.Location = new System.Drawing.Point(93, 2);
             this.dateTimePicker5.Name = "dateTimePicker5";
@@ -481,8 +468,6 @@
             // 
             // dateTimePicker6
             // 
-            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ActivityDataSource, "StaffArrivalTime", true));
-            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ActivityDataSource, "StaffArrivalTime", true));
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker6.Location = new System.Drawing.Point(93, 0);
             this.dateTimePicker6.Name = "dateTimePicker6";
@@ -557,47 +542,6 @@
             this.AddIndividualButton.Text = "&Save";
             this.AddIndividualButton.UseVisualStyleBackColor = false;
             // 
-            // ActivityByDateTree
-            // 
-            this.ActivityByDateTree.Location = new System.Drawing.Point(0, 0);
-            this.ActivityByDateTree.Name = "ActivityByDateTree";
-            this.ActivityByDateTree.Size = new System.Drawing.Size(121, 97);
-            this.ActivityByDateTree.TabIndex = 0;
-            // 
-            // IndividualSearchTree
-            // 
-            this.IndividualSearchTree.Location = new System.Drawing.Point(0, 0);
-            this.IndividualSearchTree.Name = "IndividualSearchTree";
-            this.IndividualSearchTree.Size = new System.Drawing.Size(121, 97);
-            this.IndividualSearchTree.TabIndex = 0;
-            // 
-            // IndividualTree
-            // 
-            this.IndividualTree.Location = new System.Drawing.Point(0, 0);
-            this.IndividualTree.Name = "IndividualTree";
-            this.IndividualTree.Size = new System.Drawing.Size(121, 97);
-            this.IndividualTree.TabIndex = 0;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // vINDataGridViewTextBoxColumn
-            // 
-            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -647,10 +591,19 @@
             // 
             // splitContainer6.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer6.Panel2.Controls.Add(this.vehicleDataGrid);
             this.splitContainer6.Size = new System.Drawing.Size(328, 185);
             this.splitContainer6.SplitterDistance = 34;
             this.splitContainer6.TabIndex = 0;
+            // 
+            // vehicleDataGrid
+            // 
+            this.vehicleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vehicleDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehicleDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.vehicleDataGrid.Name = "vehicleDataGrid";
+            this.vehicleDataGrid.Size = new System.Drawing.Size(328, 147);
+            this.vehicleDataGrid.TabIndex = 0;
             // 
             // splitContainer7
             // 
@@ -666,10 +619,19 @@
             // 
             // splitContainer7.Panel2
             // 
-            this.splitContainer7.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer7.Panel2.Controls.Add(this.noteDataGrid);
             this.splitContainer7.Size = new System.Drawing.Size(324, 185);
             this.splitContainer7.SplitterDistance = 34;
             this.splitContainer7.TabIndex = 1;
+            // 
+            // noteDataGrid
+            // 
+            this.noteDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.noteDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noteDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.noteDataGrid.Name = "noteDataGrid";
+            this.noteDataGrid.Size = new System.Drawing.Size(324, 147);
+            this.noteDataGrid.TabIndex = 1;
             // 
             // splitContainer8
             // 
@@ -698,7 +660,7 @@
             // 
             // splitContainer9.Panel1
             // 
-            this.splitContainer9.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer9.Panel1.Controls.Add(this.assigneeTree);
             // 
             // splitContainer9.Panel2
             // 
@@ -706,6 +668,14 @@
             this.splitContainer9.Size = new System.Drawing.Size(656, 239);
             this.splitContainer9.SplitterDistance = 310;
             this.splitContainer9.TabIndex = 2;
+            // 
+            // assigneeTree
+            // 
+            this.assigneeTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.assigneeTree.Location = new System.Drawing.Point(0, 0);
+            this.assigneeTree.Name = "assigneeTree";
+            this.assigneeTree.Size = new System.Drawing.Size(310, 239);
+            this.assigneeTree.TabIndex = 0;
             // 
             // splitContainer10
             // 
@@ -721,19 +691,10 @@
             // 
             // splitContainer10.Panel2
             // 
-            this.splitContainer10.Panel2.Controls.Add(this.treeView2);
+            this.splitContainer10.Panel2.Controls.Add(this.assignedTree);
             this.splitContainer10.Size = new System.Drawing.Size(342, 239);
             this.splitContainer10.SplitterDistance = 36;
             this.splitContainer10.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = ">>";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -744,51 +705,66 @@
             this.button2.Text = "<<";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // treeView1
+            // button1
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(310, 239);
-            this.treeView1.TabIndex = 0;
+            this.button1.Location = new System.Drawing.Point(4, 99);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = ">>";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // treeView2
+            // assignedTree
             // 
-            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView2.Location = new System.Drawing.Point(0, 0);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(302, 239);
-            this.treeView2.TabIndex = 1;
+            this.assignedTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.assignedTree.Location = new System.Drawing.Point(0, 0);
+            this.assignedTree.Name = "assignedTree";
+            this.assignedTree.Size = new System.Drawing.Size(302, 239);
+            this.assignedTree.TabIndex = 1;
             // 
-            // dataGridView1
+            // ActivityByDateTree
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(328, 147);
-            this.dataGridView1.TabIndex = 0;
+            this.ActivityByDateTree.LineColor = System.Drawing.Color.Empty;
+            this.ActivityByDateTree.Location = new System.Drawing.Point(0, 0);
+            this.ActivityByDateTree.Name = "ActivityByDateTree";
+            this.ActivityByDateTree.Size = new System.Drawing.Size(121, 97);
+            this.ActivityByDateTree.TabIndex = 0;
             // 
-            // dataGridView2
+            // IndividualSearchTree
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(324, 147);
-            this.dataGridView2.TabIndex = 1;
+            this.IndividualSearchTree.LineColor = System.Drawing.Color.Empty;
+            this.IndividualSearchTree.Location = new System.Drawing.Point(0, 0);
+            this.IndividualSearchTree.Name = "IndividualSearchTree";
+            this.IndividualSearchTree.Size = new System.Drawing.Size(121, 97);
+            this.IndividualSearchTree.TabIndex = 0;
             // 
-            // treeView3
+            // IndividualTree
             // 
-            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView3.Location = new System.Drawing.Point(0, 0);
-            this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(401, 170);
-            this.treeView3.TabIndex = 1;
+            this.IndividualTree.LineColor = System.Drawing.Color.Empty;
+            this.IndividualTree.Location = new System.Drawing.Point(0, 0);
+            this.IndividualTree.Name = "IndividualTree";
+            this.IndividualTree.Size = new System.Drawing.Size(121, 97);
+            this.IndividualTree.TabIndex = 0;
             // 
-            // ActivityDataSource
+            // nameDataGridViewTextBoxColumn
             // 
-            this.ActivityDataSource.DataSource = typeof(Common_Ground_Project.Models.Activity);
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // vINDataGridViewTextBoxColumn
+            // 
+            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
             // 
             // ActivityView
             // 
@@ -832,8 +808,6 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNoteListBindingSource)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
@@ -845,9 +819,11 @@
             this.splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGrid)).EndInit();
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.noteDataGrid)).EndInit();
             this.splitContainer8.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
             this.splitContainer8.ResumeLayout(false);
@@ -859,9 +835,6 @@
             this.splitContainer10.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
             this.splitContainer10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivityDataSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -909,28 +882,25 @@
         private System.Windows.Forms.Button AddIndividualButton;
         private System.Windows.Forms.TreeView IndividualSearchTree;
         private System.Windows.Forms.TreeView IndividualTree;
-        private System.Windows.Forms.BindingSource ActivityDataSource;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource vehicleListBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource activityNoteListBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.TreeView treeView3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView vehicleDataGrid;
+        private System.Windows.Forms.DataGridView noteDataGrid;
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.SplitContainer splitContainer9;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView assigneeTree;
         private System.Windows.Forms.SplitContainer splitContainer10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView assignedTree;
     }
 }

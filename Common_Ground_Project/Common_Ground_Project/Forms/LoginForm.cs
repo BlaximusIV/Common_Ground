@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common_Ground_Project.Controllers;
+using Common_Ground_Project.Models;
 
 namespace Common_Ground_Project.Forms
 {
     public partial class LoginForm : Form
     {
+        public CommonController Controller { get; private set; }
+
         public LoginForm()
         {
             InitializeComponent();
+            Controller = new CommonController();
         }
 
         /// <summary>
@@ -50,10 +54,9 @@ namespace Common_Ground_Project.Forms
             string userName = usernameText.Text;
             string password = passwordText.Text;
 
-            if (new CommonController().IsAuthenticated(userName, password))
+            if (Controller.IsAuthenticated(userName, password))
             {
                 this.Visible = false;
-                passwordText.Text = String.Empty;
                 CommonGroundsForm form = new CommonGroundsForm(this);
                 form.Show();
             }

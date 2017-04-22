@@ -105,6 +105,7 @@
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.noteText = new System.Windows.Forms.RichTextBox();
             this.AddNoteButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -191,7 +192,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer2.Size = new System.Drawing.Size(346, 516);
-            this.splitContainer2.SplitterDistance = 144;
+            this.splitContainer2.SplitterDistance = 157;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer6
@@ -214,7 +215,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.individualTreeView);
-            this.splitContainer6.Size = new System.Drawing.Size(346, 144);
+            this.splitContainer6.Size = new System.Drawing.Size(346, 157);
             this.splitContainer6.SplitterDistance = 54;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -256,11 +257,14 @@
             // 
             // individualTreeView
             // 
+            this.individualTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.individualTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.individualTreeView.FullRowSelect = true;
             this.individualTreeView.Location = new System.Drawing.Point(0, 0);
             this.individualTreeView.Name = "individualTreeView";
             this.individualTreeView.ShowLines = false;
-            this.individualTreeView.Size = new System.Drawing.Size(346, 86);
+            this.individualTreeView.ShowRootLines = false;
+            this.individualTreeView.Size = new System.Drawing.Size(346, 99);
             this.individualTreeView.TabIndex = 0;
             this.individualTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.individualTreeView_AfterSelect);
             // 
@@ -283,7 +287,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(346, 368);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(346, 355);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel13
@@ -680,20 +684,21 @@
             // 
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel14.Controls.Add(this.button1);
             this.panel14.Controls.Add(this.DeleteIndividualButton);
             this.panel14.Controls.Add(this.AddIndividualButton);
             this.panel14.Location = new System.Drawing.Point(3, 314);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(339, 46);
+            this.panel14.Size = new System.Drawing.Size(339, 35);
             this.panel14.TabIndex = 15;
             // 
             // DeleteIndividualButton
             // 
-            this.DeleteIndividualButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.DeleteIndividualButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DeleteIndividualButton.Location = new System.Drawing.Point(118, 4);
+            this.DeleteIndividualButton.Location = new System.Drawing.Point(182, 6);
             this.DeleteIndividualButton.Name = "DeleteIndividualButton";
-            this.DeleteIndividualButton.Size = new System.Drawing.Size(100, 39);
+            this.DeleteIndividualButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteIndividualButton.TabIndex = 1;
             this.DeleteIndividualButton.Text = "&Delete";
             this.DeleteIndividualButton.UseVisualStyleBackColor = false;
@@ -701,11 +706,11 @@
             // 
             // AddIndividualButton
             // 
-            this.AddIndividualButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddIndividualButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddIndividualButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.AddIndividualButton.Location = new System.Drawing.Point(224, 4);
+            this.AddIndividualButton.Location = new System.Drawing.Point(261, 6);
             this.AddIndividualButton.Name = "AddIndividualButton";
-            this.AddIndividualButton.Size = new System.Drawing.Size(106, 39);
+            this.AddIndividualButton.Size = new System.Drawing.Size(75, 22);
             this.AddIndividualButton.TabIndex = 0;
             this.AddIndividualButton.Text = "&Save";
             this.AddIndividualButton.UseVisualStyleBackColor = false;
@@ -819,7 +824,6 @@
             // 
             // panel15
             // 
-            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel15.Controls.Add(this.AddEContactButton);
             this.panel15.Controls.Add(this.ecEmailText);
@@ -828,9 +832,10 @@
             this.panel15.Controls.Add(this.label12);
             this.panel15.Controls.Add(this.ecNameText);
             this.panel15.Controls.Add(this.label11);
-            this.panel15.Location = new System.Drawing.Point(2, -1);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(661, 35);
+            this.panel15.Size = new System.Drawing.Size(666, 33);
             this.panel15.TabIndex = 2;
             // 
             // AddEContactButton
@@ -1009,6 +1014,16 @@
             this.AddNoteButton.UseVisualStyleBackColor = false;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(101, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // IndividualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1162,5 +1177,6 @@
         private System.Windows.Forms.RichTextBox noteText;
         private System.Windows.Forms.Button AddNoteButton;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

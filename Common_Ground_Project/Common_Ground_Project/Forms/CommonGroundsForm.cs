@@ -19,20 +19,23 @@ namespace Common_Ground_Project.Forms
 
         public CommonGroundsForm(LoginForm loginParent)
         {
-            InitializeComponent();
-            Initialize();
-
             loginForm = loginParent;
+            Controller = loginForm.Controller;
+
+            if (Controller.Permission.PermissionID < 4) // Admin / Owner / Manager 
+                adminTab.Hide();
+
+            InitializeComponent();
+            Initialize();   
         }
 
         private void Initialize()
         {
-            Controller = new CommonController();
-
             // Setup Controls with the Controller
             individualView1.Initialize(Controller);
             activityView1.Initialize(Controller);
             vehicalView1.Initialize(Controller);
+            adminView1.Initialize(Controller);
 
             frequentCallerReport1.Initialize(Controller);
             userDayReport1.Initialize(Controller);

@@ -89,6 +89,12 @@
     <Compile Include="Views\ActivityView.Designer.cs">
       <DependentUpon>ActivityView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrequentCallerReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Views\ActivityView.resx">
       <DependentUpon>ActivityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrequentCallerReport.resx">
       <DependentUpon>FrequentCallerReport.cs</DependentUpon>
