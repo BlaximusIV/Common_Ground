@@ -32,6 +32,41 @@ namespace Common_Ground_Project.DataAccess
             return returnList;
         }
 
+        public int AuthenticateStaff(string username, string password, out string errorMessage)
+        {
+            errorMessage = String.Empty;
+            int staffID = 0;
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "Master.dbo.StaffAuthenticate";
+
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        staffID = (int)cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessage = "Error Authenticating: " + e.Message;
+                    staffID = 0;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return staffID;
+        }
+
         public void SaveStaff(Staff staff, out string errorMessage)
         {
             errorMessage = String.Empty;
@@ -44,7 +79,7 @@ namespace Common_Ground_Project.DataAccess
                         if (staff.StaffID == 0)
                         {
                             cmd.CommandText = "Master.dbo.StaffInsert";
-                            cmd.Parameters.AddWithValue("@Password", ""); //TODO: Encrypt and send default password
+                            cmd.Parameters.AddWithValue("@Password", "PuppiesForSale"); //TODO: Encrypt and send default password
                             staff.StaffID = staff.IndividualID;
                         }
                         else

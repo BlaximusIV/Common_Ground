@@ -187,6 +187,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteInsert.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualWaiverReset.sql" />
+    <Content Include="DataAccess\SqlFiles\Procedures\StaffAuthenticate.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffInsert.txt" />
