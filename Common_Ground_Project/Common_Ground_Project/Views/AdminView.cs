@@ -34,32 +34,54 @@ namespace Common_Ground_Project.Views
             staffDataGrid.Columns.Clear();
 
             DataGridViewTextBoxColumn staffID = new DataGridViewTextBoxColumn();
+            staffID.DataPropertyName = "StaffID";
             staffID.ReadOnly = true;
             staffID.Visible = false;
 
+            DataGridViewTextBoxColumn individualID = new DataGridViewTextBoxColumn();
+            individualID.DataPropertyName = "IndividualID";
+            individualID.ReadOnly = true;
+            individualID.Visible = false;
+
             DataGridViewTextBoxColumn staffName = new DataGridViewTextBoxColumn();
+            staffName.DataPropertyName = "Name";
             staffName.HeaderText = "Name";
             staffName.ReadOnly = true;
 
             DataGridViewTextBoxColumn hireDate = new DataGridViewTextBoxColumn();
+            hireDate.DataPropertyName = "HireDate";
             hireDate.HeaderText = "Hired On";
             hireDate.ValueType = typeof(DateTime);
 
             DataGridViewTextBoxColumn leaveDate = new DataGridViewTextBoxColumn();
+            leaveDate.DataPropertyName = "LeaveDate";
             leaveDate.HeaderText = "Left On";
             leaveDate.ValueType = typeof(DateTime);
 
             DataGridViewComboBoxColumn permission = new DataGridViewComboBoxColumn();
+            permission.DataPropertyName = "PermissionID";
             permission.HeaderText = "Position";
             permission.DataSource = Controller.GetPermissionList(out errorMessage);
             permission.DisplayMember = "Name";
             permission.ValueMember = "PermissionID";
 
             staffDataGrid.Columns.Add(staffID);
+            staffDataGrid.Columns.Add(individualID);
             staffDataGrid.Columns.Add(staffName);
             staffDataGrid.Columns.Add(hireDate);
             staffDataGrid.Columns.Add(leaveDate);
             staffDataGrid.Columns.Add(permission);
+
+            populateStaffGrid();
+        }
+
+        private void populateStaffGrid()
+        {
+            string errorMessage = String.Empty;
+            List<Staff> Staff = new List<Staff>();
+            Staff = Controller.GetStaffList(out errorMessage);
+
+            staffDataGrid.DataSource = Staff;
         }
 
         private void DeleteIndividualButton_Click(object sender, EventArgs e)
@@ -69,6 +91,19 @@ namespace Common_Ground_Project.Views
             if (answer == DialogResult.Yes)
             {
                 Controller.ResetIndividualWaiver(out errorMessage);
+            }
+        }
+
+        private void staffDataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                string errorMessage = String.Empty;
+                Staff staff = (Staff)staffDataGrid.Rows[e.RowIndex].DataBoundItem;
+                Controller.SaveStaff(staff, out errorMessage);
+
+                if (!String.IsNullOrEmpty(errorMessage))
+                    MessageBox.Show(errorMessage);
             }
         }
     }

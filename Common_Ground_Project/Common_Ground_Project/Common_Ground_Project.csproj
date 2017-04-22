@@ -175,9 +175,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.txt" />
-    <Content Include="DataAccess\SqlFiles\DataInserts\Permission.txt" />
-    <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.txt" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\IndividualType.sql" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Permission.sql" />
+    <Content Include="DataAccess\SqlFiles\DataInserts\Vehicle.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityDeleteByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityGetByDate.txt" />
@@ -186,6 +186,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByActivity.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteGetByID.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityNoteInsert.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualWaiverReset.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffUpdate.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\StaffInsert.txt" />
@@ -217,7 +218,7 @@
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualNoteInsert.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\IndividualTypeGetByID.txt" />
-    <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.txt" />
+    <Content Include="DataAccess\SqlFiles\Procedures\IndividualUpdate.sql" />
     <Content Include="DataAccess\SqlFiles\Procedures\FrequentCallerReport.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\ActivityTypeGetAll.txt" />
     <Content Include="DataAccess\SqlFiles\Procedures\UserDayReport.txt" />

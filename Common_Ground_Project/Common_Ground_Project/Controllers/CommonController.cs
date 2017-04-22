@@ -160,8 +160,7 @@ namespace Common_Ground_Project.Controllers
 
         public void ResetIndividualWaiver(out string errorMessage)
         {
-            errorMessage = String.Empty;
-
+            IndividualData.ResetIndividualWaiver(out errorMessage);
         }
         public void SaveIndividual(Individual individual, out string errorMessage)
         {

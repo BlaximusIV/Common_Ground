@@ -76,6 +76,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.DeleteIndividualButton = new System.Windows.Forms.Button();
             this.AddIndividualButton = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -105,7 +106,6 @@
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.noteText = new System.Windows.Forms.RichTextBox();
             this.AddNoteButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -692,6 +692,17 @@
             this.panel14.Size = new System.Drawing.Size(339, 35);
             this.panel14.TabIndex = 15;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(101, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DeleteIndividualButton
             // 
             this.DeleteIndividualButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1013,16 +1024,6 @@
             this.AddNoteButton.Text = "Add &Note";
             this.AddNoteButton.UseVisualStyleBackColor = false;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(101, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // IndividualView
             // 

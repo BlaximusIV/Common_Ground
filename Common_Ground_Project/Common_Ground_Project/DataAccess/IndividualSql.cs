@@ -53,7 +53,7 @@ namespace Common_Ground_Project.DataAccess
             return returnList;
         }
 
-        public void SaveIndividual(Individual individual, out string errorMessage)
+        public void ResetIndividualWaiver(out string errorMessage)
         {
             errorMessage = String.Empty;
             using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
@@ -62,8 +62,37 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
+                        cmd.CommandText = "Master.dbo.IndividualWaiverReset";
+
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessage = "Error occured while saving Individual: " + e.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        public void SaveIndividual(Individual individual, out string errorMessage)
+        {
+            errorMessage = String.Empty;
+            bool isInsert = false;
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
                         if (individual.IndividualID == 0)
                         {
+                            isInsert = true;
                             cmd.CommandText = "Master.dbo.IndividualInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
@@ -95,7 +124,20 @@ namespace Common_Ground_Project.DataAccess
                         if (individual.IndividualID == 0) { 
                             int returnID = Convert.ToInt32(cmd.Parameters["@NewID"].Value);
                             if (returnID > 0)
+                            {
                                 individual.IndividualID = returnID;
+                            }
+                        }
+
+                        if (individual.IndividualTypeID == 1)
+                        {
+                            Staff staff = new Staff();
+                            staff.AddIndividual(individual);
+
+                            if (!isInsert)
+                                staff.StaffID = staff.IndividualID;
+
+                            new StaffSql().SaveStaff(staff, out errorMessage);
                         }
                     }
                 }

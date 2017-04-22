@@ -10,7 +10,6 @@ namespace Common_Ground_Project.Models
     public class Staff
     {
         public int StaffID { get; set; }
-        public Individual Individual { get; set; }
         public string Username { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime LeaveDate { get; set; }
@@ -18,10 +17,26 @@ namespace Common_Ground_Project.Models
         public bool IsEligibleDriver { get; set; }
         public bool IsEmployeed { get; set; }
 
+        private Individual Individual { get; set; }
+        public int IndividualID
+        {
+            get { return Individual.IndividualID; }
+        }
+        public string Name
+        {
+            get { return Individual.FullName; }
+        }
+
 
         public Staff()
         {
             StaffID = 0;
+            Individual = new Individual();
+            HireDate = new DateTime(1900, 1, 1);
+            LeaveDate = new DateTime(1900, 1, 1);
+            PermissionID = 1;
+            IsEligibleDriver = false;
+            IsEmployeed = true;
         }
         public Staff(int id)
         {
@@ -37,6 +52,11 @@ namespace Common_Ground_Project.Models
             PermissionID = rdr["PermissionID"] == DBNull.Value ? 1 : Convert.ToInt32(rdr["PermissionID"]);
             IsEligibleDriver = rdr["IsEligibleDriver"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsEligibleDriver"]);
             IsEmployeed = rdr["IsEmployeed"] == DBNull.Value ? false : Convert.ToBoolean(rdr["IsEmployeed"]);
+        }
+
+        public void AddIndividual(Individual individual)
+        {
+            Individual = individual;
         }
     }
 }
