@@ -60,6 +60,7 @@ CREATE TABLE IndividualType(
 CREATE TABLE Activity(
 	ActivityID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	ActivityTypeID INT NOT NULL,
+	ActivityTypeName VARCHAR(50),
 	TripLeaderID INT NOT NULL,
 	[Location] VARCHAR(50),
 	StartDate DATETIME NOT NULL,
