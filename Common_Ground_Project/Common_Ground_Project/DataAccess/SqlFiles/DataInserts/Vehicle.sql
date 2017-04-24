@@ -1,4 +1,4 @@
-﻿INSERT INTO Master.dbo.Vehicle
+﻿INSERT INTO dbo.Vehicle
 (
 	Name, 
 	Description, 

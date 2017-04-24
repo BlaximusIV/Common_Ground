@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@VehicleID", vehicle.VehicleID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.VehicleGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -28,7 +28,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<Vehicle> returnList = new List<Vehicle>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.VehicleGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
@@ -39,7 +39,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.VehicleGetByActivity");
+            SqlCommand cmd = new SqlCommand("dbo.VehicleGetByActivity");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -56,12 +56,12 @@ namespace Common_Ground_Project.DataAccess
                     {
                         if (vehicle.VehicleID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.VehicleInsert";
+                            cmd.CommandText = "dbo.VehicleInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.VehicleUpdate";
+                            cmd.CommandText = "dbo.VehicleUpdate";
                             cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
                         }
 
@@ -102,7 +102,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.VehicleDeleteByID";
+                        cmd.CommandText = "dbo.VehicleDeleteByID";
 
                         cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
 

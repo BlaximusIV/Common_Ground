@@ -1,4 +1,4 @@
-﻿INSERT INTO Master.dbo.ActivityType
+﻿INSERT INTO dbo.ActivityType
 (
 	Name, Description
 )

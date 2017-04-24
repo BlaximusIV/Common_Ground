@@ -13,7 +13,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityNoteID", note.ActivityNoteID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityNoteGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityNoteGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -27,7 +27,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityNoteGetByActivity");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityNoteGetByActivity");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -44,7 +44,7 @@ namespace Common_Ground_Project.DataAccess
                     {
                         if (note.ActivityID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.ActivityNoteInsert";
+                            cmd.CommandText = "dbo.ActivityNoteInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
 
                             cmd.Parameters.AddWithValue("@ActivityID", note.ActivityID);

@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@EmergencyContactID", contact.EmergencyContactID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.EmergencyContactGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -30,7 +30,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.EmergencyContactGetByIndividual");
+            SqlCommand cmd = new SqlCommand("dbo.EmergencyContactGetByIndividual");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -47,12 +47,12 @@ namespace Common_Ground_Project.DataAccess
                     {
                         if (contact.EmergencyContactID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.EmergencyContactInsert";
+                            cmd.CommandText = "dbo.EmergencyContactInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.EmergencyContactUpdate";
+                            cmd.CommandText = "dbo.EmergencyContactUpdate";
                             cmd.Parameters.AddWithValue("@EmergencyContactID", contact.EmergencyContactID);
                         }
 
@@ -94,7 +94,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.EmergencyContactDelete";
+                        cmd.CommandText = "dbo.EmergencyContactDelete";
 
                         cmd.Parameters.AddWithValue("@EmergencyContactID", contact.EmergencyContactID);
 

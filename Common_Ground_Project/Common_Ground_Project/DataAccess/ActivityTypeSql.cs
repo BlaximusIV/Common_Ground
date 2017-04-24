@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityTypeID", activityType.ActivityTypeID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityTypeGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityTypeGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -28,7 +28,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<ActivityType> returnList = new List<ActivityType>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityTypeGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityTypeGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;

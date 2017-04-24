@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -30,7 +30,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@Date", date));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByDate");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityGetByDate");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -41,7 +41,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.ActivityGetByIndividual");
+            SqlCommand cmd = new SqlCommand("dbo.ActivityGetByIndividual");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -58,12 +58,12 @@ namespace Common_Ground_Project.DataAccess
                     {
                         if (activity.ActivityID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.ActivityInsert";
+                            cmd.CommandText = "dbo.ActivityInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.ActivityUpdate";
+                            cmd.CommandText = "dbo.ActivityUpdate";
                             cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
                         }
 
@@ -110,7 +110,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.ActivityDelete";
+                        cmd.CommandText = "dbo.ActivityDelete";
 
                         cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
 

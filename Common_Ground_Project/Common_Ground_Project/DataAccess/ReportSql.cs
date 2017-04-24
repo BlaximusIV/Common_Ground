@@ -20,7 +20,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.UserDayReport";
+                        cmd.CommandText = "dbo.UserDayReport";
                         cmd.Parameters.AddWithValue("@FromDate", startTime);
                         cmd.Parameters.AddWithValue("@ToDate", endTime);
 
@@ -55,7 +55,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.FrequentCallerReport";
+                        cmd.CommandText = "dbo.FrequentCallerReport";
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;

@@ -13,7 +13,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", individual.IndividualID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -25,7 +25,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<Individual> returnList = new List<Individual>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
@@ -36,7 +36,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ActivityID", activity.ActivityID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByActivity");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualGetByActivity");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -47,7 +47,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualTypeID", type.IndividualTypeID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualGetByType");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualGetByType");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             return returnList;
@@ -62,7 +62,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.IndividualWaiverReset";
+                        cmd.CommandText = "dbo.IndividualWaiverReset";
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -93,12 +93,12 @@ namespace Common_Ground_Project.DataAccess
                         if (individual.IndividualID == 0)
                         {
                             isInsert = true;
-                            cmd.CommandText = "Master.dbo.IndividualInsert";
+                            cmd.CommandText = "dbo.IndividualInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.IndividualUpdate";
+                            cmd.CommandText = "dbo.IndividualUpdate";
                             cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
                         }
 
@@ -161,7 +161,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.IndividualDelete";
+                        cmd.CommandText = "dbo.IndividualDelete";
 
                         cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
 
