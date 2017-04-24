@@ -41,6 +41,7 @@ namespace Common_Ground_Project.Models
         {
             ActivityID = rdr["ActivityID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["ActivityID"]);
             ActivityTypeID = rdr["ActivityTypeID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["ActivityTypeID"]);
+            ActivityTypeName = rdr["ActivityTypeName"] == DBNull.Value? String.Empty : Convert.ToString(rdr["ActivityTypeName"]);
             TripLeaderID = rdr["TripLeaderID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["TripLeaderID"]);
             StartDate = rdr["Start_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Start_Date"]);
             EndDate = rdr["End_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["End_Date"]);

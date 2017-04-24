@@ -25,6 +25,10 @@ namespace Common_Ground_Project.Views
         {
             Controller = controller;
             populateActivityTree();
+            PopulateActivityTypeSelector();
+            PopulateTripLeaderSelector();
+            PopulateVehicleSelector();
+            PopulateIndividualTypeFilter();
         }
 
         private void populateActivityTree() {
@@ -34,7 +38,7 @@ namespace Common_Ground_Project.Views
             DateTime.TryParse(ActivitySearch.Text, out date);
             DateTime filterDate = date;
 
-            List <Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
+            List<Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
 
             TreeNode node = new TreeNode();
             foreach(Activity act in acvityList)
@@ -83,6 +87,141 @@ namespace Common_Ground_Project.Views
             Activity activity = (Activity)activityDataSource.DataSource;
             activity.IndividualList = Controller.GetIndividualList(activity, out errorMessage);
             activityDataSource.DataSource = activity;
+        }
+
+        private void AddActivityButton_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+
+            Activity activity = (Activity)activityDataSource.DataSource;
+            Controller.SaveActivity(activity, out errorMessage);
+            if (errorMessage == String.Empty)
+            {
+                //do nothing
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void DeleteActivityButton_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+
+                Activity activity = (Activity)activityDataSource.DataSource;
+                Controller.DeleteActivity(activity, out errorMessage);
+            if (errorMessage== String.Empty)
+            {
+                //do nothing
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+            
+        }
+
+        private void PopulateActivityTypeSelector()
+        {
+            string errorMessage = String.Empty;
+
+            List<ActivityType> actTypes = Controller.GetActivityTypeList(out errorMessage);
+
+            if (String.IsNullOrEmpty(errorMessage))
+            {
+                ActivityTypeSelector.DataSource = actTypes;
+                ActivityTypeSelector.DisplayMember = "Name";
+                ActivityTypeSelector.ValueMember = "ActivityTypeID";
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void PopulateTripLeaderSelector()
+        {
+            string errorMessage = String.Empty;
+
+            List<Staff> listStaff = Controller.GetStaffList(out errorMessage);
+
+            if (String.IsNullOrEmpty(errorMessage))
+            {
+                TripLeaderSelector.DataSource = listStaff;
+                TripLeaderSelector.DisplayMember = "FirstName";
+                TripLeaderSelector.ValueMember = "IndividualID";
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void PopulateVehicleSelector()
+        {
+            string errorMessage = String.Empty;
+
+            List<Vehicle> vehicleList = Controller.GetVehicleList(out errorMessage);
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                VehicleSelector.DataSource = vehicleList;
+                VehicleSelector.DisplayMember = "Name";
+                VehicleSelector.ValueMember = "VehicleID";
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void AddVehicleButton_Click(object sender, EventArgs e)
+        {
+            String errorMessage = String.Empty;
+            Vehicle vehicle = (Vehicle)activityDataSource.DataSource;
+            Controller.SaveVehicle(vehicle, out errorMessage);
+
+            if (errorMessage == String.Empty)
+            {
+                //do nothing
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void AddNoteButton_Click(object sender, EventArgs e)
+        {
+            String errorMessage = String.Empty;
+            ActivityNote note = (ActivityNote)activityDataSource.DataSource;
+            Controller.InsertActivityNote(note, out errorMessage);
+
+            if (errorMessage == String.Empty)
+            {
+                //do nothing
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void PopulateIndividualTypeFilter()
+        {
+            string errorMessage = String.Empty;
+
+            List<IndividualType> individualTypeList = Controller.GetIndividualTypeList(out errorMessage);
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                IndividualTypeFilter.DataSource = individualTypeList;
+                IndividualTypeFilter.DisplayMember = "Name";
+                IndividualTypeFilter.ValueMember = "IndividualTypeID";
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
         }
     }
 }
