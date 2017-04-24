@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualTypeID", type.IndividualTypeID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualTypeGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualTypeGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -28,7 +28,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<IndividualType> returnList = new List<IndividualType>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.IndividualTypeGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.IndividualTypeGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;

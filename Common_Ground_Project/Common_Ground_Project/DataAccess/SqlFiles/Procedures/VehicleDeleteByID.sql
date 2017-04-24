@@ -1,7 +1,7 @@
 ﻿USE MASTER
 GO
 
-alter PROCEDURE dbo.VehicleDeleteByID
+CREATE PROCEDURE dbo.VehicleDeleteByID
 (
 	@VehicleID INT
 )

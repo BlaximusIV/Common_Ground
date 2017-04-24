@@ -13,7 +13,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IndividualID", staff.StaffID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.StaffGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.StaffGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -26,7 +26,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<Staff> returnList = new List<Staff>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.StaffGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.StaffGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
@@ -42,7 +42,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.StaffAuthenticate";
+                        cmd.CommandText = "dbo.StaffAuthenticate";
 
                         cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@Password", password);
@@ -78,17 +78,17 @@ namespace Common_Ground_Project.DataAccess
                     {
                         if (staff.StaffID == 0)
                         {
-                            cmd.CommandText = "Master.dbo.StaffInsert";
+                            cmd.CommandText = "dbo.StaffInsert";
                             cmd.Parameters.AddWithValue("@Password", "PuppiesForSale");
                             staff.StaffID = staff.IndividualID;
                         }
                         else
                         {
-                            cmd.CommandText = "Master.dbo.StaffUpdate";
+                            cmd.CommandText = "dbo.StaffUpdate";
                         }
 
                         cmd.Parameters.AddWithValue("@IndividualID", staff.StaffID);
-                        cmd.Parameters.AddWithValue("@Username", staff.Username);
+                        cmd.Parameters.AddWithValue("@Username", (String.IsNullOrEmpty(staff.Username)) ? String.Empty : staff.Username);
                         cmd.Parameters.AddWithValue("@HireDate", staff.HireDate);
                         cmd.Parameters.AddWithValue("@LeaveDate", staff.LeaveDate);
                         cmd.Parameters.AddWithValue("@PermissionID", staff.PermissionID);
@@ -120,7 +120,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "Master.dbo.StaffUpdatePassword";
+                        cmd.CommandText = "dbo.StaffUpdatePassword";
                         cmd.Parameters.AddWithValue("@Password", password);
                         cmd.Parameters.AddWithValue("@IndividualID", staff.StaffID);
 

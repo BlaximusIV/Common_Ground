@@ -1,4 +1,4 @@
-﻿INSERT INTO Master.dbo.IndividualType
+﻿INSERT INTO dbo.IndividualType
 (
 	Name
 )

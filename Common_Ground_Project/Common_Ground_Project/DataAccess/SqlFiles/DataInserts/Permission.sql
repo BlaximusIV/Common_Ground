@@ -1,4 +1,4 @@
-﻿INSERT INTO Master.dbo.Permission
+﻿INSERT INTO dbo.Permission
 (
 	Name, 
 	IsAllowedEntry

@@ -16,7 +16,7 @@ namespace Common_Ground_Project.DataAccess
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@PermissionID", permission.PermissionID));
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.PermissionGetByID");
+            SqlCommand cmd = new SqlCommand("dbo.PermissionGetByID");
             returnList = createConnection(cmd, out errorMessage, parameters);
 
             if (returnList.Count > 0)
@@ -28,7 +28,7 @@ namespace Common_Ground_Project.DataAccess
         {
             List<Permission> returnList = new List<Permission>();
 
-            SqlCommand cmd = new SqlCommand("Master.dbo.PermissionGetAll");
+            SqlCommand cmd = new SqlCommand("dbo.PermissionGetAll");
             returnList = createConnection(cmd, out errorMessage);
 
             return returnList;
