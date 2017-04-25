@@ -23,6 +23,7 @@ namespace Common_Ground_Project.Views
         public void Initialize(CommonController controller)
         {
             Controller = controller;
+            splitContainer1.Panel2Collapsed = true;
         }
 
         private void AddEContactButton_Click(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace Common_Ground_Project.Views
                 if (table != null)
                 {
                     userDayGrid.DataSource = table;
-                    userDayChart.DataSource = table;
+                    //userDayChart.DataSource = table;
                 }
             }
         }
