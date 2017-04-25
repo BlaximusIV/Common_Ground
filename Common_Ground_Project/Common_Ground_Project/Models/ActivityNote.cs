@@ -19,6 +19,7 @@ namespace Common_Ground_Project.Models
         public ActivityNote()
         {
             ActivityNoteID = 0;
+            DateTime = new DateTime(1900, 1, 1);
         }
         public ActivityNote(int id)
         {

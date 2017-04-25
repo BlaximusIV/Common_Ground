@@ -217,12 +217,18 @@ namespace Common_Ground_Project.Views
             if (activityDataSource.DataSource != null)
             {
                 String errorMessage = String.Empty;
-                ActivityNote note = (ActivityNote)activityDataSource.DataSource;
+                Activity act = (Activity)activityDataSource.DataSource;
+                ActivityNote note = new ActivityNote();
+                note.ActivityID = act.ActivityID;
+                note.Note = ActivityNote.Text.Trim();
+
                 Controller.InsertActivityNote(note, out errorMessage);
 
                 if (errorMessage == String.Empty)
                 {
-                    //do nothing
+                    act.ActivityNoteList.Add(note);
+                    activityDataSource.DataSource = act;
+                    refreshActivityTab();
                 }
                 else
                 {

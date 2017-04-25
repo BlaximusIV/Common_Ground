@@ -811,15 +811,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(392, 1);
+            this.textBox1.Location = new System.Drawing.Point(315, 1);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(306, 4);
+            this.label12.Location = new System.Drawing.Point(248, 4);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 13);
             this.label12.TabIndex = 2;
@@ -830,7 +830,7 @@
             this.IndividualTypeFilter.FormattingEnabled = true;
             this.IndividualTypeFilter.Location = new System.Drawing.Point(79, 1);
             this.IndividualTypeFilter.Name = "IndividualTypeFilter";
-            this.IndividualTypeFilter.Size = new System.Drawing.Size(204, 21);
+            this.IndividualTypeFilter.Size = new System.Drawing.Size(163, 21);
             this.IndividualTypeFilter.TabIndex = 1;
             // 
             // label4

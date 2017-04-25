@@ -42,7 +42,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        if (note.ActivityID == 0)
+                        if (note.ActivityNoteID == 0)
                         {
                             cmd.CommandText = "dbo.ActivityNoteInsert";
                             cmd.Parameters.Add(new SqlParameter("@NewID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output });
