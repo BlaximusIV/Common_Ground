@@ -307,6 +307,37 @@ namespace Common_Ground_Project.Views
             }
         }
 
+        private void IndividualNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            filterIndividualTree();
+        }
+
+        private void filterIndividualTree()
+        {
+            populateAssigneeTree();
+            string name = textBox1.Text.Trim().ToUpper();
+
+            List<TreeNode> removeableNodes = new List<TreeNode>();
+            foreach (TreeNode node in assigneeTree.Nodes)
+            {
+                Individual individual = (Individual)node.Tag;
+
+                if (!String.IsNullOrEmpty(name) && individual.FullName.ToString().Trim().ToUpper().IndexOf(name) == -1)
+                {
+                    removeableNodes.Add(node);
+                }
+            }
+
+            if (removeableNodes.Count > 0)
+            {
+                foreach (TreeNode node in removeableNodes)
+                {
+                    node.Remove();
+                }
+            }
+
+        }
+
         private void populateAssignedTree()
         {
             string errorMessage = String.Empty;
