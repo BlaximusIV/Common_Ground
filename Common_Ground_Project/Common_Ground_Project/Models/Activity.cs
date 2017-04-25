@@ -28,7 +28,13 @@ namespace Common_Ground_Project.Models
         public Activity()
         {
             ActivityID = 0;
+            StartDate = new DateTime(1900, 1, 1);
+            EndDate = new DateTime(1900, 1, 1);
+            PickUpTime = new DateTime(1900, 1, 1);
+            DropOffTime = new DateTime(1900, 1, 1);
+            StaffArrivalTime = new DateTime(1900, 1, 1);
 
+            Location = String.Empty;
             IndividualList = new List<Individual>();
             VehicleList = new List<Vehicle>();
             ActivityNoteList = new List<ActivityNote>();
