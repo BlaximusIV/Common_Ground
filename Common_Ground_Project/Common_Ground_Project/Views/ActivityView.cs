@@ -273,5 +273,35 @@ namespace Common_Ground_Project.Views
                 ((Activity)activityDataSource.DataSource).TripLeaderID = ((Staff)TripLeaderSelector.SelectedValue).IndividualID;
             }
         }
+
+        private void IndividualTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            populateAssigneeTree();
+        }
+
+        private void populateAssigneeTree()
+        {
+            string errorMessage = String.Empty;
+            assigneeTree.Nodes.Clear();
+
+            IndividualType type = (IndividualType)IndividualTypeFilter.SelectedItem;
+            if (type != null)
+            {
+                List<Individual> peeps = Controller.GetIndividualList(type, out errorMessage);
+
+                if (String.IsNullOrEmpty(errorMessage))
+                {
+                    TreeNode node = new TreeNode();
+                    foreach (Individual indiv in peeps)
+                    {
+                        node = new TreeNode();
+                        node.Text = indiv.FullName;
+                        node.Tag = indiv;
+                    }
+                }
+                else
+                    MessageBox.Show(errorMessage);
+            }
+        }
     }
 }
