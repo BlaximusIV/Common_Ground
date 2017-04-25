@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.AddEContactButton = new System.Windows.Forms.Button();
@@ -102,7 +102,7 @@
             this.AddEContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGreen;
             this.AddEContactButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.AddEContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddEContactButton.Location = new System.Drawing.Point(204, 56);
+            this.AddEContactButton.Location = new System.Drawing.Point(-369, 56);
             this.AddEContactButton.Name = "AddEContactButton";
             this.AddEContactButton.Size = new System.Drawing.Size(80, 23);
             this.AddEContactButton.TabIndex = 7;
@@ -148,27 +148,30 @@
             // 
             // userDayGrid
             // 
+            this.userDayGrid.AllowUserToAddRows = false;
+            this.userDayGrid.AllowUserToDeleteRows = false;
             this.userDayGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDayGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userDayGrid.Enabled = false;
             this.userDayGrid.Location = new System.Drawing.Point(0, 0);
             this.userDayGrid.Name = "userDayGrid";
+            this.userDayGrid.RowHeadersVisible = false;
             this.userDayGrid.Size = new System.Drawing.Size(287, 442);
             this.userDayGrid.TabIndex = 1;
             // 
             // userDayChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.userDayChart.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.userDayChart.ChartAreas.Add(chartArea4);
             this.userDayChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.userDayChart.Legends.Add(legend1);
+            legend4.Name = "Legend1";
+            this.userDayChart.Legends.Add(legend4);
             this.userDayChart.Location = new System.Drawing.Point(0, 0);
             this.userDayChart.Name = "userDayChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.userDayChart.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.userDayChart.Series.Add(series4);
             this.userDayChart.Size = new System.Drawing.Size(569, 528);
             this.userDayChart.TabIndex = 0;
             this.userDayChart.Text = "chart1";
