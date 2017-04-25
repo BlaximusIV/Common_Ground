@@ -63,6 +63,11 @@ namespace Common_Ground_Project.Views
             Activity activity = (Activity)e.Node.Tag;
             activityDataSource.DataSource = activity;
 
+            refreshActivityTab();
+        }
+
+        private void refreshActivityTab()
+        {
             populateActivityVehicles();
             populateActivityNotes();
             populateActivityParticipants();
@@ -74,6 +79,8 @@ namespace Common_Ground_Project.Views
             Activity activity = (Activity)activityDataSource.DataSource;
             activity.VehicleList = Controller.GetVehicleList(activity, out errorMessage);
             activityDataSource.DataSource = activity;
+
+            vehicleListBindingSource.DataSource = activity.VehicleList;
         }
 
         private void populateActivityNotes()
@@ -82,6 +89,8 @@ namespace Common_Ground_Project.Views
             Activity activity = (Activity)activityDataSource.DataSource;
             activity.ActivityNoteList = Controller.GetActivityNoteList(activity, out errorMessage);
             activityDataSource.DataSource = activity;
+
+            activityNoteListBindingSource.DataSource = activity.ActivityNoteList;
         }
 
         private void populateActivityParticipants()
@@ -180,12 +189,17 @@ namespace Common_Ground_Project.Views
             if (activityDataSource.DataSource != null)
             {
                 String errorMessage = String.Empty;
-                Vehicle vehicle = (Vehicle)activityDataSource.DataSource;
-                Controller.SaveVehicle(vehicle, out errorMessage);
+                Activity activity = (Activity)activityDataSource.DataSource;
+                Vehicle vehicle = (Vehicle)VehicleSelector.SelectedItem;
+                
+
+                Controller.SaveVehicleActivity(activity, vehicle, out errorMessage);
 
                 if (errorMessage == String.Empty)
                 {
-                    //do nothing
+                    activity.VehicleList.Add(vehicle);
+                    activityDataSource.DataSource = activity;
+                    refreshActivityTab();
                 }
                 else
                 {
