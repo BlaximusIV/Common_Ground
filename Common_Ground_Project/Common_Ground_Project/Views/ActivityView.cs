@@ -24,6 +24,7 @@ namespace Common_Ground_Project.Views
         public void Initialize(CommonController controller)
         {
             Controller = controller;
+            activityDataSource.DataSource = new Activity();
             populateActivityTree();
             PopulateActivityTypeSelector();
             PopulateTripLeaderSelector();
@@ -107,19 +108,25 @@ namespace Common_Ground_Project.Views
 
         private void DeleteActivityButton_Click(object sender, EventArgs e)
         {
-            string errorMessage = String.Empty;
+            if (activityDataSource.DataSource != null)
+            {
+                string errorMessage = String.Empty;
 
                 Activity activity = (Activity)activityDataSource.DataSource;
                 Controller.DeleteActivity(activity, out errorMessage);
-            if (errorMessage== String.Empty)
-            {
-                //do nothing
+                if (errorMessage == String.Empty)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
             }
             else
             {
-                MessageBox.Show(errorMessage);
+                MessageBox.Show("Please first select an activity to delete.");
             }
-            
         }
 
         private void PopulateActivityTypeSelector()
@@ -148,8 +155,9 @@ namespace Common_Ground_Project.Views
 
             if (String.IsNullOrEmpty(errorMessage))
             {
+
                 TripLeaderSelector.DataSource = listStaff;
-                TripLeaderSelector.DisplayMember = "FirstName";
+                TripLeaderSelector.DisplayMember = "Name";
                 TripLeaderSelector.ValueMember = "IndividualID";
             }
             else
@@ -177,33 +185,47 @@ namespace Common_Ground_Project.Views
 
         private void AddVehicleButton_Click(object sender, EventArgs e)
         {
-            String errorMessage = String.Empty;
-            Vehicle vehicle = (Vehicle)activityDataSource.DataSource;
-            Controller.SaveVehicle(vehicle, out errorMessage);
-
-            if (errorMessage == String.Empty)
+            if (activityDataSource.DataSource != null)
             {
-                //do nothing
+                String errorMessage = String.Empty;
+                Vehicle vehicle = (Vehicle)activityDataSource.DataSource;
+                Controller.SaveVehicle(vehicle, out errorMessage);
+
+                if (errorMessage == String.Empty)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
             }
             else
             {
-                MessageBox.Show(errorMessage);
+                MessageBox.Show("Please first select an activity to add a vehicle to.");
             }
         }
 
         private void AddNoteButton_Click(object sender, EventArgs e)
         {
-            String errorMessage = String.Empty;
-            ActivityNote note = (ActivityNote)activityDataSource.DataSource;
-            Controller.InsertActivityNote(note, out errorMessage);
-
-            if (errorMessage == String.Empty)
+            if (activityDataSource.DataSource != null)
             {
-                //do nothing
+                String errorMessage = String.Empty;
+                ActivityNote note = (ActivityNote)activityDataSource.DataSource;
+                Controller.InsertActivityNote(note, out errorMessage);
+
+                if (errorMessage == String.Empty)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
             }
             else
             {
-                MessageBox.Show(errorMessage);
+                MessageBox.Show("Please first select an activity to add a not to.");
             }
         }
 
