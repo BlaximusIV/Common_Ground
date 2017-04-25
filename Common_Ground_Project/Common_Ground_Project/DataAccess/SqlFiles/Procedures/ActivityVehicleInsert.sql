@@ -5,7 +5,7 @@ CREATE PROCEDURE dbo.ActivityVehicleInsert
 (
 	@ActivityID INT, 
 	@VehicleID INT, 
-	@DriverID INT
+	@DriverID INT = 0
 )
 AS 
 	SET NOCOUNT ON;

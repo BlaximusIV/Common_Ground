@@ -88,6 +88,8 @@
             this.dateTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activityNoteListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.IndividualTypeFilter = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
@@ -104,8 +106,6 @@
             this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -245,6 +245,7 @@
             this.activityTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activityTreeView.Location = new System.Drawing.Point(0, 0);
             this.activityTreeView.Name = "activityTreeView";
+            this.activityTreeView.ShowLines = false;
             this.activityTreeView.Size = new System.Drawing.Size(409, 53);
             this.activityTreeView.TabIndex = 0;
             this.activityTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.activityTreeView_AfterSelect);
@@ -591,7 +592,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
             this.splitContainer5.Size = new System.Drawing.Size(436, 97);
-            this.splitContainer5.SplitterDistance = 217;
+            this.splitContainer5.SplitterDistance = 216;
             this.splitContainer5.TabIndex = 0;
             // 
             // splitContainer6
@@ -611,18 +612,18 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.vehicleDataGrid);
-            this.splitContainer6.Size = new System.Drawing.Size(217, 97);
+            this.splitContainer6.Size = new System.Drawing.Size(216, 97);
             this.splitContainer6.SplitterDistance = 34;
             this.splitContainer6.TabIndex = 0;
             // 
             // AddVehicleButton
             // 
-            this.AddVehicleButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddVehicleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddVehicleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.AddVehicleButton.Location = new System.Drawing.Point(250, 6);
+            this.AddVehicleButton.Location = new System.Drawing.Point(124, 6);
             this.AddVehicleButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddVehicleButton.Name = "AddVehicleButton";
-            this.AddVehicleButton.Size = new System.Drawing.Size(152, 25);
+            this.AddVehicleButton.Size = new System.Drawing.Size(89, 25);
             this.AddVehicleButton.TabIndex = 3;
             this.AddVehicleButton.Text = "&Add Vehicle";
             this.AddVehicleButton.UseVisualStyleBackColor = false;
@@ -630,14 +631,18 @@
             // 
             // VehicleSelector
             // 
+            this.VehicleSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VehicleSelector.FormattingEnabled = true;
-            this.VehicleSelector.Location = new System.Drawing.Point(32, 7);
+            this.VehicleSelector.Location = new System.Drawing.Point(9, 9);
             this.VehicleSelector.Name = "VehicleSelector";
-            this.VehicleSelector.Size = new System.Drawing.Size(196, 24);
+            this.VehicleSelector.Size = new System.Drawing.Size(108, 21);
             this.VehicleSelector.TabIndex = 0;
             // 
             // vehicleDataGrid
             // 
+            this.vehicleDataGrid.AllowUserToAddRows = false;
+            this.vehicleDataGrid.AllowUserToDeleteRows = false;
             this.vehicleDataGrid.AutoGenerateColumns = false;
             this.vehicleDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vehicleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -650,8 +655,9 @@
             this.vehicleDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehicleDataGrid.Location = new System.Drawing.Point(0, 0);
             this.vehicleDataGrid.Name = "vehicleDataGrid";
+            this.vehicleDataGrid.ReadOnly = true;
             this.vehicleDataGrid.RowHeadersVisible = false;
-            this.vehicleDataGrid.Size = new System.Drawing.Size(217, 59);
+            this.vehicleDataGrid.Size = new System.Drawing.Size(216, 59);
             this.vehicleDataGrid.TabIndex = 0;
             // 
             // vehicleIDDataGridViewTextBoxColumn
@@ -702,18 +708,18 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.noteDataGrid);
-            this.splitContainer7.Size = new System.Drawing.Size(215, 97);
+            this.splitContainer7.Size = new System.Drawing.Size(216, 97);
             this.splitContainer7.SplitterDistance = 34;
             this.splitContainer7.TabIndex = 1;
             // 
             // AddNoteButton
             // 
-            this.AddNoteButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddNoteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.AddNoteButton.Location = new System.Drawing.Point(276, 6);
+            this.AddNoteButton.Location = new System.Drawing.Point(137, 4);
             this.AddNoteButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(152, 25);
+            this.AddNoteButton.Size = new System.Drawing.Size(75, 25);
             this.AddNoteButton.TabIndex = 4;
             this.AddNoteButton.Text = "&Add Note";
             this.AddNoteButton.UseVisualStyleBackColor = false;
@@ -721,13 +727,17 @@
             // 
             // ActivityNote
             // 
+            this.ActivityNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ActivityNote.Location = new System.Drawing.Point(17, 7);
             this.ActivityNote.Name = "ActivityNote";
-            this.ActivityNote.Size = new System.Drawing.Size(228, 22);
+            this.ActivityNote.Size = new System.Drawing.Size(113, 20);
             this.ActivityNote.TabIndex = 0;
             // 
             // noteDataGrid
             // 
+            this.noteDataGrid.AllowUserToAddRows = false;
+            this.noteDataGrid.AllowUserToDeleteRows = false;
             this.noteDataGrid.AutoGenerateColumns = false;
             this.noteDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.noteDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -740,8 +750,9 @@
             this.noteDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteDataGrid.Location = new System.Drawing.Point(0, 0);
             this.noteDataGrid.Name = "noteDataGrid";
+            this.noteDataGrid.ReadOnly = true;
             this.noteDataGrid.RowHeadersVisible = false;
-            this.noteDataGrid.Size = new System.Drawing.Size(215, 59);
+            this.noteDataGrid.Size = new System.Drawing.Size(216, 59);
             this.noteDataGrid.TabIndex = 1;
             // 
             // activityNoteIDDataGridViewTextBoxColumn
@@ -798,12 +809,28 @@
             this.splitContainer8.SplitterDistance = 26;
             this.splitContainer8.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(392, 1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(306, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Find Name:";
+            // 
             // IndividualTypeFilter
             // 
             this.IndividualTypeFilter.FormattingEnabled = true;
             this.IndividualTypeFilter.Location = new System.Drawing.Point(79, 1);
             this.IndividualTypeFilter.Name = "IndividualTypeFilter";
-            this.IndividualTypeFilter.Size = new System.Drawing.Size(204, 24);
+            this.IndividualTypeFilter.Size = new System.Drawing.Size(204, 21);
             this.IndividualTypeFilter.TabIndex = 1;
             // 
             // label4
@@ -811,7 +838,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(2, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 17);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Find Type:";
             // 
@@ -928,22 +955,6 @@
             // dateTimeDataGridViewTextBoxColumn
             // 
             this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(306, 4);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 17);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Find Name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(392, 1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 22);
-            this.textBox1.TabIndex = 3;
             // 
             // ActivityView
             // 

@@ -122,6 +122,13 @@ namespace Common_Ground_Project.Controllers
         }
         #endregion
 
+        #region ActivityVehicle
+        public void SaveVehicleActivity(Activity activity, Vehicle vehicle, out string errorMessage)
+        {
+            ActivityData.SaveVehicleActivity(activity, vehicle, out errorMessage);
+        }
+        #endregion
+
         #region EmergencyContact - Done.
         public EmergencyContact GetEmergencyContact(EmergencyContact contact, out string errorMessage)
         {
