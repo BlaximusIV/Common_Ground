@@ -370,6 +370,16 @@ namespace Common_Ground_Project.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AddIndividualToActivity();
+        }
+
+        private void assigneeTree_DoubleClick(object sender, EventArgs e)
+        {
+            AddIndividualToActivity();
+        }
+
+        private void AddIndividualToActivity()
+        {
             string errorMessage = String.Empty;
             if (assigneeTree.SelectedNode != null)
             {
@@ -388,5 +398,37 @@ namespace Common_Ground_Project.Views
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RemoveIndividualToActivity();
+        }
+
+        private void assignedTree_DoubleClick(object sender, EventArgs e)
+        {
+            RemoveIndividualToActivity();
+        }
+
+        private void RemoveIndividualToActivity()
+        {
+            string errorMessage = String.Empty;
+            if (assignedTree.SelectedNode != null)
+            {
+                if (activityDataSource.DataSource != null)
+                {
+                    Individual peep = (Individual)assignedTree.SelectedNode.Tag;
+                    Activity act = (Activity)activityDataSource.DataSource;
+
+                    Controller.DeleteActivityIndividual(act, peep, out errorMessage);
+
+                    if (String.IsNullOrEmpty(errorMessage))
+                    {
+                        act.IndividualList.Add(peep);
+                        refreshActivityTab();
+                    }
+                }
+            }
+        }
+
     }
 }

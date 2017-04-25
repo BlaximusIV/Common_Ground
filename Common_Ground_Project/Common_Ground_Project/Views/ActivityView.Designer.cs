@@ -868,6 +868,7 @@
             this.assigneeTree.ShowLines = false;
             this.assigneeTree.Size = new System.Drawing.Size(205, 228);
             this.assigneeTree.TabIndex = 0;
+            this.assigneeTree.DoubleClick += new System.EventHandler(this.assigneeTree_DoubleClick);
             // 
             // splitContainer10
             // 
@@ -896,6 +897,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "<<";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -915,6 +917,7 @@
             this.assignedTree.ShowLines = false;
             this.assignedTree.Size = new System.Drawing.Size(187, 228);
             this.assignedTree.TabIndex = 1;
+            this.assignedTree.DoubleClick += new System.EventHandler(this.assignedTree_DoubleClick);
             // 
             // ActivityByDateTree
             // 
