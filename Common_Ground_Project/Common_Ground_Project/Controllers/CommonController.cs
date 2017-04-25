@@ -95,6 +95,17 @@ namespace Common_Ground_Project.Controllers
         }
         #endregion
 
+        #region ActivityIndividual 
+        public void SaveActivityIndividual(Activity activity, Individual individual, out string errorMessage)
+        {
+            ActivityData.SaveActivityIndividual(activity, individual, out errorMessage);
+        }
+        public void DeleteActivityIndividual(Activity activity, Individual individual, out string errorMessage)
+        {
+            ActivityData.DeleteActivityIndividual(activity, individual, out errorMessage);
+        }
+        #endregion
+
         #region ActivityNote - Done.
         public ActivityNote GetActivityNote(ActivityNote note, out string errorMessage)
         {

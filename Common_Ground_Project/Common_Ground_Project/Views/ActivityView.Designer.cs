@@ -865,6 +865,7 @@
             this.assigneeTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.assigneeTree.Location = new System.Drawing.Point(0, 0);
             this.assigneeTree.Name = "assigneeTree";
+            this.assigneeTree.ShowLines = false;
             this.assigneeTree.Size = new System.Drawing.Size(205, 228);
             this.assigneeTree.TabIndex = 0;
             // 
@@ -904,12 +905,14 @@
             this.button1.TabIndex = 0;
             this.button1.Text = ">>";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // assignedTree
             // 
             this.assignedTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.assignedTree.Location = new System.Drawing.Point(0, 0);
             this.assignedTree.Name = "assignedTree";
+            this.assignedTree.ShowLines = false;
             this.assignedTree.Size = new System.Drawing.Size(187, 228);
             this.assignedTree.TabIndex = 1;
             // 
