@@ -26,6 +26,6 @@ AS
 		Master.dbo.Activity a
 		JOIN Master.dbo.ActivityType at ON at.ActivityTypeID = a.ActivityTypeID
 	WHERE
-		CONVERT(DATE, a.StartDate) = @Date
+		CONVERT(DATE, a.StartDate) = CONVERT(DATE, @Date)
 
 GO	

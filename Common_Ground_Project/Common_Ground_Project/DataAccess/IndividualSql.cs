@@ -161,7 +161,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "dbo.IndividualDelete";
+                        cmd.CommandText = "dbo.IndividualDeleteByID";
 
                         cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
 
