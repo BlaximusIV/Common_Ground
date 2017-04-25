@@ -71,6 +71,7 @@ namespace Common_Ground_Project.Views
             populateActivityVehicles();
             populateActivityNotes();
             populateActivityParticipants();
+            populateAssignedTree();
         }
 
         private void populateActivityVehicles()
@@ -297,10 +298,63 @@ namespace Common_Ground_Project.Views
                         node = new TreeNode();
                         node.Text = indiv.FullName;
                         node.Tag = indiv;
+
+                        assigneeTree.Nodes.Add(node);
                     }
                 }
                 else
                     MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void populateAssignedTree()
+        {
+            string errorMessage = String.Empty;
+            assignedTree.Nodes.Clear();
+            Activity activity = (Activity)activityDataSource.DataSource;
+
+            if (activity != null && activity.ActivityID > 0)
+            {
+                List<Individual> peeps = Controller.GetIndividualList(activity, out errorMessage);
+
+                if (String.IsNullOrEmpty(errorMessage))
+                {
+                    if (peeps != null && peeps.Count > 0)
+                    {
+                        TreeNode node = new TreeNode();
+                        foreach (Individual indiv in peeps)
+                        {
+                            node = new TreeNode();
+                            node.Text = indiv.FullName;
+                            node.Tag = indiv;
+
+                            assignedTree.Nodes.Add(node);
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show(errorMessage);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string errorMessage = String.Empty;
+            if (assigneeTree.SelectedNode != null)
+            {
+                if (activityDataSource.DataSource != null)
+                {
+                    Individual peep = (Individual)assigneeTree.SelectedNode.Tag;
+                    Activity act = (Activity)activityDataSource.DataSource;
+
+                    Controller.SaveActivityIndividual(act, peep, out errorMessage);
+
+                    if (String.IsNullOrEmpty(errorMessage))
+                    {
+                        act.IndividualList.Add(peep);
+                        refreshActivityTab();
+                    }
+                }
             }
         }
     }

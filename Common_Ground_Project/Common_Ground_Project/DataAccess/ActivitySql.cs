@@ -100,7 +100,6 @@ namespace Common_Ground_Project.DataAccess
                 }
             }
         }
-
         public void SaveVehicleActivity(Activity activity, Vehicle vehicle, out string errorMessage)
         {
             errorMessage = String.Empty;
@@ -115,6 +114,36 @@ namespace Common_Ground_Project.DataAccess
                         cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
                         cmd.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
                         cmd.Parameters.AddWithValue("@DriverID", 0);
+
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessage = "Error occured when saving: " + e.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        public void SaveActivityIndividual(Activity activity, Individual individual, out string errorMessage)
+        {
+            errorMessage = String.Empty;
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "dbo.IndividualActivityInsert";
+
+                        cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                        cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
 
                         cmd.Connection = connection;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -155,6 +184,36 @@ namespace Common_Ground_Project.DataAccess
                 catch (Exception e)
                 {
                     errorMessage = "Activity Connection Error: " + e.Message;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        public void DeleteActivityIndividual(Activity activity, Individual individual, out string errorMessage)
+        {
+            errorMessage = String.Empty;
+            using (SqlConnection connection = new SqlConnection(LoginCredentials.ConnectionString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "dbo.IndividualActivityDelete";
+
+                        cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
+                        cmd.Parameters.AddWithValue("@IndividualID", individual.IndividualID);
+
+                        cmd.Connection = connection;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection.Open();
+                        cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception e)
+                {
+                    errorMessage = "Error occured when saving: " + e.Message;
                 }
                 finally
                 {
