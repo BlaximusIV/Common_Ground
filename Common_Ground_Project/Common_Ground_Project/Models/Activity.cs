@@ -49,11 +49,11 @@ namespace Common_Ground_Project.Models
             ActivityTypeID = rdr["ActivityTypeID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["ActivityTypeID"]);
             ActivityTypeName = rdr["ActivityTypeName"] == DBNull.Value? String.Empty : Convert.ToString(rdr["ActivityTypeName"]);
             TripLeaderID = rdr["TripLeaderID"] == DBNull.Value ? 0 : Convert.ToInt32(rdr["TripLeaderID"]);
-            StartDate = rdr["Start_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Start_Date"]);
-            EndDate = rdr["End_Date"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["End_Date"]);
-            PickUpTime = rdr["Pick_Up_Time"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Pick_Up_Time"]);
-            DropOffTime = rdr["Drop_Off_Time"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Drop_Off_Time"]);
-            StaffArrivalTime = rdr["Staff_Arrival_Time"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["Staff_Arrival_Time"]);
+            StartDate = rdr["StartDate"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["StartDate"]);
+            EndDate = rdr["EndDate"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime(rdr["EndDate"]);
+            PickUpTime = rdr["PickUpTime"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime("1900/01/01 " + rdr["PickUpTime"]);
+            DropOffTime = rdr["DropOffTime"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime("1900/01/01 " + rdr["DropOffTime"]);
+            StaffArrivalTime = rdr["StaffArrivalTime"] == DBNull.Value ? new DateTime(1900, 1, 1) : Convert.ToDateTime("1900/01/01 " + rdr["StaffArrivalTime"]);
             Location = rdr["Location"] == DBNull.Value ? String.Empty : rdr["Location"].ToString();
             Cost = rdr["Cost"] == DBNull.Value ? 0.00M : Convert.ToDecimal(rdr["Cost"]);
 

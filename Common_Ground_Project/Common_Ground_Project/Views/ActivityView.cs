@@ -35,11 +35,13 @@ namespace Common_Ground_Project.Views
         private void populateActivityTree() {
             string errorMsg = String.Empty;
             activityTreeView.Nodes.Clear();
-            DateTime date;
+            DateTime date = DateTime.Now;
             DateTime.TryParse(ActivitySearch.Text, out date);
-            DateTime filterDate = date;
 
-            List<Activity> acvityList = Controller.GetActivityList(filterDate, out errorMsg);
+            if (date < new DateTime(1900, 1, 1))
+                date = DateTime.Now;
+
+            List<Activity> acvityList = Controller.GetActivityList(date, out errorMsg);
 
             TreeNode node = new TreeNode();
             foreach(Activity act in acvityList)
@@ -93,17 +95,12 @@ namespace Common_Ground_Project.Views
         private void AddActivityButton_Click(object sender, EventArgs e)
         {
             string errorMessage = String.Empty;
-
             Activity activity = (Activity)activityDataSource.DataSource;
             Controller.SaveActivity(activity, out errorMessage);
-            if (errorMessage == String.Empty)
-            {
-                //do nothing
-            }
-            else
-            {
+            if (!String.IsNullOrEmpty(errorMessage))
                 MessageBox.Show(errorMessage);
-            }
+            else
+                populateActivityTree();
         }
 
         private void DeleteActivityButton_Click(object sender, EventArgs e)
@@ -111,17 +108,12 @@ namespace Common_Ground_Project.Views
             if (activityDataSource.DataSource != null)
             {
                 string errorMessage = String.Empty;
-
                 Activity activity = (Activity)activityDataSource.DataSource;
                 Controller.DeleteActivity(activity, out errorMessage);
-                if (errorMessage == String.Empty)
-                {
-                    //do nothing
-                }
-                else
-                {
+                if (!String.IsNullOrEmpty(errorMessage))
                     MessageBox.Show(errorMessage);
-                }
+                else
+                    populateActivityTree();
             }
             else
             {

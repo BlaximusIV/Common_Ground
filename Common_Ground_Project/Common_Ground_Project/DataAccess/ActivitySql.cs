@@ -110,7 +110,7 @@ namespace Common_Ground_Project.DataAccess
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "dbo.ActivityDelete";
+                        cmd.CommandText = "dbo.ActivityDeleteByID";
 
                         cmd.Parameters.AddWithValue("@ActivityID", activity.ActivityID);
 
