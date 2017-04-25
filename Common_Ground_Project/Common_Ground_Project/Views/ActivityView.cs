@@ -245,5 +245,21 @@ namespace Common_Ground_Project.Views
                 MessageBox.Show(errorMessage);
             }
         }
+
+        private void ActivityTypeSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activityDataSource.DataSource != null)
+            {
+                ((Activity)activityDataSource.DataSource).ActivityTypeID = ((ActivityType)ActivityTypeSelector.SelectedItem).ActivityTypeID;
+            }
+        }
+
+        private void TripLeaderSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activityDataSource.DataSource != null)
+            {
+                ((Activity)activityDataSource.DataSource).TripLeaderID = ((Staff)TripLeaderSelector.SelectedValue).IndividualID;
+            }
+        }
     }
 }
