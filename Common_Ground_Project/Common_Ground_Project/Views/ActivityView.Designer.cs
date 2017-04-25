@@ -832,6 +832,7 @@
             this.IndividualTypeFilter.Name = "IndividualTypeFilter";
             this.IndividualTypeFilter.Size = new System.Drawing.Size(163, 21);
             this.IndividualTypeFilter.TabIndex = 1;
+            this.IndividualTypeFilter.SelectedIndexChanged += new System.EventHandler(this.IndividualTypeFilter_SelectedIndexChanged);
             // 
             // label4
             // 
