@@ -230,7 +230,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CommonGroundsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Common Grounds";
+            this.Text = "Common Ground";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CommonGroundsForm_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.individualTab.ResumeLayout(false);
