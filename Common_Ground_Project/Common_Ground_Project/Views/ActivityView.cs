@@ -439,5 +439,11 @@ namespace Common_Ground_Project.Views
         {
             filterIndividualTree();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            activityDataSource.DataSource = new Activity();
+            refreshActivityTab();
+        }
     }
 }
