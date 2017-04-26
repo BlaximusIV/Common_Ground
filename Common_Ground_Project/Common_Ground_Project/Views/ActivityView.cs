@@ -64,6 +64,7 @@ namespace Common_Ground_Project.Views
         {
             Activity activity = (Activity)e.Node.Tag;
             activityDataSource.DataSource = activity;
+            noteDataGrid.Rows.Clear();
 
             refreshActivityTab();
         }
