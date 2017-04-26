@@ -55,6 +55,8 @@ namespace Common_Ground_Project.Views
 
         private void ActivitySearch_ValueChanged(object sender, EventArgs e)
         {
+            activityDataSource.DataSource = new Activity();
+            refreshActivityTab();
             populateActivityTree();
         }
 
@@ -68,6 +70,8 @@ namespace Common_Ground_Project.Views
 
         private void refreshActivityTab()
         {
+            textBox1.Clear();
+            ActivityNote.Clear();
             populateActivityVehicles();
             populateActivityNotes();
             populateActivityParticipants();
@@ -238,7 +242,7 @@ namespace Common_Ground_Project.Views
             }
             else
             {
-                MessageBox.Show("Please first select an activity to add a not to.");
+                MessageBox.Show("Please first select an activity to add a note to.");
             }
         }
 
@@ -430,5 +434,9 @@ namespace Common_Ground_Project.Views
             }
         }
 
+       private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            filterIndividualTree();
+        }
     }
 }
